@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Itinerary | Satguru DMC Russia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+    <style>
+        .dest-detail-section { position:relative; padding:48px 0 90px; overflow:visible !important; }
+        .dest-detail-section .container,
+        .dest-detail-section .row { overflow:visible !important; }
+        .dest-detail-section .row { align-items:flex-start !important; }
+        .dest-sidebar-col {
+            position:sticky !important; top:96px !important;
+            align-self:flex-start !important; overflow:visible !important;
+        }
+        .dest-sidebar-sticky { position:static !important; }
+        @media (max-width:991px) {
+            .dest-sidebar-col { position:static !important; margin-bottom:28px; }
+        }
+    </style>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="inner-banner-section" id="itinHero" data-section-name="OVERVIEW" data-parallax>
+            <div class="parallax-layer" id="itinHeroBg"></div>
+            <div class="container">
+                <div class="row align-items-center banner-height">
+                    <div class="col-lg-10 col-md-8">
+                        <div class="banner-content">
+                            <p class="banner-subtitle" id="itinSubtitle">Explore Russia</p>
+                            <h1 class="banner-title" id="itinTitle">Loading…</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT -->
+        <section class="dest-detail-section" data-section-name="ITINERARY">
+            <div class="container">
+                <div class="row g-4 g-xl-5">
+
+                    <!-- SIDEBAR -->
+                    <div class="col-xl-3 col-lg-4 dest-sidebar-col">
+                        <div class="dest-sidebar-sticky">
+                            <div class="dest-sidebar-card">
+                                <div class="sidebar-card-header">
+                                    <h6>Itinerary Summary</h6>
+                                </div>
+                                <nav class="sidebar-itinerary" id="sidebarNav">
+                                    <!-- populated by JS -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT CONTENT -->
+                    <div class="col-xl-9 col-lg-8" id="itinContent">
+                        <!-- populated by JS -->
+                        <div class="text-center py-5">
+                            <p style="color:#888;">Loading itinerary…</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.min.js"></script>
+    <script src="assets/js/cms.js"></script>
+    <script src="assets/js/section-indicator.js"></script>
+
+    <script>
+    'use strict';
+    (async function () {
+        var params = new URLSearchParams(window.location.search);
+        var slug   = params.get('slug');
+
+        if (!slug) { window.location.href = 'popular-itineraries.html'; return; }
+
+        var data = await satguruCMS.get(
+            '/api/itineraries?where[slug][equals]=' + encodeURIComponent(slug) + '&limit=1'
+        );
+        var itin = data && data.docs && data.docs[0];
+
+        if (!itin) {
+            document.getElementById('itinContent').innerHTML =
+                '<div style="padding:80px 0;text-align:center">' +
+                '<h2 style="color:#1e3a3e">Itinerary not found</h2>' +
+                '<a href="popular-itineraries.html" class="btn contact-btn mt-3">' +
+                '<span class="icon"><img src="assets/img/arrow-icon-header.svg" alt=""></span>' +
+                'Back to Itineraries</a></div>';
+            return;
+        }
+
+        // Page title & hero
+        document.title = itin.title + ' | Satguru DMC Russia';
+        document.getElementById('itinTitle').textContent    = itin.title;
+        document.getElementById('itinSubtitle').textContent = itin.heroSubtitle || 'Explore Russia';
+        document.getElementById('itinHero').setAttribute('data-section-name', itin.title.toUpperCase());
+
+        if (itin.heroImage) {
+            document.getElementById('itinHeroBg').style.backgroundImage = "url('" + itin.heroImage + "')";
+        }
+
+        var days      = itin.days      || [];
+        var gallery   = itin.gallery   || [];
+        var pricing   = itin.pricing   || [];
+        var inclusions = itin.inclusions || [];
+
+        // Build sidebar sections list
+        var sidebarSections = days.map(function (d) {
+            return { id: d.id, icon: d.icon || 'ri-map-pin-line', label: d.label || '', city: d.city || '' };
+        });
+        if (gallery.length)   sidebarSections.push({ id: 'gallery',    icon: 'ri-image-line',         label: 'Gallery',  city: 'Photos' });
+        if (pricing.length)   sidebarSections.push({ id: 'pricing',    icon: 'ri-price-tag-3-line',   label: 'Pricing',  city: 'Accommodation', green: true });
+        if (inclusions.length) sidebarSections.push({ id: 'inclusions', icon: 'ri-checkbox-circle-line', label: 'Package', city: 'Inclusions', green: true });
+
+        // Render sidebar
+        var nav = document.getElementById('sidebarNav');
+        nav.innerHTML = sidebarSections.map(function (s, i) {
+            var numClass = s.green ? 'icon-num-green' : 'icon-num';
+            return (i ? '<div class="sidebar-divider"></div>' : '') +
+                '<a class="sidebar-day-item' + (i === 0 ? ' active' : '') + '" href="#' + s.id + '" data-target="' + s.id + '">' +
+                '<div class="sidebar-day-num ' + numClass + '"><i class="' + s.icon + '" style="font-size:16px;"></i></div>' +
+                '<div class="sidebar-day-text">' +
+                '<span class="sidebar-day-label">' + escHtml(s.label) + '</span>' +
+                '<span class="sidebar-day-city">' + escHtml(s.city) + '</span>' +
+                '</div>' +
+                '</a>';
+        }).join('');
+
+        // Sidebar click & scroll spy
+        nav.querySelectorAll('.sidebar-day-item').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                var el = document.getElementById(this.getAttribute('data-target'));
+                if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 90, behavior: 'smooth' });
+            });
+        });
+        var spyIds = sidebarSections.map(function (s) { return s.id; });
+        function updateActive() {
+            var y = window.pageYOffset, cur = spyIds[0];
+            spyIds.forEach(function (id) {
+                var el = document.getElementById(id);
+                if (el && el.getBoundingClientRect().top + window.pageYOffset - 110 <= y) cur = id;
+            });
+            nav.querySelectorAll('.sidebar-day-item').forEach(function (l) {
+                l.classList.toggle('active', l.getAttribute('data-target') === cur);
+            });
+        }
+        window.addEventListener('scroll', updateActive, { passive: true });
+        updateActive();
+
+        // Render right-column content
+        var html = '';
+
+        // Day blocks
+        days.forEach(function (day) {
+            var contentHtml = (day.content || []).map(function (c) {
+                return parseContentLine(c.text || String(c));
+            }).join('');
+
+            html += '<div class="dest-day-block" id="' + escAttr(day.id) + '">' +
+                '<span class="dest-day-tag">' + escHtml(day.label) + '</span>' +
+                '<h2 class="dest-day-heading">' + escHtml(day.heading) + '</h2>' +
+                '<hr class="dest-day-rule">' +
+                '<div class="dest-day-content">' + contentHtml + '</div>' +
+                '</div>';
+        });
+
+        // Gallery
+        if (gallery.length) {
+            var slides = gallery.map(function (g) {
+                return '<div class="swiper-slide"><img src="' + escAttr(g.img) + '" alt="' + escAttr(g.alt || '') + '" loading="lazy"></div>';
+            }).join('');
+
+            html += '<div class="dest-gallery-section" id="gallery">' +
+                '<h3 class="dest-section-heading">Photo Gallery</h3>' +
+                '<div class="swiper dest-gallery-swiper">' +
+                '<div class="swiper-wrapper">' + slides + '</div>' +
+                '<div class="swiper-button-next"></div>' +
+                '<div class="swiper-button-prev"></div>' +
+                '<div class="swiper-pagination"></div>' +
+                '</div>' +
+                '</div>';
+        }
+
+        // Pricing
+        if (pricing.length) {
+            var rows = pricing.map(function (p) {
+                return '<tr><td>' + escHtml(p.type) + '</td><td>' + escHtml(p.price) + '</td></tr>';
+            }).join('');
+
+            html += '<div class="dest-pricing-section" id="pricing">' +
+                '<h3 class="dest-section-heading">Accommodation &amp; Pricing</h3>' +
+                '<div class="dest-table-wrap"><table class="dest-table">' +
+                '<thead><tr><th>Type of Accommodation</th><th>Per Pax (USD)</th></tr></thead>' +
+                '<tbody>' + rows + '</tbody>' +
+                '</table></div></div>';
+        }
+
+        // Inclusions
+        if (inclusions.length) {
+            var items = inclusions.map(function (inc) {
+                return '<li><span class="incl-dot"></span>' + escHtml(inc.text || String(inc)) + '</li>';
+            }).join('');
+
+            html += '<div class="dest-inclusions-section" id="inclusions">' +
+                '<h3 class="dest-section-heading">What\'s Included</h3>' +
+                '<div class="dest-inclusions-card">' +
+                '<ul class="inclusions-list">' + items + '</ul>' +
+                '</div></div>';
+        }
+
+        document.getElementById('itinContent').innerHTML = html;
+
+        // Init gallery swiper
+        if (gallery.length && typeof Swiper !== 'undefined') {
+            new Swiper('.dest-gallery-swiper', {
+                loop: true,
+                navigation: {
+                    nextEl: '.dest-gallery-swiper .swiper-button-next',
+                    prevEl: '.dest-gallery-swiper .swiper-button-prev'
+                },
+                pagination: { el: '.dest-gallery-swiper .swiper-pagination', clickable: true },
+                autoplay: { delay: 4500, disableOnInteraction: false }
+            });
+        }
+
+        // Re-initialise scroll spy after content injection
+        updateActive();
+
+    })();
+
+    function parseContentLine(text) {
+        if (!text) return '';
+        if (text.indexOf('TIME:') === 0) {
+            var rest  = text.slice(5);
+            var colon = rest.indexOf(':');
+            if (colon !== -1) {
+                var time = rest.slice(0, colon + 3); // e.g. "10:00"
+                var body = rest.slice(colon + 3).replace(/^:\s*/, '');
+                return '<p><span class="dest-time-tag">' + escHtml(time) + '</span> ' + escHtml(body) + '</p>';
+            }
+        }
+        return '<p>' + escHtml(text) + '</p>';
+    }
+    function escHtml(s) {
+        if (!s) return '';
+        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+    function escAttr(s) { return escHtml(s); }
+    </script>
+
+</body>
+</html>

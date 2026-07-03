@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MICE | Satguru DMC Russia</title>
+    <meta name="description"
+        content="Satguru DMC Russia's MICE specialists handle everything from smaller meetings to large international summits — with creative design, expert logistics and unforgettable experiences.">
+    <meta property="og:title" content="MICE | Satguru DMC Russia">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <!-- Non-critical CSS -->
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    </noscript>
+
+    <style>
+        /* MICE section — taller vertical presence */
+
+        /* Hero banner swiper */
+        .explore-hero-swiper {
+            position: absolute !important;
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 0;
+        }
+
+        .explore-hero-swiper .swiper-slide {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .explore-hero-swiper .swiper-pagination {
+            bottom: 22px;
+            z-index: 10;
+        }
+
+        .explore-hero-swiper .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.55);
+            opacity: 1;
+        }
+
+        .explore-hero-swiper .swiper-pagination-bullet-active {
+            background: #69AA48;
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Wave animation for MICE banner letters */
+        @keyframes waveLetter {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-14px);
+            }
+        }
+
+        .mice-wave-title {
+            display: flex;
+            text-align: center;
+            line-height: 1;
+            font-size: 144px;
+            font-weight: 900;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-mice-word {
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-headline-rest {
+            display: flex;
+            align-items: center;
+        }
+
+        .wave-letter {
+            display: inline-block;
+            position: relative;
+            animation: waveLetter 1.8s ease-in-out infinite;
+            cursor: default;
+        }
+
+        .wave-letter:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .wave-letter:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .wave-letter:nth-child(3) {
+            animation-delay: 0.30s;
+        }
+
+        .wave-letter:nth-child(4) {
+            animation-delay: 0.45s;
+        }
+
+        .hero-logo-gif {
+            height: 150px;
+            margin: 0 20px;
+            width: auto;
+            display: inline-block;
+            vertical-align: middle;
+            filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.4));
+        }
+
+        .hero-event-word {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        @keyframes orangeIconPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 16px rgba(255, 122, 0, 0.35);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 6px 28px rgba(253, 185, 19, 0.6);
+                transform: scale(1.1);
+            }
+        }
+
+        .about-wcu-icon {
+            background: linear-gradient(135deg, #ff7a00, #fdb913) !important;
+            animation: orangeIconPulse 2.4s ease-in-out infinite;
+        }
+
+        .about-wcu-icon i {
+            color: #fff !important;
+        }
+
+        @media (max-width: 1199px) {
+            .mice-wave-title {
+                font-size: 64px;
+            }
+
+            .hero-logo-gif {
+                height: 70px;
+            }
+
+            .miceBG .banner-title {
+                font-size: 45px;
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- ===================================== -->
+        <!-- INNER PAGE BANNER START -->
+        <!-- ===================================== -->
+        <section class="inner-banner-section experiencebanner miceBG" data-section-name="MICE">
+
+            <!-- 4-slide fade slider -->
+            <div class="swiper explore-hero-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url('assets/img/m1.png');"></div>
+                    <div class="swiper-slide" style="background-image: url('assets/img/m2.png');"></div>
+                    <div class="swiper-slide" style="background-image: url('assets/img/m3.png');"></div>
+                    <div class="swiper-slide" style="background-image: url('assets/img/m4.png');"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center banner-height">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="banner-content">
+                            <h1 class="banner-title mice-wave-title">
+                                <span class="hero-mice-word">
+                                    <span class="wave-letter">M</span><span class="wave-letter">I</span><span
+                                        class="wave-letter">C</span><span class="wave-letter">E</span>
+                                </span>
+                                <span class="hero-headline-rest">
+                                    <img src="assets/img/mice-banner-logo.gif" alt="Satguru" class="hero-logo-gif" />
+                                    <span class="hero-event-word">Events</span>
+                                </span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===================================== -->
+        <!-- INNER PAGE BANNER END -->
+        <!-- ===================================== -->
+
+
+        <!-- ================= MICE SECTION + STACKING CARDS ================= -->
+        <style>
+            /* Tall outer wrapper — provides the scroll distance for pinned section */
+            .mice-pin-wrapper {
+                height: calc(100vh + 3000px);
+            }
+
+            /* Pinned section sticks while cards cycle */
+            .projects-section {
+                position: sticky;
+                top: 0;
+                min-height: 100vh;
+                padding: 60px 0 110px;
+                background: #f9f6ef;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            .mice-overview-row {
+                padding-bottom: 0;
+            }
+
+            /* Stage: all 6 cards sit absolutely on top of each other */
+            .mice-cards-stage {
+                position: relative;
+                height: 300px;
+            }
+
+            .project-row {
+                position: absolute;
+                inset: 0;
+                will-change: transform, opacity;
+            }
+
+            .mice-stack-card {
+                display: flex;
+                align-items: stretch;
+                background: #fff;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 8px 32px rgba(17, 67, 73, 0.13);
+                padding: 18px;
+                border: 2px solid #69aa48;
+                height: 364px;
+            }
+
+            .mice-stack-img {
+                width: 60%;
+                flex-shrink: 0;
+                overflow: hidden;
+                border-radius: 12px;
+            }
+
+            .mice-stack-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .mice-stack-content {
+                flex: 1;
+                padding: 36px 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .mice-stack-icon {
+                width: 52px;
+                height: 52px;
+                background: linear-gradient(135deg, #F5A623, #E8640A);
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                color: #fff;
+                flex-shrink: 0;
+            }
+
+            .mice-stack-content h5 {
+                font-size: 20px;
+                font-weight: 800;
+                color: #114349;
+                margin: 0;
+            }
+
+            .mice-stack-content p {
+                font-size: 18px;
+                color: #000000;
+                margin: 0;
+                line-height: 1.7;
+            }
+
+            /* Card counter badge */
+            .mice-card-counter {
+                position: fixed;
+                right: 220px;
+                top: 69%;
+                transform: translateY(-50%);
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s;
+                z-index: 50;
+            }
+
+            .mice-card-counter.show {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .mice-card-counter span {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #ccc;
+                transition: background 0.3s, height 0.3s;
+                display: block;
+            }
+
+            .mice-card-counter span.active {
+                background: #114349;
+                height: 24px;
+                border-radius: 4px;
+            }
+
+            @media (max-width: 991px) {
+                .mice-pin-wrapper {
+                    height: auto;
+                }
+
+                .mice-cards-stage {
+                    height: auto;
+                }
+
+                .project-row {
+                    position: relative;
+                    inset: auto;
+                }
+
+                .mice-stack-card {
+                    flex-direction: column;
+                    height: auto;
+                    min-height: 360px;
+                    margin-bottom: 16px;
+                }
+
+                .mice-stack-img {
+                    width: 100%;
+                    height: 290px;
+                    border-radius: 12px;
+                }
+
+                .mice-stack-content {
+                    padding: 20px;
+                }
+
+                /* Disable sticky pinning — just normal scroll */
+                .projects-section {
+                    position: relative;
+                    min-height: auto;
+                    padding: 60px 0 36px;
+                }
+
+                .mice-card-counter {
+                    display: none;
+                }
+            }
+        </style>
+
+
+
+        <div class="mice-pin-wrapper">
+            <section class="projects-section" aria-labelledby="projects-heading">
+                <div class="container container--projects">
+                    <div class="row justify-content-center text-center mice-overview-row">
+                        <div class="col-lg-12">
+                            <div class="section-heading">
+                                <h2>Meeting, Incentives, Conferences and Exhibitions</h2>
+                            </div>
+                            <p class="mice-page-desc">
+                                Our MICE specialists and experts are the best and are part of the larger worldwide
+                                network.
+                                We have a proven track record to handle all types of events — from smaller meetings to
+                                larger international summits. We are proud of and rely on our excellent logistics and
+                                creative design solutions to organize meetings, incentives, conferences and events for
+                                our
+                                clients.
+                            </p>
+                            <p class="mice-page-desc">
+                                We are excited to assist you in finding the best solutions and impart our experience and
+                                knowledge to ensure that your event is successful and your participants receive a unique
+                                experience and unforgettable impressions.
+                            </p>
+                            <a href="#" class="btn btn-view-packages customize-nav-btn">
+                                <span class="bannerPackage"><img src="assets/img/org-arrow.svg" alt=""
+                                        loading="lazy"></span>
+                                customize your request
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="projects-list">
+                        <div class="mice-cards-stage">
+
+                            <article class="project-row">
+                                <div class="mice-stack-card">
+                                    <div class="mice-stack-img"><img src="assets/img/it.jpg" alt="Incentive trips"
+                                            loading="lazy"></div>
+                                    <div class="mice-stack-content">
+                                        <div class="mice-stack-icon"><i class="ri-trophy-line"></i></div>
+                                        <h5>Incentive trips</h5>
+                                        <p>Employee and partner incentive programs aimed at <br> increasing motivation
+                                            and
+                                            engagement.</p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project-row">
+                                <div class="mice-stack-card">
+                                    <div class="mice-stack-img"><img src="assets/img/2slide3.jpg"
+                                            alt="Off-site conferences" loading="lazy"></div>
+                                    <div class="mice-stack-content">
+                                        <div class="mice-stack-icon"><i class="ri-slideshow-line"></i></div>
+                                        <h5>Off-site conferences and team <br> building activities</h5>
+                                        <p>Team formats that unite and energize. Organization of business <br> events of
+                                            any
+                                            format and scale.</p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project-row">
+                                <div class="mice-stack-card">
+                                    <div class="mice-stack-img"><img src="assets/img/slide-2.jpg"
+                                            alt="Business meetings" loading="lazy"></div>
+                                    <div class="mice-stack-content">
+                                        <div class="mice-stack-icon"><i class="ri-briefcase-line"></i></div>
+                                        <h5>Business meetings and <br> client events</h5>
+                                        <p>Visits with partners, distributors <br> and regular customers.</p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project-row">
+                                <div class="mice-stack-card">
+                                    <div class="mice-stack-img"><img src="assets/img/slide4.jpg" alt="Ceremonial events"
+                                            loading="lazy"></div>
+                                    <div class="mice-stack-content">
+                                        <div class="mice-stack-icon"><i class="ri-vip-crown-line"></i></div>
+                                        <h5>Ceremonial and business events</h5>
+                                        <p>Gala dinners, award ceremonies, presentations, <br> company anniversaries.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project-row">
+                                <div class="mice-stack-card">
+                                    <div class="mice-stack-img"><img src="assets/img/slide5.jpg"
+                                            alt="Business-to-Government" loading="lazy"></div>
+                                    <div class="mice-stack-content">
+                                        <div class="mice-stack-icon"><i class="ri-government-line"></i></div>
+                                        <h5>Business-to-Government (B2G)</h5>
+                                        <p>Working as a bridge between Govt. and Private Companies to sustain the
+                                            business.
+                                            Providing venues, logistical, technical, or strategic services directly to
+                                            public sector entities, official trade delegations, and ministries.</p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="project-row">
+                                <div class="mice-stack-card">
+                                    <div class="mice-stack-img"><img src="assets/img/slide6.jpg" alt="Off-site catering"
+                                            loading="lazy"></div>
+                                    <div class="mice-stack-content">
+                                        <div class="mice-stack-icon"><i class="ri-music-2-line"></i></div>
+                                        <h5>Off-site catering, host and <br> DJ services</h5>
+                                        <p>These specialized services — host, DJ, entertainment, catering — turn the
+                                            event
+                                            from a standard corporate function into an immersive, branded experience.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <!-- dot counter — right-side vertical -->
+                    <div class="mice-card-counter">
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <div id="site-footer" style="position: relative; z-index: 20;"></div>
+
+    </main>
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.min.js?v=3"></script>
+    <script src="assets/js/section-indicator.js"></script>
+
+    <script>
+        /* Pinned-section stacking cards */
+        (function () {
+            // On mobile: all cards visible and stacked — skip the JS animation entirely
+            if (window.innerWidth < 992) return;
+
+            var wrapper = document.querySelector('.mice-pin-wrapper');
+            var rows = Array.prototype.slice.call(document.querySelectorAll('.mice-cards-stage .project-row'));
+            var dots = Array.prototype.slice.call(document.querySelectorAll('.mice-card-counter span'));
+            var counter = document.querySelector('.mice-card-counter');
+            if (!wrapper || !rows.length) return;
+
+            var n = rows.length;
+            var ticking = false;
+            var prevIdx = -1;
+
+            /* Set initial state: card 0 visible, rest hidden behind */
+            rows.forEach(function (row, i) {
+                row.style.transition = 'transform 0.45s cubic-bezier(.4,0,.2,1), opacity 0.45s ease';
+                if (i === 0) {
+                    row.style.transform = 'scale(1)';
+                    row.style.opacity = '1';
+                    row.style.zIndex = String(n + 1);
+                } else {
+                    row.style.transform = 'scale(0.92)';
+                    row.style.opacity = '0';
+                    row.style.zIndex = String(n - i);
+                }
+            });
+
+            function update() {
+                var wRect = wrapper.getBoundingClientRect();
+                var scrolled = -wRect.top;                          /* px scrolled into wrapper */
+                var range = wrapper.offsetHeight - window.innerHeight;
+                var progress = Math.max(0, Math.min(range, scrolled)) / range;
+
+                var activeIdx = Math.min(n - 1, Math.floor(progress * n));
+
+                if (activeIdx !== prevIdx) {
+                    rows.forEach(function (row, i) {
+                        if (i < activeIdx) {
+                            var depth = activeIdx - i;
+                            row.style.transform = 'scale(' + Math.max(1 - depth * 0.04, 0.84) + ') translateY(' + (-depth * 6) + 'px)';
+                            row.style.opacity = String(Math.max(1 - depth * 0.18, 0.3));
+                            row.style.zIndex = String(n - depth);
+                        } else if (i === activeIdx) {
+                            row.style.transform = 'scale(1) translateY(0)';
+                            row.style.opacity = '1';
+                            row.style.zIndex = String(n + 1);
+                        } else {
+                            row.style.transform = 'scale(0.92) translateY(0)';
+                            row.style.opacity = '0';
+                            row.style.zIndex = String(n - i);
+                        }
+                    });
+
+                    dots.forEach(function (d, i) { d.classList.toggle('active', i === activeIdx); });
+                    prevIdx = activeIdx;
+                }
+
+                if (counter) {
+                    if (progress > 0 && progress < 1) {
+                        counter.classList.add('show');
+                    } else {
+                        counter.classList.remove('show');
+                    }
+                }
+
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function () {
+                if (!ticking) { requestAnimationFrame(update); ticking = true; }
+            }, { passive: true });
+
+            update();
+        })();
+    </script>
+
+    <script>
+        new Swiper('.explore-hero-swiper', {
+            loop: true,
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            speed: 1400,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            allowTouchMove: false,
+            pagination: { el: '.explore-hero-swiper .swiper-pagination', clickable: true },
+        });
+    </script>
+
+</body>
+
+</html>

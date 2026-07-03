@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Our Footprint | Satguru DMC Russia Network</title>
+    <meta name="description"
+        content="Discover Satguru DMC Russia's extensive network of offices across Russia and global presences in 80+ countries.">
+    <meta property="og:title" content="Our Footprint | Satguru DMC Russia Network">
+    <meta property="og:description"
+        content="An elaborate country-wide network of local offices across Russia and strategic global presences in 80+ countries.">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <!-- Non-critical CSS -->
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    </noscript>
+
+    <style>
+        /* City info panel — pinned inside the map panel at the bottom */
+        .rn-city-info {
+            position: absolute;
+            bottom: 0px;
+            left: 16px; 
+            right: 16px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+            padding: 18px 22px;
+            animation: rnCiFade 0.25s ease;
+        }
+
+        @keyframes rnCiFade {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rn-ci-left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .rn-ci-right {
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .rn-city-info {
+                flex-direction: column;
+                align-items: flex-start;
+                bottom: 8px;
+                left: 8px;
+                right: 8px;
+            }
+        }
+    </style>
+
+    <!-- amCharts 4 preconnect -->
+    <link rel="preconnect" href="https://cdn.amcharts.com" crossorigin>
+
+    <!-- jsvectormap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css">
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- ===================================== -->
+        <!-- INNER PAGE BANNER START -->
+        <!-- ===================================== -->
+        <section class="inner-banner-section" data-section-name="NETWORK" data-parallax>
+            <div class="parallax-layer" style="background-image: url('./assets/img/Final%20Images/Ournetwork.webp');">
+            </div>
+            <div class="container">
+                <div class="row align-items-center banner-height">
+                    <div class="col-lg-10 col-md-8">
+                        <div class="banner-content">
+                            <h1 class="banner-title">Strength Through Connections</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===================================== -->
+        <!-- INNER PAGE BANNER END -->
+        <!-- ===================================== -->
+
+
+        <!-- ===================================== -->
+        <!-- NETWORK SECTION START -->
+        <!-- ===================================== -->
+        <section class="network-section section page-section" data-section-name="LOCATIONS" id="our-network">
+
+            <div class="container z-3 position-relative reveal">
+                <div class="row align-items-center">
+
+                    <!-- Left: heading + description -->
+                    <div class="col-lg-8 col-md-12 text-start">
+                        <div class="section-heading mb-0">
+                            <h2>Our <span>Network</span></h2>
+                            <p class="mb-0">
+                                Satguru DMC Russia has an elaborate country-wide network of local offices across
+                                Russia and strategic global presences in more than 80+ countries.
+                                Our pan-Russia network enables us to maintain the highest standards of service
+                                delivery as well as scout for innovative products.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right: tab buttons -->
+                    <div class="col-lg-4 col-md-12 d-flex justify-content-lg-end justify-content-md-start justify-content-start align-items-center">
+                        <ul class="nav network-tabs" id="networkTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="russia-tab" data-bs-toggle="tab"
+                                    data-bs-target="#russia" type="button" role="tab">
+                                    PRESENCE IN RUSSIA
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="global-tab" data-bs-toggle="tab" data-bs-target="#global"
+                                    type="button" role="tab">
+                                    GLOBAL NETWORK
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="container">
+                <div class="tab-content" id="networkTabContent">
+
+                    <!-- TAB 1: PRESENCE IN RUSSIA — Dynamic map -->
+                    <div class="tab-pane fade show active" id="russia" role="tabpanel">
+                        <div class="gn-wrap">
+
+                            <!-- LEFT PANEL: office accordion -->
+                            <div class="gn-list-panel">
+                                <h3 class="gn-panel-title">Our presence<br>across Russia</h3>
+                                <div class="gn-divider"></div>
+                                <ul class="gn-region-list" id="rn-office-list">
+
+                                    <!-- Branch Office -->
+                                    <li class="gn-region-item gn-has-sub active" data-office="branch">
+                                        <div class="gn-region-header">
+                                            <span>Branch Office</span>
+                                            <i class="ri-arrow-right-s-line gn-region-arrow"></i>
+                                        </div>
+                                        <ul class="gn-subregion-list">
+                                            <li class="gn-subregion-item active" data-city="moscow">Moscow</li>
+                                            <li class="gn-subregion-item" data-city="ekaterinburg">Ekaterinburg</li>
+                                            <li class="gn-subregion-item" data-city="novosibirsk">Novosibirsk</li>
+                                        </ul>
+                                    </li>
+
+                                    <!-- Sales Office -->
+                                    <li class="gn-region-item gn-has-sub" data-office="sales">
+                                        <div class="gn-region-header">
+                                            <span>Sales Office</span>
+                                            <i class="ri-arrow-right-s-line gn-region-arrow"></i>
+                                        </div>
+                                        <ul class="gn-subregion-list">
+                                            <li class="gn-subregion-item" data-city="st-petersburg">St. Petersburg</li>
+                                            <li class="gn-subregion-item" data-city="kazan">Kazan</li>
+                                            <li class="gn-subregion-item" data-city="rostov">Rostov on Don</li>
+                                            <li class="gn-subregion-item" data-city="khabarovsk">Khabarovsk</li>
+                                            <li class="gn-subregion-item" data-city="vladivostok">Vladivostok</li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <!-- RIGHT PANEL: Russia map -->
+                            <div class="gn-map-panel">
+                                <div id="rn-russia-map"></div>
+                                <!-- City info panel — appears below the map on marker click -->
+                                <div id="rn-city-info" class="rn-city-info" style="display:none;"></div>
+                            </div>
+
+                        </div><!-- /gn-wrap -->
+                    </div>
+                    <!-- END TAB 1 -->
+
+                    <!-- TAB 2: GLOBAL NETWORK -->
+                    <div class="tab-pane fade" id="global" role="tabpanel">
+                        <div class="gn-wrap">
+
+                            <!-- LEFT PANEL: region accordion -->
+                            <div class="gn-list-panel">
+                                <h3 class="gn-panel-title">Keep in touch with<br>Satguru Travels</h3>
+                                <div class="gn-divider"></div>
+                                <ul class="gn-region-list" id="gn-region-list">
+
+                                    <!-- Russia: default selected -->
+                                    <li class="gn-region-item gn-single active" data-region="russia">
+                                        <div class="gn-region-header">
+                                            <span>Russia</span>
+                                            <i class="ri-arrow-right-s-line gn-region-arrow"></i>
+                                        </div>
+                                    </li>
+
+                                    <!-- Africa: accordion with 5 sub-regions -->
+                                    <li class="gn-region-item gn-has-sub" data-region="africa">
+                                        <div class="gn-region-header">
+                                            <span>Africa</span>
+                                            <i class="ri-arrow-right-s-line gn-region-arrow"></i>
+                                        </div>
+                                        <ul class="gn-subregion-list">
+                                            <li class="gn-subregion-item" data-subregion="central-africa">Central Africa
+                                            </li>
+                                            <li class="gn-subregion-item" data-subregion="east-africa">East Africa</li>
+                                            <li class="gn-subregion-item" data-subregion="north-africa">North Africa
+                                            </li>
+                                            <li class="gn-subregion-item active" data-subregion="southern-africa">
+                                                Southern Africa</li>
+                                            <li class="gn-subregion-item" data-subregion="west-africa">West Africa</li>
+                                        </ul>
+                                    </li>
+
+                                    <!-- North America -->
+                                    <li class="gn-region-item gn-has-sub" data-region="north-america">
+                                        <div class="gn-region-header">
+                                            <span>North America</span>
+                                            <i class="ri-arrow-right-s-line gn-region-arrow"></i>
+                                        </div>
+                                        <ul class="gn-subregion-list">
+                                            <li class="gn-subregion-item" data-subregion="na-usa">USA</li>
+                                            <li class="gn-subregion-item" data-subregion="na-canada">Canada</li>
+                                            <li class="gn-subregion-item" data-subregion="na-dominican-republic">
+                                                Dominican Republic</li>
+                                            <li class="gn-subregion-item" data-subregion="na-jamaica">Jamaica</li>
+                                        </ul>
+                                    </li>
+
+                                    <!-- South America -->
+                                    <li class="gn-region-item gn-has-sub" data-region="south-america">
+                                        <div class="gn-region-header">
+                                            <span>South America</span>
+                                            <i class="ri-arrow-right-s-line gn-region-arrow"></i>
+                                        </div>
+                                        <ul class="gn-subregion-list">
+                                            <li class="gn-subregion-item" data-subregion="sa-brazil">Brazil</li>
+                                        </ul>
+                                    </li>
+                                    <li class="gn-region-item gn-single" data-region="middle-east">
+                                        <div class="gn-region-header">
+                                            <span>Middle East</span>
+                                            <i class="ri-arrow-right-s-line gn-region-arrow"></i>
+                                        </div>
+                                    </li>
+                                    <li class="gn-region-item gn-single" data-region="europe">
+                                        <div class="gn-region-header">
+                                            <span>Europe</span>
+                                            <i class="ri-arrow-right-s-line gn-region-arrow"></i>
+                                        </div>
+                                    </li>
+                                    <li class="gn-region-item gn-single" data-region="asia">
+                                        <div class="gn-region-header">
+                                            <span>Asia</span>
+                                            <i class="ri-arrow-right-s-line gn-region-arrow"></i>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <!-- RIGHT PANEL: world map -->
+                            <div class="gn-map-panel">
+                                <div id="gn-world-map"></div>
+                            </div>
+
+                        </div><!-- /gn-wrap -->
+                    </div>
+                    <!-- END TAB 2 -->
+
+                </div>
+            </div>
+
+        </section>
+        <!-- ===================================== -->
+        <!-- NETWORK SECTION END -->
+        <!-- ===================================== -->
+
+        <div id="site-footer"></div>
+
+    </main>
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.min.js?v=3"></script>
+    <!-- GSAP + ScrollTrigger + Parallax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/parallax.js"></script>
+
+    <!-- jsvectormap world map -->
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"></script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            /* ============================================================
+               RUSSIA TAB
+            ============================================================ */
+            var rnCityData = [
+                { key: 'moscow', label: 'Moscow', branch: true, coords: [55.7522, 37.6156], phone: '+7 (985) 540-01-44', addr: '9th Floor, Entrance 1, Mytnaya St., Moscow 119049, Russia', mapsUrl: 'https://yandex.com/maps/?ll=37.6155,55.7272&z=16&pt=37.6155,55.7272' },
+                { key: 'ekaterinburg', label: 'Ekaterinburg', branch: true, coords: [56.8519, 60.6122], phone: '+7 (985) 540-01-56', addr: 'Ulitsa Belinskogo, off. 108, Ekaterinburg, 620063, Russia', mapsUrl: 'https://yandex.com/maps/?ll=60.6122,56.8519&z=16&pt=60.6122,56.8519' },
+                { key: 'novosibirsk', label: 'Novosibirsk', branch: true, coords: [54.9885, 82.9346], phone: '+7 (985) 530-11-92', addr: '28 Romanova street, off. 318, Novosibirsk 630099, Russia', mapsUrl: 'https://yandex.com/maps/?ll=82.9346,54.9885&z=16&pt=82.9346,54.9885' },
+                { key: 'st-petersburg', label: 'St. Petersburg', branch: false, coords: [59.9500, 30.3167], phone: '+7 (916) 462-19-56', addr: 'St. Petersburg, Russia', mapsUrl: 'https://yandex.com/maps/?ll=30.3167,59.9500&z=16&pt=30.3167,59.9500' },
+                { key: 'kazan', label: 'Kazan', branch: false, coords: [55.7879, 49.1233], phone: '+7 (985) 151-91-64', addr: 'Kazan, Republic of Tatarstan, Russia', mapsUrl: 'https://yandex.com/maps/?ll=49.1233,55.7879&z=16&pt=49.1233,55.7879' },
+                { key: 'rostov', label: 'Rostov on Don', branch: false, coords: [47.2357, 39.7015], phone: '+7 (916) 192-60-64', addr: 'Rostov-on-Don, Rostov Oblast, Russia', mapsUrl: 'https://yandex.com/maps/?ll=39.7015,47.2357&z=16&pt=39.7015,47.2357' },
+                { key: 'khabarovsk', label: 'Khabarovsk', branch: false, coords: [48.4827, 135.0836], phone: '+7 (915) 157-96-02', addr: 'Khabarovsk, Khabarovsk Krai, Russia', mapsUrl: 'https://yandex.com/maps/?ll=135.0836,48.4827&z=16&pt=135.0836,48.4827' },
+                { key: 'vladivostok', label: 'Vladivostok', branch: false, coords: [43.1155, 131.8855], phone: '+7 (915) 157-96-02', addr: 'Vladivostok, Primorsky Krai, Russia', mapsUrl: 'https://yandex.com/maps/?ll=131.8855,43.1155&z=16&pt=131.8855,43.1155' }
+            ];
+
+            var rnMap = null;
+            var rnActiveCity = 'moscow';
+            var rnMapReady = false;
+            var rnPulseWrappers = [];
+            var rnPulseDebounce = null;
+
+            /* paint only Russia; hide every other region */
+            function rnApplyColors() {
+                var mapEl = document.getElementById('rn-russia-map');
+                if (!mapEl) return;
+                mapEl.querySelectorAll('path.jvm-region').forEach(function (p) {
+                    if (p.getAttribute('data-code') === 'RU') {
+                        p.setAttribute('fill', '#236E3B');
+                        p.setAttribute('stroke', '#1a5430');
+                        p.setAttribute('stroke-width', '0.4');
+                        p.style.fill = '#236E3B';
+                        p.style.stroke = '#1a5430';
+                        p.style.strokeWidth = '0.4';
+                        p.style.fillOpacity = '1';
+                        p.style.visibility = 'visible';
+                    } else {
+                        p.setAttribute('fill', 'none');
+                        p.setAttribute('stroke', 'none');
+                        p.style.fill = 'none';
+                        p.style.stroke = 'none';
+                        p.style.visibility = 'hidden';
+                    }
+                });
+            }
+
+            /* get the SVG circle for a marker by index */
+            function rnGetMarkerEl(index) {
+                var el = document.querySelector('#rn-russia-map .jvm-marker[data-index="' + index + '"]');
+                if (!el) el = document.querySelectorAll('#rn-russia-map .jvm-marker')[index] || null;
+                return el;
+            }
+
+            /* style each marker dot */
+            function rnUpdateMarkers() {
+                rnCityData.forEach(function (city, i) {
+                    var el = rnGetMarkerEl(i);
+                    if (!el) return;
+                    var on = (city.key === rnActiveCity);
+                    el.setAttribute('fill', on ? '#E8640A' : '#ffffff');
+                    el.setAttribute('stroke', on ? '#ffffff' : '#4a9e6a');
+                    el.setAttribute('stroke-width', on ? '3' : '2');
+                    el.setAttribute('r', on ? '11' : '6');
+                    el.style.fill = on ? '#E8640A' : '#ffffff';
+                    el.style.stroke = on ? '#ffffff' : '#4a9e6a';
+                    el.style.strokeWidth = on ? '3' : '2';
+                });
+            }
+
+            /* build SMIL-animated pulse rings (SVG native — works in all browsers) */
+            function rnBuildPulseRings() {
+                document.querySelectorAll('#rn-russia-map .rn-pulse-g').forEach(function (el) { el.remove(); });
+                rnPulseWrappers = [];
+
+                var ns = 'http://www.w3.org/2000/svg';
+                var DUR = 2.2;
+
+                rnCityData.forEach(function (city, i) {
+                    var dot = rnGetMarkerEl(i);
+                    if (!dot) { rnPulseWrappers.push(null); return; }
+
+                    var cx = parseFloat(dot.getAttribute('cx') || 0);
+                    var cy = parseFloat(dot.getAttribute('cy') || 0);
+                    var color = (city.key === rnActiveCity) ? '#E8640A' : '#5cb87a';
+
+                    var g = document.createElementNS(ns, 'g');
+                    g.setAttribute('class', 'rn-pulse-g');
+                    g.style.pointerEvents = 'none';
+
+                    for (var j = 0; j < 3; j++) {
+                        var begin = (j * (DUR / 3)).toFixed(2) + 's';
+
+                        var ring = document.createElementNS(ns, 'circle');
+                        ring.setAttribute('cx', cx);
+                        ring.setAttribute('cy', cy);
+                        ring.setAttribute('r', '8');
+                        ring.setAttribute('fill', 'none');
+                        ring.setAttribute('stroke', color);
+                        ring.setAttribute('stroke-width', '1.5');
+                        ring.setAttribute('opacity', '0');
+
+                        var aR = document.createElementNS(ns, 'animate');
+                        aR.setAttribute('attributeName', 'r');
+                        aR.setAttribute('from', '8');
+                        aR.setAttribute('to', '30');
+                        aR.setAttribute('dur', DUR + 's');
+                        aR.setAttribute('begin', begin);
+                        aR.setAttribute('repeatCount', 'indefinite');
+                        aR.setAttribute('calcMode', 'spline');
+                        aR.setAttribute('keySplines', '0.2 0.6 0.4 1');
+                        aR.setAttribute('keyTimes', '0;1');
+                        ring.appendChild(aR);
+
+                        var aO = document.createElementNS(ns, 'animate');
+                        aO.setAttribute('attributeName', 'opacity');
+                        aO.setAttribute('from', '0.7');
+                        aO.setAttribute('to', '0');
+                        aO.setAttribute('dur', DUR + 's');
+                        aO.setAttribute('begin', begin);
+                        aO.setAttribute('repeatCount', 'indefinite');
+                        aO.setAttribute('calcMode', 'spline');
+                        aO.setAttribute('keySplines', '0.2 0.6 0.4 1');
+                        aO.setAttribute('keyTimes', '0;1');
+                        ring.appendChild(aO);
+
+                        g.appendChild(ring);
+                    }
+
+                    dot.parentElement.insertBefore(g, dot);
+                    rnPulseWrappers.push({ g: g });
+                });
+            }
+
+            /* recolour pulse rings for active city */
+            function rnUpdatePulseRings() {
+                rnCityData.forEach(function (city, i) {
+                    var info = rnPulseWrappers[i];
+                    if (!info) return;
+                    var color = (city.key === rnActiveCity) ? '#E8640A' : '#5cb87a';
+                    info.g.querySelectorAll('circle').forEach(function (ring) {
+                        ring.setAttribute('stroke', color);
+                    });
+                });
+            }
+
+            /* city info panel at the bottom of the map */
+            function showRnPopup(cityKey) {
+                var panel = document.getElementById('rn-city-info');
+                if (!panel) return;
+                var city = null;
+                rnCityData.forEach(function (c) { if (c.key === cityKey) city = c; });
+                if (!city) return;
+
+                panel.innerHTML =
+                    '<div class="rn-ci-left">' +
+                    '<div class="rn-popup-city">' + city.label +
+                    '<span class="rn-popup-badge ' + (city.branch ? 'branch' : 'sales') + '">' +
+                    (city.branch ? 'Branch' : 'Sales') + '</span>' +
+                    '</div>' +
+                    '<div class="rn-popup-row"><i class="ri-map-pin-line"></i><span>' + city.addr + '</span></div>' +
+                    '<div class="rn-popup-row"><i class="ri-phone-line"></i><span>' + city.phone + '</span></div>' +
+                    '</div>' +
+                    '<div class="rn-ci-right">' +
+                    '<a href="' + city.mapsUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-view-packages footer-directions-btn">' +
+                    '<span class="bannerPackage"><img src="assets/img/org-arrow.svg" alt=""></span> GET DIRECTIONS' +
+                    '</a>' +
+                    '</div>';
+
+                panel.style.display = 'flex';
+                panel.classList.add('rn-ci-in');
+            }
+
+            function hideRnPopup() {
+                var p = document.getElementById('rn-city-info');
+                if (p) { p.style.display = 'none'; p.classList.remove('rn-ci-in'); }
+            }
+
+            /* select a city */
+            function rnSelectCity(cityKey) {
+                rnActiveCity = cityKey;
+                document.querySelectorAll('#rn-office-list .gn-subregion-item').forEach(function (item) {
+                    item.classList.toggle('active', item.getAttribute('data-city') === cityKey);
+                });
+                rnApplyColors();
+                rnUpdateMarkers();
+                rnUpdatePulseRings();
+                showRnPopup(cityKey);
+            }
+
+            /* accordion open/close */
+            function rnToggleOffice(officeEl) {
+                var wasActive = officeEl.classList.contains('active');
+                document.querySelectorAll('#rn-office-list .gn-region-item').forEach(function (r) { r.classList.remove('active'); });
+                if (!wasActive) {
+                    officeEl.classList.add('active');
+                    var first = officeEl.querySelector('.gn-subregion-item');
+                    if (first) rnSelectCity(first.getAttribute('data-city'));
+                } else {
+                    rnActiveCity = null;
+                    rnApplyColors();
+                    rnUpdateMarkers();
+                    rnUpdatePulseRings();
+                    hideRnPopup();
+                }
+            }
+
+            /* inject divider lines between city items */
+            function rnInjectDividers() {
+                if (document.querySelector('#rn-office-list .rn-city-divider')) return;
+                document.querySelectorAll('#rn-office-list .gn-subregion-list').forEach(function (list) {
+                    var items = Array.prototype.slice.call(list.querySelectorAll('.gn-subregion-item'));
+                    items.forEach(function (item, idx) {
+                        if (idx < items.length - 1) {
+                            var hr = document.createElement('li');
+                            hr.className = 'rn-city-divider';
+                            item.insertAdjacentElement('afterend', hr);
+                        }
+                    });
+                });
+            }
+
+            /* DOM ready: wire all interactions */
+            document.addEventListener('DOMContentLoaded', function () {
+                rnInjectDividers();
+
+                document.querySelectorAll('#rn-office-list .gn-region-header').forEach(function (hdr) {
+                    hdr.addEventListener('click', function () { rnToggleOffice(this.parentElement); });
+                });
+
+                document.querySelectorAll('#rn-office-list .gn-subregion-item').forEach(function (item) {
+                    item.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        var parent = this.closest('.gn-region-item');
+                        if (parent && !parent.classList.contains('active')) {
+                            document.querySelectorAll('#rn-office-list .gn-region-item').forEach(function (r) { r.classList.remove('active'); });
+                            parent.classList.add('active');
+                        }
+                        rnSelectCity(this.getAttribute('data-city'));
+                    });
+                });
+
+                var mapEl = document.getElementById('rn-russia-map');
+                if (mapEl) {
+                    /* close popup when clicking map background */
+                    mapEl.addEventListener('click', function (e) {
+                        if (!e.target.classList.contains('jvm-marker') && !e.target.classList.contains('jvm-element')) {
+                            hideRnPopup();
+                        }
+                    });
+
+                    /* block drag — intercept mousedown/touchstart before jsVectorMap
+                       gets them, but only when the target is NOT a marker */
+                    mapEl.addEventListener('mousedown', function (e) {
+                        if (!e.target.classList.contains('jvm-marker') && !e.target.classList.contains('jvm-element')) {
+                            e.stopImmediatePropagation();
+                        }
+                    }, true);
+                    mapEl.addEventListener('touchstart', function (e) {
+                        if (!e.target.classList.contains('jvm-marker') && !e.target.classList.contains('jvm-element')) {
+                            e.stopImmediatePropagation();
+                        }
+                    }, true);
+                }
+            });
+
+            /* initialise jsVectorMap */
+            function initRussiaMap() {
+                if (rnMap) return;
+                if (typeof jsVectorMap === 'undefined') { setTimeout(initRussiaMap, 200); return; }
+
+                rnMap = new jsVectorMap({
+                    selector: '#rn-russia-map',
+                    map: 'world',
+                    backgroundColor: 'transparent',
+                    zoomButtons: false,
+                    zoomOnScroll: false,
+                    showTooltip: false,
+                    focusOn: { regions: ['RU'], animate: false },
+                    regionStyle: {
+                        initial: { fill: 'none', stroke: 'none', strokeWidth: 0, fillOpacity: 0 },
+                        hover: { fill: 'none', cursor: 'default' }
+                    },
+                    markerStyle: {
+                        initial: { fill: '#ffffff', stroke: '#4a9e6a', strokeWidth: 2, r: 6 },
+                        hover: { fill: '#fff4ec', stroke: '#ffffff', strokeWidth: 3, r: 8, cursor: 'pointer' }
+                    },
+                    markers: rnCityData.map(function (c) { return { name: c.label, coords: c.coords }; }),
+                    onMarkerClick: function (e, idx) { rnSelectCity(rnCityData[idx].key); },
+                    onViewportChange: function () {
+                        if (rnMapReady) hideRnPopup();
+                        clearTimeout(rnPulseDebounce);
+                        rnPulseDebounce = setTimeout(function () {
+                            rnBuildPulseRings();
+                            rnUpdatePulseRings();
+                        }, 200);
+                    }
+                });
+
+                setTimeout(function () {
+                    rnApplyColors();
+                    rnSelectCity(rnActiveCity);
+                    rnBuildPulseRings();
+                    rnUpdatePulseRings();
+                    rnMapReady = true;
+                }, 150);
+            }
+
+            document.addEventListener('DOMContentLoaded', function () { setTimeout(initRussiaMap, 250); });
+
+            var russiaTrigger = document.querySelector('[data-bs-target="#russia"]');
+            if (russiaTrigger) {
+                russiaTrigger.addEventListener('shown.bs.tab', function () {
+                    setTimeout(function () {
+                        if (rnMap) {
+                            rnApplyColors();
+                            rnUpdateMarkers();
+                            rnBuildPulseRings();
+                            rnUpdatePulseRings();
+                            if (rnActiveCity) showRnPopup(rnActiveCity);
+                        } else {
+                            initRussiaMap();
+                        }
+                    }, 80);
+                });
+            }
+
+            /* ============================================================
+               GLOBAL MAP (TAB 2)
+            ============================================================ */
+            var presenceCountries = [
+                'RW', 'CM', 'BI', 'CG', 'CD', 'GA', 'GQ', 'CF', 'TD',
+                'KE', 'ET', 'TZ', 'UG', 'ER', 'DJ', 'MW', 'MG',
+                'EG', 'MA', 'DZ', 'TN', 'LY', 'SD',
+                'ZA', 'ZW', 'ZM', 'MZ', 'BW', 'NA', 'SZ', 'LS', 'MU',
+                'NG', 'GH', 'SN', 'CI', 'BJ', 'NE', 'ML', 'BF', 'TG', 'GN', 'GM', 'SL', 'LR', 'GW', 'MR',
+                'US', 'CA', 'MX', 'DO', 'JM', 'BR', 'CO', 'AR', 'CL', 'PE', 'VE',
+                'IN', 'LK', 'NP', 'PK', 'BD',
+                'SG', 'TH', 'MY', 'PH', 'ID', 'VN', 'MM',
+                'CN', 'JP', 'KR',
+                'GB', 'FR', 'DE', 'NL', 'IT', 'ES', 'BE', 'CH', 'PT', 'SE', 'NO', 'DK', 'FI', 'AT', 'IE', 'LU',
+                'RU', 'UA', 'PL', 'CZ', 'SK', 'HU', 'RO', 'BG', 'HR', 'RS', 'BY', 'LT', 'LV', 'EE',
+                'TR', 'GR',
+                'AE', 'QA', 'SA', 'BH', 'KW', 'OM', 'JO', 'LB', 'IQ'
+            ];
+
+            var gnSubregions = {
+                'central-africa': ['RW', 'CM', 'BI', 'CG', 'CD', 'GA', 'GQ', 'CF', 'TD'],
+                'east-africa': ['KE', 'ET', 'TZ', 'UG', 'ER', 'DJ', 'MW', 'MG'],
+                'north-africa': ['EG', 'MA', 'DZ', 'TN', 'LY', 'SD'],
+                'southern-africa': ['ZA', 'ZW', 'ZM', 'MZ', 'BW', 'NA', 'SZ', 'LS', 'MU'],
+                'west-africa': ['NG', 'GH', 'SN', 'CI', 'BJ', 'NE', 'ML', 'BF', 'TG', 'GN', 'GM', 'SL', 'LR', 'GW', 'MR'],
+                'na-usa': ['US'],
+                'na-canada': ['CA'],
+                'na-dominican-republic': ['DO'],
+                'na-jamaica': ['JM'],
+                'sa-brazil': ['BR']
+            };
+
+            var gnRegionCountries = {
+                'russia': ['RU'],
+                'middle-east': ['AE', 'QA', 'SA', 'BH', 'KW', 'OM', 'JO', 'LB', 'IQ', 'SY', 'IL'],
+                'europe': ['GB', 'FR', 'DE', 'NL', 'IT', 'ES', 'BE', 'CH', 'PT', 'SE', 'NO', 'DK', 'FI', 'AT', 'IE', 'LU', 'RU', 'UA', 'PL', 'CZ', 'SK', 'HU', 'RO', 'BG', 'HR', 'RS', 'BY', 'LT', 'LV', 'EE', 'TR', 'GR'],
+                'asia': ['IN', 'LK', 'NP', 'PK', 'BD', 'SG', 'TH', 'MY', 'PH', 'ID', 'VN', 'MM', 'CN', 'JP', 'KR'],
+                'north-america': ['US', 'CA', 'DO', 'JM'],
+                'south-america': ['BR']
+            };
+
+            var gnMap = null;
+            var gnActiveSubregion = null;
+            var gnActiveRegion = 'russia';
+
+            function injectMapGradient() {
+                var svg = document.querySelector('#gn-world-map svg');
+                if (!svg || svg.querySelector('#mapOrangeGrad')) return;
+                var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+                defs.innerHTML = '<linearGradient id="mapOrangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">' +
+                    '<stop offset="0%" stop-color="#ff7a00"/><stop offset="100%" stop-color="#fdb913"/></linearGradient>';
+                svg.insertBefore(defs, svg.firstChild);
+            }
+
+            function applyMapColors(activeCodes) {
+                var mapEl = document.getElementById('gn-world-map');
+                if (!mapEl) return;
+                injectMapGradient();
+                mapEl.querySelectorAll('path.jvm-region').forEach(function (path) {
+                    var code = path.getAttribute('data-code');
+                    if (activeCodes.indexOf(code) !== -1) {
+                        path.style.fill = 'url(#mapOrangeGrad)';
+                    } else if (presenceCountries.indexOf(code) !== -1) {
+                        path.style.fill = '#236E3B';
+                    } else {
+                        path.style.fill = '';
+                    }
+                });
+            }
+
+            function selectSubregion(subregionKey) {
+                gnActiveSubregion = subregionKey;
+                document.querySelectorAll('#gn-region-list .gn-subregion-item').forEach(function (item) {
+                    item.classList.toggle('active', item.getAttribute('data-subregion') === subregionKey);
+                });
+                applyMapColors(gnSubregions[subregionKey] || []);
+            }
+
+            function selectRegion(regionKey) {
+                gnActiveRegion = regionKey;
+                gnActiveSubregion = null;
+                document.querySelectorAll('#gn-region-list .gn-region-item').forEach(function (r) { r.classList.remove('active'); });
+                var el = document.querySelector('#gn-region-list .gn-region-item[data-region="' + regionKey + '"]');
+                if (el) el.classList.add('active');
+                applyMapColors(gnRegionCountries[regionKey] || []);
+            }
+
+            function toggleRegionWithSub(regionEl) {
+                var isActive = regionEl.classList.contains('active');
+                document.querySelectorAll('#gn-region-list .gn-region-item').forEach(function (r) { r.classList.remove('active'); });
+                if (!isActive) {
+                    regionEl.classList.add('active');
+                    gnActiveRegion = regionEl.getAttribute('data-region');
+                    var firstSub = regionEl.querySelector('.gn-subregion-item');
+                    if (firstSub) selectSubregion(firstSub.getAttribute('data-subregion'));
+                }
+            }
+
+            document.querySelectorAll('#gn-region-list .gn-region-header').forEach(function (header) {
+                header.addEventListener('click', function () {
+                    var regionEl = this.parentElement;
+                    if (regionEl.classList.contains('gn-has-sub')) {
+                        toggleRegionWithSub(regionEl);
+                    } else {
+                        selectRegion(regionEl.getAttribute('data-region'));
+                    }
+                });
+            });
+
+            document.querySelectorAll('#gn-region-list .gn-subregion-item').forEach(function (item) {
+                item.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    selectSubregion(this.getAttribute('data-subregion'));
+                });
+            });
+
+            function initMap() {
+                if (gnMap) {
+                    var colors = gnActiveSubregion ? (gnSubregions[gnActiveSubregion] || []) : (gnRegionCountries[gnActiveRegion] || []);
+                    applyMapColors(colors);
+                    return;
+                }
+                if (typeof jsVectorMap === 'undefined') return;
+                gnMap = new jsVectorMap({
+                    selector: '#gn-world-map',
+                    map: 'world',
+                    backgroundColor: 'transparent',
+                    zoomButtons: false,
+                    zoomOnScroll: false,
+                    showTooltip: false,
+                    regionStyle: {
+                        initial: { fill: '#E8F0DE', stroke: '#236E3B', strokeWidth: 0.4, fillOpacity: 1 },
+                        hover: { fill: '#cde0b8', cursor: 'pointer' }
+                    },
+                    onRegionClick: function (event, code) {
+                        var foundSub = null;
+                        Object.keys(gnSubregions).forEach(function (key) {
+                            if (gnSubregions[key].indexOf(code) !== -1) foundSub = key;
+                        });
+                        if (foundSub) {
+                            var parentRegion = (foundSub.indexOf('africa') !== -1) ? 'africa' : 'america';
+                            document.querySelectorAll('#gn-region-list .gn-region-item').forEach(function (r) { r.classList.remove('active'); });
+                            var parentEl = document.querySelector('#gn-region-list .gn-region-item[data-region="' + parentRegion + '"]');
+                            if (parentEl) parentEl.classList.add('active');
+                            selectSubregion(foundSub);
+                            return;
+                        }
+                        Object.keys(gnRegionCountries).forEach(function (key) {
+                            if (gnRegionCountries[key].indexOf(code) !== -1) selectRegion(key);
+                        });
+                    }
+                });
+                applyMapColors(gnRegionCountries[gnActiveRegion] || []);
+            }
+
+            var globalTrigger = document.querySelector('[data-bs-target="#global"]');
+            if (globalTrigger) {
+                globalTrigger.addEventListener('shown.bs.tab', function () { setTimeout(initMap, 60); });
+            }
+            if (window.location.hash === '#global') { setTimeout(initMap, 200); }
+
+        })();
+    </script>
+    <script src="assets/js/section-indicator.js"></script>
+
+</body>
+
+</html>

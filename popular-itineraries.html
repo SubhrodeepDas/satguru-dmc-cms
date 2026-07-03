@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Popular Itineraries | Satguru DMC Russia</title>
+    <meta name="description" content="Browse Satguru DMC Russia's most popular itineraries — from 4 Nights Moscow to 9 Nights Siberia–Baikal–Moscow–Saint Petersburg, with starting prices and easy booking.">
+    <meta property="og:title" content="Popular Itineraries | Satguru DMC Russia">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <!-- Non-critical CSS -->
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+    <style>
+        /* Packages slider section */
+        .packages-slider-section { padding: 90px 0; }
+        .packages-swiper { overflow: hidden; }
+        .packages-swiper .tour-explore-card { height: 520px !important; box-shadow: none !important; border-radius: 18px; }
+        .packages-swiper .tour-explore-card:hover { box-shadow: none !important; }
+        .packages-swiper .tour-explore-card__img { object-position: top center; }
+        .pkg-search-wrap { margin-bottom: 36px; }
+        .pkg-search-inner {
+            position: relative;
+            max-width: 100%;
+        }
+        .pkg-search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #114349;
+            pointer-events: none;
+        }
+        .pkg-search-input {
+            width: 100%;
+            padding: 14px 20px 14px 50px;
+            border: 2px solid #d8e8e6;
+            border-radius: 50px;
+            font-size: 15px;
+            color: #1a2e2c;
+            background: #fff;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .pkg-search-input:focus {
+            border-color: #114349;
+            box-shadow: 0 0 0 4px rgba(17,67,73,0.08);
+        }
+        .pkg-search-input::placeholder { color: #a0b4b2; }
+.pkg-no-results {
+            text-align: center;
+            padding: 60px 0;
+            color: #7a8c8a;
+            font-size: 16px;
+            display: none;
+        }
+        .pkg-slider-wrap { position: relative; }
+        .pkg-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #114349;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.25s ease;
+        }
+        .pkg-nav-btn:hover { background: linear-gradient(135deg, #F57C1B 0%, #F8C522 100%); }
+        .pkg-prev { left: -24px; }
+        .pkg-next { right: -24px; }
+        @media (max-width: 768px) {
+            .pkg-prev { left: 0; }
+            .pkg-next { right: 0; }
+        }
+
+        /* ── Hero Swiper (matches Destinations page) ── */
+        .explore-hero-swiper {
+            position: absolute !important;
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 0;
+        }
+        .explore-hero-swiper .swiper-slide {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .explore-hero-swiper .swiper-pagination { bottom: 22px; z-index: 10; }
+        .explore-hero-swiper .swiper-pagination-bullet {
+            width: 8px; height: 8px;
+            background: rgba(255,255,255,0.55); opacity: 1;
+        }
+        .explore-hero-swiper .swiper-pagination-bullet-active {
+            background: #69AA48; width: 24px; border-radius: 4px;
+        }
+
+        /* ── Package Cards ── */
+        .pkg-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(17,67,73,0.10);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+        .pkg-card:hover { transform: translateY(-6px); box-shadow: 0 10px 36px rgba(17,67,73,0.18); color: inherit; text-decoration: none; }
+        .pkg-card__img-wrap { position: relative; height: 210px; overflow: hidden; flex-shrink: 0; }
+        .pkg-card__img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+        .pkg-card:hover .pkg-card__img { transform: scale(1.06); }
+        .pkg-card__duration {
+            position: absolute; top: 12px; right: 12px;
+            background: rgba(17,67,73,0.88); color: #fff;
+            font-size: 11px; font-weight: 600; letter-spacing: 0.3px;
+            padding: 4px 11px; border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+        .pkg-card__body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+        .pkg-card__title { font-size: 15px; font-weight: 700; color: #114349; margin: 0 0 6px; line-height: 1.35; }
+        .pkg-card__dest { font-size: 12px; color: #7a8c8a; display: flex; align-items: center; gap: 4px; margin-bottom: 10px; }
+        .pkg-card__desc { font-size: 13px; color: #566565; line-height: 1.55; flex: 1; margin-bottom: 14px;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .pkg-card__footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 4px; border-top: 1px solid #eef2f2; }
+        .pkg-card__price { font-size: 14px; font-weight: 700; color: #F57C1B; }
+        .pkg-card__btn {
+            display: inline-flex; align-items: center; gap: 5px;
+            font-size: 12px; font-weight: 600; color: #114349;
+            border: 1.5px solid #114349; border-radius: 20px;
+            padding: 6px 14px; text-decoration: none;
+            transition: all 0.2s ease; background: transparent;
+        }
+        .pkg-card__btn:hover, .pkg-card:hover .pkg-card__btn { background: #114349; color: #fff; }
+        .packages-swiper .pkg-card { height: auto; }
+        @media (max-width: 576px) { .pkg-card__img-wrap { height: 180px; } }
+
+        /* ── Tablet/Mobile: 2-column grid, no swiper (below 991px) ── */
+        .pkg-mobile-grid {
+            display: none;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .pkg-mobile-grid .tour-explore-card {
+            display: block;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            height: 260px;
+            text-decoration: none;
+            flex: 0 0 calc(50% - 8px);
+            width: calc(50% - 8px);
+        }
+        @media (max-width: 991px) {
+            .pkg-mobile-grid { display: flex; }
+            #pkgSliderWrap .packages-swiper,
+            #pkgSliderWrap .pkg-nav-btn { display: none !important; }
+        }
+        @media (max-width: 767px) {
+            .pkg-mobile-grid .tour-explore-card {
+                flex: 0 0 100%;
+                width: 100%;
+                height: 240px;
+            }
+        }
+        @media (max-width: 480px) {
+            .pkg-mobile-grid .tour-explore-card { height: 200px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- ===================================== -->
+        <!-- INNER PAGE BANNER START -->
+        <!-- ===================================== -->
+        <section class="inner-banner-section experiencebanner" data-section-name="OVERVIEW">
+
+            <!-- 3-slide fade slider -->
+            <div class="swiper explore-hero-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide itin-slide" data-bg="assets/img/Final%20Images/p1.webp"></div>
+                    <div class="swiper-slide itin-slide" data-bg="assets/img/Final%20Images/p2.webp"></div>
+                    <div class="swiper-slide itin-slide" data-bg="assets/img/Final%20Images/p3.webp"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center banner-height">
+                    <div class="col-lg-10 col-md-8">
+                        <div class="banner-content">
+                            <h1 class="banner-title">Popular <span class="banner-subtitle">Itineraries</span></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===================================== -->
+        <!-- INNER PAGE BANNER END -->
+        <!-- ===================================== -->
+
+
+        <!-- ═══════════════════════════════════════════════════
+             FEATURED PACKAGES — Swiper Slider
+        ════════════════════════════════════════════════════ -->
+        <section class="packages-slider-section section page-section" data-section-name="PACKAGES">
+            <div class="container">
+                <div class="pkg-search-wrap">
+                    <div class="pkg-search-inner">
+                        <i class="ri-search-line pkg-search-icon"></i>
+                        <input type="text" class="pkg-search-input" id="pkgSearch" placeholder="Search destinations...">
+                    </div>
+                </div>
+                <p class="pkg-no-results" id="pkgNoResults">No destinations found for your search.</p>
+                <div class="pkg-slider-wrap" id="pkgSliderWrap">
+                    <div class="swiper packages-swiper">
+                        <div class="swiper-wrapper"></div>
+                    </div>
+                    <!-- Mobile stacked cards (no swiper) -->
+                    <div id="pkgMobileGrid" class="pkg-mobile-grid"></div>
+                    <button class="pkg-nav-btn pkg-prev" aria-label="Previous"><i class="ri-arrow-left-s-line"></i></button>
+                    <button class="pkg-nav-btn pkg-next" aria-label="Next"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+        </section>
+        <!-- ═══════════ END EXPLORE OUR PACKAGES ═══════════ -->
+
+        <div id="site-footer"></div>
+
+    </main>
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.min.js?v=3"></script>
+    <!-- GSAP + ScrollTrigger + Parallax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/parallax.js"></script>
+    <script src="assets/js/section-indicator.js"></script>
+    <script src="assets/js/cms.js"></script>
+    <!-- Banner Swiper initialised after CMS images are loaded (see CMS loader below) -->
+    <script>
+        // ── All packages come from CMS — no static data ──
+        (function () {
+            function escHtml(s) {
+                return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : '';
+            }
+
+            var pkgSwiper = null;
+            var allPackages = [];
+
+            function buildSlides(list) {
+                return list.map(function (p) {
+                    return '<div class="swiper-slide">' +
+                        '<a href="' + escHtml(p.href || '#') + '" class="tour-explore-card">' +
+                        '<img src="' + escHtml(p.img) + '" alt="' + escHtml(p.title) + '" class="tour-explore-card__img" loading="lazy">' +
+                        '<span class="tour-explore-card__overlay"></span>' +
+                        '<h3 class="tour-explore-card__title">' + escHtml(p.title) +
+                        '<span class="tour-explore-card__arrow"><i class="ri-arrow-right-up-line"></i></span>' +
+                        '</h3></a></div>';
+                }).join('');
+            }
+
+            function buildCards(list) {
+                return list.map(function (p) {
+                    return '<a href="' + escHtml(p.href || '#') + '" class="tour-explore-card">' +
+                        '<img src="' + escHtml(p.img) + '" alt="' + escHtml(p.title) + '" class="tour-explore-card__img" loading="lazy">' +
+                        '<span class="tour-explore-card__overlay"></span>' +
+                        '<h3 class="tour-explore-card__title">' + escHtml(p.title) +
+                        '<span class="tour-explore-card__arrow"><i class="ri-arrow-right-up-line"></i></span>' +
+                        '</h3></a>';
+                }).join('');
+            }
+
+            window._initPkgSwiper = function (list) {
+                var wrap = document.getElementById('pkgSliderWrap');
+                var noResults = document.getElementById('pkgNoResults');
+                var mobileGrid = document.getElementById('pkgMobileGrid');
+                if (pkgSwiper) { pkgSwiper.destroy(true, true); pkgSwiper = null; }
+                if (!list.length) {
+                    wrap.style.display = 'none';
+                    noResults.style.display = 'block';
+                    return;
+                }
+                wrap.style.display = '';
+                noResults.style.display = 'none';
+
+                if (window.innerWidth < 992) {
+                    // Tablet/mobile: 2-column card grid, no swiper
+                    wrap.querySelector('.swiper-wrapper').innerHTML = '';
+                    mobileGrid.innerHTML = buildCards(list);
+                } else {
+                    // Desktop: Swiper slider
+                    mobileGrid.innerHTML = '';
+                    wrap.querySelector('.swiper-wrapper').innerHTML = buildSlides(list);
+                    pkgSwiper = new Swiper('.packages-swiper', {
+                        slidesPerView: 1, spaceBetween: 24,
+                        loop: list.length > 4,
+                        breakpoints: { 576: { slidesPerView: 2 }, 992: { slidesPerView: 3 }, 1200: { slidesPerView: 4 } }
+                    });
+                    wrap.querySelector('.pkg-prev').onclick = function () { pkgSwiper.slidePrev(); };
+                    wrap.querySelector('.pkg-next').onclick = function () { pkgSwiper.slideNext(); };
+                }
+            };
+
+            window._setPkgPackages = function (list) {
+                allPackages = list;
+                window._initPkgSwiper(list);
+                document.getElementById('pkgSearch').value = '';
+            };
+
+            // Start hidden — CMS will populate via _setPkgPackages()
+            window._initPkgSwiper([]);
+
+            document.getElementById('pkgSearch').addEventListener('input', function () {
+                var q = this.value.trim().toLowerCase();
+                var filtered = q ? allPackages.filter(function (p) {
+                    var search = (p.title + ' ' + (p.dest || '')).toLowerCase();
+                    return search.indexOf(q) !== -1;
+                }) : allPackages;
+                window._initPkgSwiper(filtered);
+            });
+        })();
+    </script>
+
+    <!-- CMS dynamic loaders — popular-itineraries.html (Payload CMS) -->
+    <script>
+        (async function () {
+            function escHtml(s) {
+                return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : '';
+            }
+
+            // ── Packages slider — populated from CMS ──
+            var itinData = await satguruCMS.getItineraries();
+            if (itinData && itinData.docs && itinData.docs.length) {
+                if (window._setPkgPackages) {
+                    window._setPkgPackages(itinData.docs.map(function (itin) {
+                        return {
+                            title: itin.title,
+                            img:   satguruCMS.imgUrl(itin.image) || itin.imageUrl || '',
+                            href:  itin.slug ? 'itinerary/' + encodeURIComponent(itin.slug) : '#'
+                        };
+                    }));
+                }
+            }
+
+            // ── Inner Banner ──
+            function applyItinBannerBg() {
+                document.querySelectorAll('.explore-hero-swiper .itin-slide').forEach(function (el) {
+                    var bg = el.getAttribute('data-bg');
+                    if (bg) el.style.backgroundImage = "url('" + bg + "')";
+                });
+            }
+
+            var bannerWrapper = document.querySelector('.explore-hero-swiper .swiper-wrapper');
+            try {
+                var slides = await satguruCMS.getItinerariesBannerSlides();
+                if (slides && slides.docs && slides.docs.length && bannerWrapper) {
+                    bannerWrapper.innerHTML = slides.docs.map(function (s) {
+                        var img = s.imageUrl || satguruCMS.imgUrl(s.image) || '';
+                        return '<div class="swiper-slide itin-slide" data-bg="' + escHtml(img) + '"></div>';
+                    }).join('');
+                }
+                // If CMS returns no slides, static fallback (p1/p2/p3) remains untouched
+            } catch (e) {}
+
+            // Init Swiper after slides are ready (CMS or static fallback)
+            new Swiper('.explore-hero-swiper', {
+                loop: true,
+                effect: 'fade',
+                fadeEffect: { crossFade: true },
+                speed: 1400,
+                autoplay: { delay: 4000, disableOnInteraction: false },
+                allowTouchMove: false,
+                pagination: { el: '.explore-hero-swiper .swiper-pagination', clickable: true },
+                on: {
+                    init: function () { applyItinBannerBg(); },
+                },
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

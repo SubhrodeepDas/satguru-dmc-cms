@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <title>Brand &amp; Association | Satguru DMC Russia</title>
+        <meta name="description"
+                content="Explore the trusted brands of the Satguru Travel Group and our proud affiliations with global travel associations and award bodies.">
+        <meta property="og:title" content="Brand &amp; Association | Satguru DMC Russia">
+        <meta property="og:type" content="website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+        <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style"
+                onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+                <link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css">
+        </noscript>
+
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style"
+                onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+        </noscript>
+
+        <style>
+                /* Disable global scroll-snap on this page */
+                html {
+                        scroll-snap-type: none !important;
+                }
+
+                .inner-banner-section {
+                        scroll-snap-align: none !important;
+                        scroll-snap-stop: normal !important;
+                }
+
+                /* ── Combined Brand & Association Layout ── */
+                .ba-viewport {
+                        display: flex;
+                        flex-direction: column;
+                }
+
+                /* ── Brand Half ── */
+                .ba-brand-half {
+                        flex: 0 0 50%;
+                        background: #ffffff;
+                        display: flex;
+                        align-items: center;
+                        padding: 100px 0;
+                        border-bottom: 2px solid #e8f0ec;
+                }
+
+                /* Brand logo grid */
+                .ba-brand-grid {
+                        display: grid;
+                        grid-template-columns: repeat(6, 1fr);
+                        gap: 20px;
+                }
+
+                .ba-brand-card {
+                        background: #fff;
+                        border: 1.5px solid #e8edf0;
+                        border-radius: 18px;
+                        padding: 4px 16px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 14px;
+                        text-align: center;
+                        transition: box-shadow 0.22s, transform 0.22s, border-color 0.22s;
+                        min-height: 110px;
+                }
+
+                .ba-brand-card:hover {
+                        box-shadow: 0 8px 28px rgba(17, 67, 73, 0.13);
+                        transform: translateY(-3px);
+                        border-color: #b8d9b0;
+                }
+
+                .ba-brand-icon {
+
+                        border-radius: 14px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                }
+
+                .ba-brand-icon img {
+                        width: 100%;
+                        height: 88px;
+                        border-radius: 14px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        object-fit: cover;
+                }
+
+                .ba-brand-name {
+                        font-size: 15px;
+                        font-weight: 800;
+                        color: #114349;
+                        letter-spacing: 0.2px;
+                        line-height: 1.2;
+                }
+
+                .ba-brand-tag {
+                        font-size: 10.5px;
+                        color: #888;
+                        font-weight: 500;
+                        letter-spacing: 0.3px;
+                        text-transform: uppercase;
+                }
+
+                /* Per-brand colour accents */
+                .ba-brand-st .ba-brand-icon {
+                        background: #fff4e6;
+                        color: #E8640A;
+                }
+
+                .ba-brand-sdmc .ba-brand-icon {
+                        background: #e8f6ed;
+                        color: #114349;
+                }
+
+                .ba-brand-stmc .ba-brand-icon {
+                        background: #e8f0fb;
+                        color: #2a7fc1;
+                }
+
+                .ba-brand-t3 .ba-brand-icon {
+                        background: #fff4e6;
+                        color: #E8640A;
+                }
+
+                .ba-brand-tw .ba-brand-icon {
+                        background: #e8f6ed;
+                        color: #69AA48;
+                }
+
+                .ba-brand-odmc .ba-brand-icon {
+                        background: #f0eafc;
+                        color: #7c4dcc;
+                }
+
+                /* ── Association Half ── */
+                .ba-assoc-half {
+                        flex: 0 0 50%;
+                        background: #f4f8f5;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        padding: 100px 0 80px;
+                }
+
+                /* ── Marquee strips ── */
+                .assoc-strips-outer {
+                        width: 100%;
+                        overflow: hidden;
+                        -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+                        mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+                        margin-top: 18px;
+                }
+
+                .assoc-strip-row {
+                        margin-bottom: 14px;
+                        overflow: hidden;
+                }
+
+                .assoc-strip-row:last-child {
+                        margin-bottom: 0;
+                }
+
+                .assoc-strip {
+                        display: flex;
+                        gap: 14px;
+                        width: max-content;
+                        align-items: center;
+                        will-change: transform;
+                }
+
+                .assoc-strip-rtl {
+                        animation: assoc-scroll-left 40s linear infinite;
+                }
+
+                .assoc-strip-ltr {
+                        animation: assoc-scroll-right 40s linear infinite;
+                }
+
+                @keyframes assoc-scroll-left {
+                        0% {
+                                transform: translateX(0);
+                        }
+
+                        100% {
+                                transform: translateX(-50%);
+                        }
+                }
+
+                @keyframes assoc-scroll-right {
+                        0% {
+                                transform: translateX(-50%);
+                        }
+
+                        100% {
+                                transform: translateX(0);
+                        }
+                }
+
+                /* Fixed width cards so both halves have identical total width → seamless loop */
+                .assoc-logo-card {
+                        background: #fff;
+                        border: 1.5px solid #e5e5e5;
+                        border-radius: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 160px;
+                        height: 76px;
+                        flex: 0 0 160px;
+                        transition: box-shadow 0.2s, border-color 0.2s;
+                        overflow: hidden;
+                }
+
+                .assoc-logo-card:hover {
+                        box-shadow: 0 6px 20px rgba(17, 67, 73, 0.12);
+                        border-color: #b8d9b0;
+                }
+
+                .assoc-logo-card img {
+                        max-height: 66px;
+                        max-width: 190px;
+                        object-fit: contain;
+                        filter: grayscale(25%);
+                        transition: filter 0.2s;
+                        pointer-events: none;
+                }
+
+                .assoc-logo-card.custom-7 img {
+                        max-height: 91px;
+                        max-width: 190px;
+                        object-fit: contain;
+                        filter: grayscale(25%);
+                        transition: filter 0.2s;
+                        pointer-events: none;
+                }
+
+                .assoc-logo-card:hover img {
+                        filter: grayscale(0%);
+                }
+
+                /* Responsive */
+                @media (max-width: 1199px) {
+                        .ba-brand-grid {
+                                grid-template-columns: repeat(3, 1fr);
+                        }
+
+                        .ba-viewport {
+                                min-height: auto;
+                        }
+
+                        .ba-brand-half {
+                                flex: none;
+                                padding: 60px 0;
+                        }
+
+                        .ba-assoc-half {
+                                flex: none;
+                        }
+                }
+
+                @media (max-width: 767px) {
+                        .ba-brand-grid {
+                                grid-template-columns: repeat(2, 1fr);
+                        }
+
+                        .ba-heading {
+                                font-size: 24px;
+                        }
+                }
+        </style>
+</head>
+
+<body>
+
+        <div id="site-header"></div>
+
+        <main>
+
+                <!-- ===================================== -->
+                <!-- INNER PAGE BANNER -->
+                <!-- ===================================== -->
+                <section class="inner-banner-section"
+                        style="background-image: url('./assets/img/Final%20Images/Brand%26Association.webp'); background-size: cover; background-position: center;">
+                        <div class="container">
+                                <div class="row align-items-center banner-height">
+                                        <div class="col-lg-10 col-md-8">
+                                                <div class="banner-content">
+                                                        <h1 class="banner-title">Brand &amp; Association</h1>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+
+                <!-- ===================================== -->
+                <!-- COMBINED BRAND & ASSOCIATION VIEWPORT -->
+                <!-- ===================================== -->
+                <div class="ba-viewport">
+
+                        <!-- ── BRAND SECTION ── -->
+                        <div class="ba-brand-half" id="brand">
+                                <div class="container reveal">
+                                        <div class="brand-page-heading">
+                                                <h2>Our <span>Brand</span></h2>
+                                                <p>Trusted brands that define world-class travel across every segment.
+                                                </p>
+                                        </div>
+
+                                        <div class="ba-brand-grid">
+
+                                                <!-- Satguru Travel -->
+                                                <div class="ba-brand-card ba-brand-st">
+                                                        <div class="ba-brand-icon"><img
+                                                                        src="assets/img/satguru-travel-logo.png" alt="">
+                                                        </div>
+                                                </div>
+
+                                                <!-- Satguru DMC -->
+                                                <div class="ba-brand-card ba-brand-sdmc">
+                                                        <div class="ba-brand-icon"><img src="assets/img/satguru-dmc.png"
+                                                                        alt=""></div>
+                                                </div>
+
+                                                <!-- Satguru TMC -->
+                                                <div class="ba-brand-card ba-brand-stmc">
+                                                        <div class="ba-brand-icon"><img src="assets/img/satguru-tmc.png"
+                                                                        alt=""></div>
+
+                                                </div>
+
+                                                <!-- T3 -->
+                                                <div class="ba-brand-card ba-brand-t3">
+                                                        <div class="ba-brand-icon"><img src="assets/img/new-t3.png"
+                                                                        alt="">
+                                                        </div>
+
+                                                </div>
+
+                                                <!-- Travel Wings -->
+                                                <div class="ba-brand-card ba-brand-tw">
+                                                        <div class="ba-brand-icon"><img
+                                                                        src="assets/img/new-travelwings.png" alt="">
+                                                        </div>
+
+                                                </div>
+
+                                                <!-- Odyssey DMC -->
+                                                <div class="ba-brand-card ba-brand-odmc">
+                                                        <div class="ba-brand-icon"><img src="assets/img/new-odessy.png"
+                                                                        alt=""></div>
+
+                                                </div>
+
+                                        </div>
+                                </div>
+                        </div>
+
+                        <!-- ── ASSOCIATIONS & AWARDS SECTION ── -->
+                        <div class="ba-assoc-half" id="association">
+                                <div class="container reveal">
+                                        <div class="association-page-heading">
+                                                <h2>Associations &amp; <span>Awards</span></h2>
+                                                <p>Proudly affiliated with leading global tourism bodies, government
+                                                        departments, and award
+                                                        institutions.</p>
+                                        </div>
+                                </div>
+
+                                <!-- Marquee strips (full-width, outside container) -->
+                                <div class="assoc-strips-outer">
+
+                                        <!-- Row 1: right → left (all logos) -->
+                                        <div class="assoc-strip-row">
+                                                <div class="assoc-strip assoc-strip-rtl">
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-1.webp"
+                                                                        alt="IATA" loading="lazy">
+                                                        </div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-2.webp"
+                                                                        alt="Russian Federal Tourism" loading="lazy">
+                                                        </div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-3.webp"
+                                                                        alt="RKN" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-4.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-5.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-6.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card custom-7"><img
+                                                                        src="assets/img/brand-logo/brand-7.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-8.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-9.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-10.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-11.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-12.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-13.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-14.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-15.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-16.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-17.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-18.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-19.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-20.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-21.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-22.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-23.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <!-- duplicate for seamless loop -->
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-1.webp"
+                                                                        alt="IATA" loading="lazy">
+                                                        </div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-2.webp"
+                                                                        alt="Russian Federal Tourism" loading="lazy">
+                                                        </div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-3.webp"
+                                                                        alt="RKN" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-4.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-5.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-6.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-7.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-8.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-9.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-10.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-11.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-12.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-13.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-14.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-15.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-16.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-17.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-18.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-19.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-20.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-21.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-22.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-23.webp"
+                                                                        alt="Partner" loading="lazy">
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- Row 2: left → right (reversed order) -->
+                                        <div class="assoc-strip-row">
+                                                <div class="assoc-strip assoc-strip-ltr">
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-1.webp"
+                                                                        alt="IATA" loading="lazy">
+                                                        </div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-2.webp"
+                                                                        alt="Russian Federal Tourism" loading="lazy">
+                                                        </div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-3.webp"
+                                                                        alt="RKN" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-4.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-5.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-6.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-7.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-8.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-9.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-10.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-11.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-12.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-13.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-14.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-15.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-16.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-17.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-18.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-19.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-20.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-21.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-22.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-23.webp"
+                                                                        alt="Partner" loading="lazy">
+                                                        </div>
+                                                        <!-- duplicate for seamless loop -->
+
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-1.webp"
+                                                                        alt="IATA" loading="lazy">
+                                                        </div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-2.webp"
+                                                                        alt="Russian Federal Tourism" loading="lazy">
+                                                        </div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-3.webp"
+                                                                        alt="RKN" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-4.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-5.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-6.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-7.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-8.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-9.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-10.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-11.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-12.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-13.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-14.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-15.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-16.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-17.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-18.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-19.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-20.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-21.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-22.webp"
+                                                                        alt="Partner" loading="lazy"></div>
+                                                        <div class="assoc-logo-card"><img
+                                                                        src="assets/img/brand-logo/brand-23.webp"
+                                                                        alt="Partner" loading="lazy">
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                </div>
+                        </div>
+
+                </div>
+                <!-- /ba-viewport -->
+
+                <div id="site-footer"></div>
+
+        </main>
+
+        <script src="assets/js/includes.js?v=5"></script>
+        <script src="assets/js/jquery-4.0.0.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/main.min.js?v=3"></script>
+
+</body>
+
+</html>

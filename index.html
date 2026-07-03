@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Satguru DMC Russia | Premier Destination Management Company</title>
+    <meta name="description"
+        content="Satguru DMC Russia — your premier destination management company for Russia. Expert tour packages, MICE services, and unforgettable travel experiences across Moscow, St. Petersburg, and beyond.">
+    <meta property="og:title" content="Satguru DMC Russia | Premier Destination Management Company">
+    <meta property="og:description"
+        content="Expert tour packages, MICE services, and unforgettable travel experiences across Russia.">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect: warm up CDN connections before they are discovered -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Critical CSS — render-blocking (defines above-the-fold layout) -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <!-- Home-page: disable newsletter/footer sub-sections from snapping individually -->
+    <style>
+        .newsletter-section,
+        .main-footer {
+            scroll-snap-align: none;
+        }
+        .hero-banner .hero-swiper {
+            position: absolute !important;
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 0;
+        }
+        .hero-slide {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* Hero pagination dots */
+        .hero-swiper-pagination { bottom: 28px !important; z-index: 10; }
+        .hero-swiper-pagination .swiper-pagination-bullet {
+            width: 8px; height: 8px;
+            background: rgba(255,255,255,0.55); opacity: 1;
+        }
+        .hero-swiper-pagination .swiper-pagination-bullet-active {
+            background: #69AA48; width: 24px; border-radius: 4px;
+        }
+        /* Second section — 2px white stroke top & bottom */
+        .tour-package-section {
+            border-top: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+    </style>
+
+    <!-- Non-critical CSS — loaded asynchronously (fonts & icon libraries) -->
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css"></noscript>
+
+
+</head>
+
+<body>
+
+
+
+    <div id="site-header"></div>
+
+
+    <main class="home-main">
+
+        <!-- ================= HERO BANNER SECTION START ================= -->
+        <section class="hero-banner home-section" data-section-name="WELCOME" data-parallax data-section-id="hero-banner">
+
+            <!-- Hero Carousel -->
+            <div class="swiper hero-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide hero-slide" data-bg="assets/img/banner/Untitled-2b1.webp"></div>
+                    <div class="swiper-slide hero-slide" data-bg="assets/img/banner/Untitled-2b2.webp"></div>
+                    <div class="swiper-slide hero-slide" data-bg="assets/img/banner/Untitled-2b3.webp"></div>
+                    <div class="swiper-slide hero-slide" data-bg="assets/img/banner/Untitled-2b4.webp"></div>
+                    <div class="swiper-slide hero-slide" data-bg="assets/img/banner/Untitled-2b5.webp"></div>
+                    <div class="swiper-slide hero-slide" data-bg="assets/img/banner/Untitled-2b6.webp"></div>
+                </div>
+                <div class="swiper-pagination hero-swiper-pagination"></div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <!-- ================= LEFT CONTENT SECTION ================= -->
+                    <div class="col-lg-6 col-md-12 hero-content">
+                        <div class="top-banner-content reveal">
+                            <h1>
+                                <span>Think Russia,</span><br>
+                                Think Satguru!
+                            </h1>
+
+                            <p>
+                                Satguru Travels is a leading travel and tourism company in Russia offering both leisure and business travel. No matter where your heart desires to go on a holiday, we have it covered!
+                            </p>
+
+                            <a href="popular-itineraries.html" class="btn btn-view-packages">
+                                <span class="bannerPackage"><img src="assets/img/org-arrow.svg" alt=""
+                                        loading="lazy"></span> VIEW
+                                PACKAGES
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </section>
+
+        <!-- ================= HERO BANNER SECTION END ================= -->
+        <!-- ================= TOUR PACKAGE SECTION ================= -->
+        <section class="tour-package-section home-section" data-section-name="ITINERARIES" data-parallax data-section-id="tour-package-section">
+            <div class="section-parallax-bg parallax-layer"></div>
+
+            <div class="container reveal">
+                <!-- Heading Row -->
+                <div class="row align-items-center mb-lg-4 mb-3">
+                    <div class="col-12 d-flex align-items-center justify-content-between flex-wrap gap-3 gap-md-0">
+                        <div>
+                            <h2 class="tour-heading">
+                                Top Destination in Russia
+                            </h2>
+                            <p class="tour-subtext">Enjoy Seamless and Memorable Adventure of Russia through its most iconic cities, cultural centres and natural regions.</p>
+                        </div>
+                        <div class="flex-shrink-0 mt-lg-0 d-none d-md-block">
+                            <a href="explore.html" class="btn contact-btn">
+                                <span class="icon"><img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy"></span>
+                                View All
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expanding Destination Cards -->
+                <div class="expand-cards-wrap">
+
+                    <a href="moscow-excursions.html" class="expand-card" style="background-image: url('https://satgurutravel.ru/dmc/wp-content/uploads/2022/01/siberian-winter-inspiration_t20_z2x4J4-scaled.jpg')">
+                        <div class="expand-card-body">
+                            <h4 class="expand-card-title">Moscow</h4>
+                            <p class="expand-card-desc">Russia's dynamic capital blends Soviet grandeur with modern energy — from the iconic Red Square and the Kremlin to world-class restaurants, galleries, and a thriving arts scene.</p>
+                        </div>
+                    </a>
+
+                    <a href="saint-petersburg-excursions.html" class="expand-card" style="background-image: url('https://satgurutravel.ru/dmc/wp-content/uploads/2021/12/St.-Petersburg.jpg')">
+                        <div class="expand-card-body">
+                            <h4 class="expand-card-title">Saint Petersburg</h4>
+                            <p class="expand-card-desc">Russia's cultural heart dazzles with baroque palaces, the world-renowned Hermitage Museum, romantic canals, and the legendary White Nights.</p>
+                        </div>
+                    </a>
+
+                    <a href="golden-ring.html" class="expand-card" style="background-image: url('https://satgurutravel.ru/dmc/wp-content/uploads/2021/12/golden-ring-3.jpg')">
+                        <div class="expand-card-body">
+                            <h4 class="expand-card-title">Golden Ring</h4>
+                            <p class="expand-card-desc">A circle of ancient Russian towns — Sergiev Posad, Vladimir, Suzdal and Yaroslavl — preserving medieval kremlin walls and Orthodox heritage.</p>
+                        </div>
+                    </a>
+
+                    <a href="murmansk-excursions.html" class="expand-card" style="background-image: url('https://satgurutravel.ru/dmc/wp-content/uploads/2022/02/aerial-view-of-murmansk-in-the-summer-2021-10-13-17-03-10-utc.jpg')">
+                        <div class="expand-card-body">
+                            <h4 class="expand-card-title">Murmansk</h4>
+                            <p class="expand-card-desc">Above the Arctic Circle, Murmansk delivers breathtaking Northern Lights spectacles, polar day adventures, dramatic tundra landscapes, and authentic Russian Arctic culture.</p>
+                        </div>
+                    </a>
+
+                    <a href="kazan-excursions.html" class="expand-card" style="background-image: url('https://satgurutravel.ru/dmc/wp-content/uploads/2021/12/Winter.jpg')">
+                        <div class="expand-card-body">
+                            <h4 class="expand-card-title">Kazan</h4>
+                            <p class="expand-card-desc">The multicultural capital of Tatarstan — UNESCO Kazan Kremlin, the grand Qolsharif Mosque and a unique blend of Russian and Eastern cultures.</p>
+                        </div>
+                    </a>
+
+                    <a href="sochi-excursions.html" class="expand-card" style="background-image: url('https://satgurutravel.ru/dmc/wp-content/uploads/2021/12/Sochi-city.jpg')">
+                        <div class="expand-card-body">
+                            <h4 class="expand-card-title">Sochi</h4>
+                            <p class="expand-card-desc">Known as the 'Russian Riviera', Sochi blends golden Black Sea beaches with alpine mountain resorts, the lush Sochi National Park, and year-round outdoor adventures.</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <!-- Mobile-only View All button — appears below cards on mobile -->
+                <div class="text-center mt-3 d-md-none">
+                    <a href="explore.html" class="btn contact-btn">
+                        <span class="icon"><img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy"></span>
+                        View All
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= MICE BANNER SECTION START ================= -->
+        <section class="mice-banner-section home-section" data-section-name="MICE" data-parallax data-section-id="mice-banner-section">
+            <video class="mice-video-bg" autoplay loop muted playsinline>
+                <source src="assets/img/0_Party_Social_Event_1920x1080.mp4" type="video/mp4">
+            </video>
+            <div class="mice-banner-overlay"></div>
+            <div class="container position-relative z-2 reveal">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-8 col-md-8 text-start">
+                        <h2>MICE- Meeting, Incentives,<br>Conferences and Exhibitions</h2>
+                        <p>Satguru DMC Russia is Russia's premier Destination Management Company with a country-wide network and dedicated teams that specialise in every aspect of travel. The Company has an elaborate network of owned offices across Russia.</p>
+                        <a href="#" class="btn btn-view-packages mice-cta">
+                            <span class="bannerPackage"><img src="assets/img/org-arrow.svg" alt="" loading="lazy"></span> REQUEST FOR A QUOTE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ================= MICE BANNER SECTION END ================= -->
+
+        <div id="site-footer"></div>
+
+
+    </main>
+
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.odometerOptions = {
+            format: 'd',   // plain digits (no comma)
+            duration: 2000
+        };
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.min.js?v=3"></script>
+
+
+
+
+    <!-- ================= HOMEPAGE PARALLAX + SECTION TRANSITIONS ================= -->
+    <script>
+        (function () {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+            gsap.registerPlugin(ScrollTrigger);
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // 2. Section transition: fade + slide content into view
+            if (!reduceMotion) {
+                document.querySelectorAll('.home-section .reveal').forEach(el => {
+                    gsap.fromTo(el,
+                        { autoAlpha: 0, y: 60 },
+                        {
+                            autoAlpha: 1,
+                            y: 0,
+                            duration: 1.1,
+                            ease: 'power3.out',
+                            scrollTrigger: {
+                                trigger: el,
+                                start: 'top 85%',
+                                toggleActions: 'play none none reverse'
+                            }
+                        }
+                    );
+                });
+            }
+
+        })();
+    </script>
+    <script src="assets/js/section-indicator.js"></script>
+
+    <!-- CMS client — loaded once, used by all dynamic sections below -->
+    <script src="assets/js/cms.js"></script>
+
+    <!-- Hero banner: load slide images from CMS, then init Swiper -->
+    <script>
+        (async function () {
+            function escHtml(s) {
+                return s ? String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') : '';
+            }
+
+            /* Apply correct background-image per slide based on current viewport width.
+               Each .hero-slide carries data-bg (desktop) and optionally data-mobile-bg.
+               Falls back to desktop image when no mobile image is set. */
+            function applyBannerBg() {
+                var isMobile = window.innerWidth < 768;
+                document.querySelectorAll('.hero-swiper .hero-slide').forEach(function (el) {
+                    var mobileBg = el.getAttribute('data-mobile-bg');
+                    var desktopBg = el.getAttribute('data-bg');
+                    var url = (isMobile && mobileBg) ? mobileBg : desktopBg;
+                    if (url) el.style.backgroundImage = "url('" + url + "')";
+                });
+            }
+
+            var swiperWrapper = document.querySelector('.hero-swiper .swiper-wrapper');
+
+            if (swiperWrapper) {
+                try {
+                    var data = await satguruCMS.getHomeBannerSlides();
+                    if (data && data.docs && data.docs.length) {
+                        swiperWrapper.innerHTML = data.docs.map(function (slide) {
+                            var desktopImg = slide.imageUrl || satguruCMS.imgUrl(slide.image) || '';
+                            var mobileImg  = slide.mobileImageUrl || satguruCMS.imgUrl(slide.mobileImage) || '';
+                            return '<div class="swiper-slide hero-slide"' +
+                                ' data-bg="' + escHtml(desktopImg) + '"' +
+                                (mobileImg ? ' data-mobile-bg="' + escHtml(mobileImg) + '"' : '') +
+                                '></div>';
+                        }).join('');
+                    }
+                    // If CMS returns no slides, static fallback slides (with data-bg) are used
+                } catch (e) {
+                    // CMS unreachable — static slides remain, no action needed
+                }
+            }
+
+            window.addEventListener('resize', applyBannerBg);
+
+            // Init Swiper after slides are ready (CMS or static).
+            // applyBannerBg runs inside on.init so it targets cloned loop slides too.
+            new Swiper('.hero-swiper', {
+                loop: true,
+                effect: 'fade',
+                fadeEffect: { crossFade: true },
+                speed: 1400,
+                autoplay: { delay: 4500, disableOnInteraction: false },
+                allowTouchMove: false,
+                pagination: {
+                    el: '.hero-swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    init: function () { applyBannerBg(); },
+                },
+            });
+        })();
+    </script>
+    <script>
+        (async function () {
+            function escHtml(s) {
+                return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : '';
+            }
+
+            var wrap = document.querySelector('.expand-cards-wrap');
+            if (!wrap) return;
+
+            // Load home page destination cards from Explore Listings (homeFeature=true)
+            var data = await satguruCMS.getHomeExploreListings();
+            if (!data || !data.docs || !data.docs.length) return;
+
+            wrap.innerHTML = data.docs.map(function (listing) {
+                var img = listing.imageUrl || satguruCMS.imgUrl(listing.image) || '';
+                var href = 'explore/' + encodeURIComponent(listing.destinationSlug || '');
+                return '<a href="' + escHtml(href) + '" class="expand-card"' +
+                    ' style="background-image:url(\'' + escHtml(img) + '\')">' +
+                    '<div class="expand-card-body">' +
+                    '<h4 class="expand-card-title">' + escHtml(listing.destinationName) + '</h4>' +
+                    '<p class="expand-card-desc">' + escHtml(listing.description || '') + '</p>' +
+                    '</div></a>';
+            }).join('');
+        })();
+    </script>
+
+</body>
+
+</html>

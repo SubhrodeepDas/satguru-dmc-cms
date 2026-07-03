@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Explore Russia | Satguru DMC Russia</title>
+    <meta name="description"
+        content="Explore Russia's most iconic destinations with Satguru DMC. Discover curated tour packages for Moscow, St. Petersburg, Siberia, and beyond.">
+    <meta property="og:title" content="Explore Russia | Satguru DMC Russia">
+    <meta property="og:description"
+        content="Curated Russia tour packages covering Moscow, St. Petersburg, Siberia, and more with Satguru DMC.">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <style>
+        /* ═══════════════════════════════════════════════
+           EXPLORE PAGE — destination card overrides
+        ═══════════════════════════════════════════════ */
+
+        /* Card height — matches popular-itineraries */
+        .tour-explore-card {
+            height: 320px !important;
+        }
+
+        /* ── Destination search bar ── */
+        .dest-search-wrap {
+            margin-bottom: 2.2rem;
+        }
+
+        .dest-search-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            border: 1.5px solid rgba(17, 67, 73, 0.18);
+            border-radius: 100px;
+            padding: 13px 24px;
+            box-shadow: 0 2px 16px rgba(17, 67, 73, 0.07);
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .dest-search-bar:focus-within {
+            border-color: rgba(17, 67, 73, 0.45);
+            box-shadow: 0 4px 22px rgba(17, 67, 73, 0.13);
+        }
+
+        .dest-search-bar i {
+            font-size: 1.15rem;
+            color: #114349;
+            flex-shrink: 0;
+        }
+
+        .dest-search-bar input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-family: 'Satoshi-Variable', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #114349;
+            line-height: 1.5;
+        }
+
+        .dest-search-bar input::placeholder {
+            color: rgba(17, 67, 73, 0.45);
+        }
+
+        /* ── Explore hero Swiper ── */
+        .explore-hero-swiper {
+            position: absolute !important;
+            inset: 0;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 0;
+        }
+
+        .explore-hero-swiper .swiper-slide {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Dot pagination — position above content */
+        .explore-hero-swiper .swiper-pagination {
+            bottom: 22px;
+            z-index: 10;
+        }
+
+        .explore-hero-swiper .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.55);
+            opacity: 1;
+        }
+
+        .explore-hero-swiper .swiper-pagination-bullet-active {
+            background: #69AA48;
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Hide cards that don't match search */
+        .tour-dest-col.dest-hidden {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .tour-explore-card {
+                height: 260px;
+            }
+
+            .tour-explore-card__name {
+                font-size: 1.1rem;
+            }
+
+            .tour-explore-card__desc {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- ================= BANNER ================= -->
+        <section class="inner-banner-section experiencebanner" data-section-name="EXPLORE">
+
+            <!-- Swiper slider as background -->
+            <div class="swiper explore-hero-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide explore-slide" data-bg="assets/img/Final%20Images/dh1.webp"></div>
+                    <div class="swiper-slide explore-slide" data-bg="assets/img/Final%20Images/dh2.webp"></div>
+                    <div class="swiper-slide explore-slide" data-bg="assets/img/Final%20Images/dh3.webp"></div>
+                    <div class="swiper-slide explore-slide" data-bg="assets/img/Final%20Images/dh4.webp"></div>
+                    <div class="swiper-slide explore-slide" data-bg="assets/img/Final%20Images/dh5.webp"></div>
+                    <div class="swiper-slide explore-slide" data-bg="assets/img/Final%20Images/dh6.webp"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center banner-height">
+                    <div class="col-lg-10 col-md-8">
+                        <div class="banner-content">
+                            <h1 class="banner-title">Top <span class="banner-subtitle">Destination</span> in Russia</h1>
+                            <p class="banner-description">
+                                Enjoy Seamless and Memorable Adventure of Russia through its most iconic cities,
+                                cultural centers and natural regions
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ================= BANNER END ================= -->
+
+
+        <!-- ═══════════════════════════════════════════════════════════
+             DESTINATION CARDS  —  9 cards · 4 columns · 3 rows
+        ════════════════════════════════════════════════════════════ -->
+        <section class="explore-tours-section section page-section" data-section-name="DESTINATIONS" id="destinations">
+            <div class="container">
+
+                <!-- Search bar -->
+                <div class="dest-search-wrap">
+                    <div class="dest-search-bar">
+                        <i class="ri-search-line"></i>
+                        <input type="text" id="destSearch" placeholder="Search excursions…" autocomplete="off" aria-label="Search excursions">
+                    </div>
+                    <div id="destNoResults" style="display:none; text-align:center; padding:32px 0; color:#6b7280; font-size:14px;">
+                        No excursions found matching your search.
+                    </div>
+                </div>
+
+                <div class="row tour-explore-grid" id="destGrid">
+                    <!-- Populated entirely from CMS: Explore Page → Excursions (homeFeature = true) -->
+                </div>
+            </div>
+        </section>
+        <!-- ═══════════ END DESTINATION CARDS ═══════════ -->
+
+        <div id="site-footer"></div>
+
+    </main>
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- GSAP + ScrollTrigger + Parallax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.min.js?v=3"></script>
+    <script src="assets/js/parallax.js"></script>
+    <script src="assets/js/section-indicator.js"></script>
+    <script src="assets/js/cms.js"></script>
+
+    <!-- CMS dynamic loaders — explore.html -->
+    <script>
+    (async function () {
+        function escHtml(s) {
+            return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : '';
+        }
+
+        function destHref(slug) {
+            if (!slug) return '#';
+            if (slug.indexOf('.html') !== -1 || slug.indexOf('http') === 0 || slug.indexOf('/') === 0) return slug;
+            return 'explore/' + encodeURIComponent(slug);
+        }
+
+        // ── 1. Banner Swiper ──
+        function applyExploreBannerBg() {
+            document.querySelectorAll('.explore-hero-swiper .explore-slide').forEach(function (el) {
+                var bg = el.getAttribute('data-bg');
+                if (bg) el.style.backgroundImage = "url('" + bg + "')";
+            });
+        }
+
+        var swiperWrapper = document.querySelector('.explore-hero-swiper .swiper-wrapper');
+        try {
+            var bannerData = await satguruCMS.getExploreBannerSlides();
+            if (bannerData && bannerData.docs && bannerData.docs.length && swiperWrapper) {
+                swiperWrapper.innerHTML = bannerData.docs.map(function (slide) {
+                    var img = slide.imageUrl || satguruCMS.imgUrl(slide.image) || '';
+                    return '<div class="swiper-slide explore-slide" data-bg="' + escHtml(img) + '"></div>';
+                }).join('');
+            }
+        } catch (e) { /* keep static slides */ }
+
+        new Swiper('.explore-hero-swiper', {
+            loop: true,
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            speed: 1400,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            allowTouchMove: false,
+            pagination: { el: '.explore-hero-swiper .swiper-pagination', clickable: true },
+            on: {
+                init: function () { applyExploreBannerBg(); },
+            },
+        });
+
+        // ── 2. Destination cards grid — from ExploreListings collection ──
+        try {
+            var listingsData = await satguruCMS.getExploreListings();
+            if (listingsData && listingsData.docs && listingsData.docs.length) {
+                var grid = document.getElementById('destGrid');
+                if (grid) {
+                    grid.innerHTML = listingsData.docs.map(function (item) {
+                        var img  = item.imageUrl || satguruCMS.imgUrl(item.image) || '';
+                        var name = item.destinationName || '';
+                        var href = destHref(item.destinationSlug || '');
+                        return '<div class="col-lg-4 col-md-6 col-12 tour-dest-col" data-name="' + escHtml(name.toLowerCase()) + '">' +
+                            '<a href="' + escHtml(href) + '" class="tour-explore-card">' +
+                            '<img src="' + escHtml(img) + '" alt="' + escHtml(name) + '" class="tour-explore-card__img" loading="lazy">' +
+                            '<span class="tour-explore-card__overlay"></span>' +
+                            '<h3 class="tour-explore-card__title">' + escHtml(name) +
+                            '<span class="tour-explore-card__arrow"><i class="ri-arrow-right-up-line"></i></span>' +
+                            '</h3></a></div>';
+                    }).join('');
+                }
+            }
+        } catch (e) { /* keep static fallback cards */ }
+
+    })();
+    </script>
+
+    <!-- Live search — filters cards by name, shows "no results" message -->
+    <script>
+    (function () {
+        var input     = document.getElementById('destSearch');
+        var noResults = document.getElementById('destNoResults');
+        if (!input) return;
+
+        function runSearch() {
+            var q     = input.value.trim().toLowerCase();
+            var cols  = document.querySelectorAll('#destGrid .tour-dest-col');
+            var shown = 0;
+
+            cols.forEach(function (col) {
+                var name    = (col.getAttribute('data-name') || '').toLowerCase();
+                var visible = !q || name.indexOf(q) !== -1;
+                col.classList.toggle('dest-hidden', !visible);
+                if (visible) shown++;
+            });
+
+            if (noResults) {
+                noResults.style.display = (q && shown === 0) ? 'block' : 'none';
+            }
+        }
+
+        input.addEventListener('input', runSearch);
+
+        // Clear search on Escape
+        input.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                input.value = '';
+                runSearch();
+                input.blur();
+            }
+        });
+    })();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title id="page-title">City Excursions | Satguru DMC Russia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="page-desc" name="description" content="Explore guided excursions across Russia's top destinations with Satguru DMC Russia.">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/responsive.min.css">
+
+    <link rel="preload" href="../assets/satoshi-font/css/satoshi.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/satoshi-font/css/satoshi.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+    <style>
+        html { scroll-snap-type: y proximity; }
+        .dest-banner-swiper { position: absolute; inset: 0; width: 100% !important; height: 100% !important; z-index: 0; }
+        .dest-banner-swiper .swiper-slide { background-size: cover; background-position: center; background-repeat: no-repeat; }
+        .flip-back__desc { color: #ffffff; font-size: 17px; line-height: 30px; margin: 0 0 16px; }
+        .excursion-empty { text-align: center; padding: 60px 20px; color: #888; font-size: 16px; }
+    </style>
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- HERO BANNER -->
+        <section class="dest-hero-nameplate" data-section-name="OVERVIEW">
+            <div class="swiper dest-banner-swiper">
+                <div class="swiper-wrapper" id="hero-slides">
+                    <div class="swiper-slide" style="background-image: url('../assets/img/explore-bg.webp');"></div>
+                </div>
+            </div>
+            <div class="dest-nameplate">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h1 class="dest-nameplate__title" id="city-title">Excursions</h1>
+                        <span class="dest-nameplate__sub">Most Popular Destinations</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXCURSION CARDS -->
+        <section class="excursion-grid-section" data-section-name="EXCURSIONS">
+            <div class="container reveal">
+                <div class="row excursion-grid-row" id="excursion-grid">
+                    <div class="excursion-empty">Loading excursions…</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOMMENDATIONS -->
+        <section class="dest-rec-section" data-section-name="DISCOVER">
+            <div class="container">
+                <p class="dest-rec-label">Recommendation</p>
+                <h2 class="dest-rec-heading">Other Excursions You Might Like</h2>
+                <div class="row dest-rec-grid" id="rec-grid"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="../assets/js/includes.js?v=5"></script>
+    <script src="../assets/js/jquery-4.0.0.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../assets/js/main.min.js?v=3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="../assets/js/parallax.js"></script>
+    <script src="../assets/js/cms.js"></script>
+    <script src="../assets/js/section-indicator.js"></script>
+
+    <script>
+        var heroSwiper = new Swiper('.dest-banner-swiper', {
+            loop: true, effect: 'fade', fadeEffect: { crossFade: true },
+            speed: 1400, autoplay: { delay: 4500, disableOnInteraction: false }, allowTouchMove: false
+        });
+    </script>
+
+    <script>
+    (async function () {
+        function escHtml(s) {
+            return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : '';
+        }
+
+        // Read city slug from URL path: /explore/SLUG → SLUG
+        var citySlug = window.location.pathname.split('/').filter(Boolean).pop() || '';
+        citySlug = citySlug.replace(/\.html$/, '');
+
+        if (!citySlug || citySlug === 'index.html') {
+            document.getElementById('excursion-grid').innerHTML = '<div class="excursion-empty">No city specified. Please return to the <a href="../explore.html">Explore page</a>.</div>';
+            return;
+        }
+
+        // ── 1. Load Explore Listing for this city (name + hero image) ──
+        var listingsRes = await satguruCMS.getExploreListings(50);
+        var listing = null;
+        if (listingsRes && listingsRes.docs) {
+            listing = listingsRes.docs.find(function (l) { return l.destinationSlug === citySlug; });
+        }
+
+        if (listing) {
+            var cityName = listing.destinationName || citySlug;
+            document.getElementById('city-title').textContent = cityName;
+            document.title = cityName + ' Excursions | Satguru DMC Russia';
+            document.getElementById('page-desc').setAttribute('content', 'Explore guided excursions in ' + cityName + ' with Satguru DMC Russia.');
+
+            var heroImg = listing.imageUrl || satguruCMS.imgUrl(listing.image) || '';
+            if (heroImg) {
+                document.getElementById('hero-slides').innerHTML =
+                    '<div class="swiper-slide" style="background-image: url(\'' + escHtml(heroImg) + '\');"></div>';
+                heroSwiper.update();
+            }
+        } else {
+            var cityName = citySlug.replace(/-excursions$/, '').replace(/-/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+            document.getElementById('city-title').textContent = cityName;
+            document.title = cityName + ' Excursions | Satguru DMC Russia';
+        }
+
+        // ── 2. Load excursion cards ──
+        var excRes = await satguruCMS.getExcursions(citySlug);
+        var grid = document.getElementById('excursion-grid');
+        if (excRes && excRes.docs && excRes.docs.length) {
+            grid.innerHTML = excRes.docs.map(function (exc) {
+                var img = satguruCMS.imgUrl(exc.image) || exc.imageUrl || '';
+                var desc = exc.description || '';
+                return '<div class="col-lg-4 col-md-6">' +
+                    '<div class="excursion-grid-card"><div class="flip-card-inner">' +
+                    '<div class="flip-card-front">' +
+                    '<div class="excursion-grid-card__img"><img src="' + escHtml(img) + '" alt="' + escHtml(exc.title) + '" loading="lazy"></div>' +
+                    '<div class="excursion-grid-card__body">' +
+                    '<h3 class="excursion-grid-card__title">' + escHtml(exc.title) + '</h3>' +
+                    '<p class="excursion-grid-card__location">' + escHtml(exc.location || '') + '</p>' +
+                    '<table class="excursion-grid-card__meta">' +
+                    '<tr><td>Duration</td><td>: ' + escHtml(exc.duration || '') + '</td></tr>' +
+                    '<tr><td>Start Tour</td><td>: ' + escHtml(exc.startTour || 'Your Hotel') + '</td></tr>' +
+                    '<tr><td>Transportation</td><td>: ' + escHtml(exc.transportation || 'By Cab') + '</td></tr>' +
+                    '</table></div>' +
+                    '<button type="button" class="btn contact-btn excursion-grid-card__btn">' +
+                    '<span class="icon"><img src="../assets/img/arrow-icon-header.svg" alt="" loading="lazy"></span>View Details</button>' +
+                    '</div>' +
+                    '<div class="flip-card-back">' +
+                    '<h4 class="flip-back__title">' + escHtml(exc.title) + '</h4>' +
+                    '<p class="flip-back__desc">' + escHtml(desc) + '</p>' +
+                    '<a href="#" class="btn contact-btn flip-back__cta customize-nav-btn">' +
+                    '<span class="icon"><img src="../assets/img/arrow-icon-header.svg" alt="" loading="lazy"></span>Request A Quote</a>' +
+                    '</div></div></div></div>';
+            }).join('');
+            attachFlipHandlers();
+        } else {
+            grid.innerHTML = '<div class="excursion-empty">No excursions found for this city yet. Please check back soon.</div>';
+        }
+
+        // ── 3. Load recommendations (other cities) ──
+        if (listingsRes && listingsRes.docs && listingsRes.docs.length) {
+            var recs = listingsRes.docs.filter(function (l) { return l.destinationSlug !== citySlug; }).slice(0, 3);
+            var recGrid = document.getElementById('rec-grid');
+            if (recGrid && recs.length) {
+                recGrid.innerHTML = recs.map(function (l) {
+                    var img = l.imageUrl || satguruCMS.imgUrl(l.image) || '';
+                    var href = l.destinationSlug || '#';
+                    return '<div class="col-lg-4 col-md-6">' +
+                        '<a href="' + escHtml(href) + '" class="dest-rec-card">' +
+                        '<div class="dest-rec-card__img"><img src="' + escHtml(img) + '" alt="' + escHtml(l.destinationName) + '" loading="lazy"></div>' +
+                        '<p class="dest-rec-card__title">' + escHtml(l.destinationName) + '</p>' +
+                        '</a></div>';
+                }).join('');
+            }
+        }
+
+    })();
+    </script>
+
+    <script>
+        function attachFlipHandlers() {
+            document.querySelectorAll('.excursion-grid-card').forEach(function(card) {
+                var btn = card.querySelector('.excursion-grid-card__btn');
+                if (btn && !btn._flipBound) {
+                    btn.addEventListener('click', function() { card.classList.add('is-flipped'); });
+                    btn._flipBound = true;
+                }
+                if (!card._leaveBound) {
+                    card.addEventListener('mouseleave', function() { card.classList.remove('is-flipped'); });
+                    card._leaveBound = true;
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

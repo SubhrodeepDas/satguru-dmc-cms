@@ -1,0 +1,68 @@
+[
+  {
+    "title": "",
+    "subtitle": "",
+    "image": "/uploads/mr4jatjq-ly15rl.webp",
+    "mobileImage": "",
+    "order": 1,
+    "active": true,
+    "id": "mr4jb4cgv9tjyd",
+    "createdAt": "2026-07-03T06:10:29.440Z",
+    "updatedAt": "2026-07-03T06:10:29.440Z"
+  },
+  {
+    "title": "",
+    "subtitle": "",
+    "image": "/uploads/mr4jaxdm-vsug83.webp",
+    "mobileImage": "",
+    "order": 2,
+    "active": true,
+    "id": "mr4jb4fngrahcl",
+    "createdAt": "2026-07-03T06:10:29.555Z",
+    "updatedAt": "2026-07-03T06:10:29.555Z"
+  },
+  {
+    "title": "",
+    "subtitle": "",
+    "image": "/uploads/mr4jaxgl-vv5mcp.webp",
+    "mobileImage": "",
+    "order": 3,
+    "active": true,
+    "id": "mr4jb4jhk0yu37",
+    "createdAt": "2026-07-03T06:10:29.693Z",
+    "updatedAt": "2026-07-03T06:10:29.693Z"
+  },
+  {
+    "title": "",
+    "subtitle": "",
+    "image": "/uploads/mr4jaxjk-racqhi.webp",
+    "mobileImage": "",
+    "order": 4,
+    "active": true,
+    "id": "mr4jb4v3gupbjo",
+    "createdAt": "2026-07-03T06:10:30.111Z",
+    "updatedAt": "2026-07-03T06:10:30.111Z"
+  },
+  {
+    "title": "",
+    "subtitle": "",
+    "image": "/uploads/mr4jaxmu-9ojfqy.webp",
+    "mobileImage": "",
+    "order": 5,
+    "active": true,
+    "id": "mr4jb4yc1ve91c",
+    "createdAt": "2026-07-03T06:10:30.228Z",
+    "updatedAt": "2026-07-03T06:10:30.228Z"
+  },
+  {
+    "title": "",
+    "subtitle": "",
+    "image": "/uploads/mr4jaxqv-eyd2bp.webp",
+    "mobileImage": "",
+    "order": 6,
+    "active": true,
+    "id": "mr4jb51827zypg",
+    "createdAt": "2026-07-03T06:10:30.332Z",
+    "updatedAt": "2026-07-03T06:10:30.332Z"
+  }
+]

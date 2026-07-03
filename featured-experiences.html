@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Featured Experiences | Satguru DMC Russia</title>
+    <meta name="description"
+        content="Explore Russia's featured experiences — river cruises, ballet, northern lights, circus, ice floating, luxury railway and more with Satguru DMC.">
+    <meta property="og:title" content="Featured Experiences | Satguru DMC Russia">
+    <meta property="og:description"
+        content="Discover Russia's most iconic experiences — from St. Petersburg river cruises to Arctic northern lights hunting with Satguru DMC.">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect: warm up CDN connections before they are discovered -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Critical CSS — render-blocking (defines above-the-fold layout) -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <!-- Non-critical CSS — loaded asynchronously (fonts & icon libraries) -->
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    </noscript>
+
+    <style>
+        .exp-duration {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(232, 100, 10, 0.18);
+            border: 1px solid rgba(232, 100, 10, 0.4);
+            color: #F5880A;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 30px;
+            margin-top: 10px;
+        }
+
+        /* ── Custom mobile experience dropdown ── */
+        .exp-dropdown {
+            position: relative;
+            margin-bottom: 20px;
+            user-select: none;
+        }
+
+        .exp-dropdown-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 18px;
+            background: #fff;
+            border: 1.5px solid rgba(17, 67, 73, 0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 2px 10px rgba(17, 67, 73, 0.06);
+        }
+
+        .exp-dropdown-trigger:hover {
+            border-color: rgba(17, 67, 73, 0.4);
+        }
+
+        .exp-dropdown.open .exp-dropdown-trigger {
+            border-color: #114349;
+            border-bottom-color: transparent;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 2px 10px rgba(17, 67, 73, 0.1);
+        }
+
+        .exp-dropdown-label {
+            font-size: 15px;
+            font-weight: 700;
+            color: #114349;
+            font-family: 'Satoshi-Variable', sans-serif;
+        }
+
+        .exp-dropdown-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .exp-dropdown-arrow i {
+            color: #114349;
+            font-size: 22px;
+            display: block;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .exp-dropdown.open .exp-dropdown-arrow i {
+            transform: rotate(180deg);
+        }
+
+        .exp-dropdown-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1.5px solid #114349;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 12px 32px rgba(17, 67, 73, 0.14);
+            z-index: 100;
+            padding-left: 0;
+            overflow: hidden;
+            animation: expDropDown 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes expDropDown {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .exp-dropdown.open .exp-dropdown-list {
+            display: block;
+        }
+
+        .exp-dropdown-item {
+            padding: 13px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5a5e;
+            cursor: pointer;
+            transition: background 0.18s ease, color 0.18s ease, padding-left 0.18s ease;
+            border-bottom: 1px solid rgba(17, 67, 73, 0.07);
+            font-family: 'Satoshi-Variable', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exp-dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-dropdown-item:hover {
+            background: rgba(17, 67, 73, 0.05);
+            color: #114349;
+            padding-left: 24px;
+        }
+
+        .exp-dropdown-item.active {
+            background: linear-gradient(135deg, rgba(17, 67, 73, 0.08), rgba(105, 170, 72, 0.08));
+            color: #114349;
+            font-weight: 700;
+        }
+
+        .exp-dropdown-item.active::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #69AA48;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- ===================================== -->
+        <!-- INNER PAGE FULL WIDTH BANNER START -->
+        <!-- ===================================== -->
+        <section class="inner-banner-section experiencebanner" data-section-name="FEATURED" data-parallax>
+            <div class="parallax-layer" style="background-image: url('./assets/img/feat-exp-banner.webp');"></div>
+
+            <div class="container">
+                <div class="row align-items-center banner-height">
+                    <div class="col-lg-10 col-md-8">
+
+                        <div class="banner-content">
+                            <h1 class="banner-title"><span class="banner-subtitle">Featured</span> Experiences</h1>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- ===================================== -->
+        <!-- INNER PAGE FULL WIDTH BANNER END -->
+        <!-- ===================================== -->
+
+
+        <!-- ═══════════ Experience Section ═══════════ -->
+        <section class="experience-section page-section" data-section-name="EXPERIENCES" id="travel-themes">
+            <div class="container reveal">
+                <div class="row align-items-center mb-lg-4 mb-3">
+                    <div class="col-lg-8 col-md-12">
+                        <h2 class="tour-heading">
+                            Featured
+                            <span>Experiences</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- ── Mobile Dropdown (below 767px) ── -->
+                        <div class="d-md-none exp-dropdown" id="expDropdown">
+                            <div class="exp-dropdown-trigger" id="expDropdownTrigger">
+                                <span class="exp-dropdown-label" id="expDropdownLabel">River Cruise</span>
+                                <span class="exp-dropdown-arrow"><i class="ri-arrow-down-s-line"></i></span>
+                            </div>
+                            <ul class="exp-dropdown-list" id="expDropdownList">
+                                <li class="exp-dropdown-item active" data-target="river-cruise">River Cruise</li>
+                                <li class="exp-dropdown-item" data-target="bridge-ceremony">Bridge Opening Ceremony</li>
+                                <li class="exp-dropdown-item" data-target="ballet-show">Ballet Show</li>
+                                <li class="exp-dropdown-item" data-target="russian-circus">Russian Circus</li>
+                                <li class="exp-dropdown-item" data-target="northern-lights">Northern Lights</li>
+                                <li class="exp-dropdown-item" data-target="ice-floating">Ice Floating</li>
+                                <li class="exp-dropdown-item" data-target="ice-tracking">Ice Tracking</li>
+                                <li class="exp-dropdown-item" data-target="clubbing-party">Clubbing &amp; Party</li>
+                            </ul>
+                        </div>
+
+                        <!-- ── Tab Navigation (desktop) ── -->
+                        <ul class="nav nav-tabs experience-tabs d-none d-md-flex" id="experienceTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="tab-river" data-bs-toggle="tab"
+                                    data-bs-target="#river-cruise" type="button" role="tab">River Cruise</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tab-bridge" data-bs-toggle="tab"
+                                    data-bs-target="#bridge-ceremony" type="button" role="tab">Bridge Opening
+                                    Ceremony</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tab-ballet" data-bs-toggle="tab"
+                                    data-bs-target="#ballet-show" type="button" role="tab">Ballet Show</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tab-circus" data-bs-toggle="tab"
+                                    data-bs-target="#russian-circus" type="button" role="tab">Russian Circus</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tab-northern" data-bs-toggle="tab"
+                                    data-bs-target="#northern-lights" type="button" role="tab">Northern Lights</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tab-ice-float" data-bs-toggle="tab"
+                                    data-bs-target="#ice-floating" type="button" role="tab">Ice Floating</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tab-ice-track" data-bs-toggle="tab"
+                                    data-bs-target="#ice-tracking" type="button" role="tab">Ice Tracking</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tab-clubbing" data-bs-toggle="tab"
+                                    data-bs-target="#clubbing-party" type="button" role="tab">Clubbing &amp;
+                                    Party</button>
+                            </li>
+                        </ul>
+
+                        <!-- ── Tab Content ── -->
+                        <div class="tab-content experience-tab-content" id="experienceTabsContent">
+
+                            <!-- ╔═══ TAB 1 — River Cruise ═══╗ -->
+                            <div class="tab-pane show active" id="river-cruise" role="tabpanel">
+                                <div class="experience-slider-wrap">
+                                    <div class="swiper experience-swiper" data-swiper-id="river">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide experience-slide">
+                                                <img src="assets/img/river-cruise.jpg" alt="River Cruise Night"
+                                                    class="slide-bg" loading="lazy">
+                                                <div class="slide-overlay"></div>
+                                                <div class="testimonial-card-1">
+                                                    <div class="testimonial-desc">
+                                                        <p>For more than 10 years the Radisson Royal Flotilla has been
+                                                            developing the tourist potential of Moscow, attracting the
+                                                            attention of residents and guests of the capital to
+                                                            all-year-round leisure on the Moskva River.</p>
+                                                    </div>
+                                                    <div class="testimonial-author">Elena Petrova</div>
+                                                    <div class="testimonial-role">Senior Travel Consultant</div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ╔═══ TAB 2 — Bridge Opening Ceremony ═══╗ -->
+                            <div class="tab-pane" id="bridge-ceremony" role="tabpanel">
+                                <div class="experience-slider-wrap">
+                                    <div class="swiper experience-swiper" data-swiper-id="bridge">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide experience-slide">
+                                                <img src="https://images.unsplash.com/photo-1556610961-2fecc5927173?w=1400&q=80"
+                                                    alt="Bridge Night" class="slide-bg" loading="lazy">
+                                                <div class="slide-overlay"></div>
+                                                <div class="testimonial-card-1">
+                                                    <div class="testimonial-desc">
+                                                        <p>St. Petersburg is possibly one of the unique cities in the
+                                                            world that every night is split in two parts (from the
+                                                            beginning of May till the middle of November – navigation
+                                                            period).
+                                                        </p>
+                                                    </div>
+                                                    <div class="testimonial-author">Dmitry Volkov</div>
+                                                    <div class="testimonial-role">Cultural Events Director</div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ╔═══ TAB 3 — Ballet Show ═══╗ -->
+                            <div class="tab-pane" id="ballet-show" role="tabpanel">
+                                <div class="experience-slider-wrap">
+                                    <div class="swiper experience-swiper" data-swiper-id="ballet">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide experience-slide">
+                                                <img src="assets/img/ballet.webp" alt="Ballet Performance"
+                                                    class="slide-bg" loading="lazy">
+                                                <div class="slide-overlay"></div>
+                                                <div class="testimonial-card-1">
+                                                    <div class="testimonial-desc">
+                                                        <p>Moscow is a premier global destination for ballet, featuring
+                                                            world-renowned performances primarily at the historic
+                                                            Bolshoi Theatre, which stages classics like Swan Lake and
+                                                            The Nutcracker. </p>
+                                                    </div>
+                                                    <div class="testimonial-author">Maria Kuznetsova</div>
+                                                    <div class="testimonial-role">Arts &amp; Culture Specialist</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ╔═══ TAB 4 — Russian Circus ═══╗ -->
+                            <div class="tab-pane" id="russian-circus" role="tabpanel">
+                                <div class="experience-slider-wrap">
+                                    <div class="swiper experience-swiper" data-swiper-id="circus">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide experience-slide">
+                                                <img src="assets/img/circus-new.jpg" alt="Circus Show" class="slide-bg"
+                                                    loading="lazy">
+                                                <div class="slide-overlay"></div>
+                                                <div class="testimonial-card-1">
+                                                    <div class="testimonial-desc">
+                                                        <p>Russian circus is a world-renowned art form, characterized by
+                                                            high-level acrobatics, theatrical clowning, and traditional
+                                                            animal acts, holding a status equal to ballet or opera.</p>
+                                                    </div>
+                                                    <div class="testimonial-author">Alexei Romanov</div>
+                                                    <div class="testimonial-role">Entertainment Critic</div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ╔═══ TAB 5 — Northern Lights ═══╗ -->
+                            <div class="tab-pane" id="northern-lights" role="tabpanel">
+                                <div class="experience-slider-wrap">
+                                    <div class="swiper experience-swiper" data-swiper-id="northern">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide experience-slide">
+                                                <img src="assets/img/northrn-light.webp" alt="Northern Lights Tent"
+                                                    class="slide-bg" loading="lazy">
+                                                <div class="slide-overlay"></div>
+                                                <div class="testimonial-card-1">
+                                                    <div class="testimonial-desc">
+                                                        <p>The best place to hunt for the Northern Lights in Russia is
+                                                            Murmansk Region, which occupies the Kola Peninsula. Standard
+                                                            Northern Lights midnight hunt starts at 9 p.m.</p>
+                                                    </div>
+                                                    <div class="testimonial-author">Raghunath Subramanian</div>
+                                                    <div class="testimonial-role">Global CEO &amp; Executive Chairman
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ╔═══ TAB 6 — Ice Floating ═══╗ -->
+                            <div class="tab-pane" id="ice-floating" role="tabpanel">
+                                <div class="experience-slider-wrap">
+                                    <div class="swiper experience-swiper" data-swiper-id="icefloat">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide experience-slide">
+                                                <img src="https://images.unsplash.com/photo-1551415923-a2297c7fda79?w=1400&q=80"
+                                                    alt="Ice Floating" class="slide-bg" loading="lazy">
+                                                <div class="slide-overlay"></div>
+                                                <div class="testimonial-card-1">
+                                                    <div class="testimonial-desc">
+                                                        <p>Arctic Floating is a most extraordinary entertainment in
+                                                            Murmansk for our guests. For those who are not afraid of
+                                                            cold water, we offer to try something new.</p>
+
+                                                    </div>
+                                                    <div class="testimonial-author">Natalia Ivanova</div>
+                                                    <div class="testimonial-role">Adventure Tourism Guide</div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ╔═══ TAB 7 — Ice Tracking ═══╗ -->
+                            <div class="tab-pane" id="ice-tracking" role="tabpanel">
+                                <div class="experience-slider-wrap">
+                                    <div class="swiper experience-swiper" data-swiper-id="icetrack">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide experience-slide">
+                                                <img src="https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=1400&q=80"
+                                                    alt="Frozen Lake" class="slide-bg" loading="lazy">
+                                                <div class="slide-overlay"></div>
+                                                <div class="testimonial-card-1">
+                                                    <div class="testimonial-desc">
+                                                        <p>We offer you trekking on Lake Baikal ice. Days are sunny in
+                                                            February &amp; March and Baikal ice is still very strong and
+                                                            transparent.</p>
+                                                    </div>
+                                                    <div class="testimonial-author">Yuki Tanaka</div>
+                                                    <div class="testimonial-role">Nature Photographer</div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ╔═══ TAB 8 — Clubbing & Party ═══╗ -->
+                            <div class="tab-pane" id="clubbing-party" role="tabpanel">
+                                <div class="experience-slider-wrap">
+                                    <div class="swiper experience-swiper" data-swiper-id="clubbing">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide experience-slide">
+                                                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1400&q=80"
+                                                    alt="Nightclub" class="slide-bg" loading="lazy">
+                                                <div class="slide-overlay"></div>
+                                                <div class="testimonial-card-1">
+                                                    <div class="testimonial-desc">
+                                                        <p>Moscow and St. Petersburg are home to some of the world's
+                                                            most legendary nightlife scenes. From exclusive rooftop bars
+                                                            to underground clubs and world-class.</p>
+                                                    </div>
+                                                    <div class="testimonial-author">Anya Kovalenko</div>
+                                                    <div class="testimonial-role">Nightlife &amp; Events Curator</div>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <!-- end tab-content -->
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div id="site-footer"></div>
+
+    </main>
+
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.min.js?v=3"></script>
+    <!-- GSAP + ScrollTrigger + Parallax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/parallax.js"></script>
+
+
+    <script>
+        // ── Store all Swiper instances ──
+        var swiperInstances = {};
+
+        // ── Initialize a Swiper inside a tab pane ──
+        function initSwiper(container) {
+            var id = container.getAttribute('data-swiper-id');
+
+            // Destroy existing instance if any
+            if (swiperInstances[id]) {
+                swiperInstances[id].destroy(true, true);
+            }
+
+            swiperInstances[id] = new Swiper(container, {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                speed: 800,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                loop: true,
+                autoplay: false,
+                allowTouchMove: true,
+                grabCursor: true,
+            });
+
+            // Bind custom arrow buttons
+            var nextBtns = container.querySelectorAll('.swiper-next-btn');
+            var prevBtns = container.querySelectorAll('.swiper-prev-btn');
+
+            nextBtns.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    swiperInstances[id].slideNext();
+                });
+            });
+
+            prevBtns.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    swiperInstances[id].slidePrev();
+                });
+            });
+        }
+
+        // ── Init Swiper in the active tab on page load ──
+        document.addEventListener('DOMContentLoaded', function () {
+            var activePane = document.querySelector('.tab-pane.show.active');
+            if (activePane) {
+                var swiperEl = activePane.querySelector('.experience-swiper');
+                if (swiperEl) initSwiper(swiperEl);
+            }
+        });
+
+        // ── Init Swiper when a new tab is shown ──
+        document.querySelectorAll('#experienceTabs .nav-link').forEach(function (tabEl) {
+            tabEl.addEventListener('shown.bs.tab', function (e) {
+                var targetId = e.target.getAttribute('data-bs-target');
+                var pane = document.querySelector(targetId);
+
+                if (pane) {
+                    var swiperEl = pane.querySelector('.experience-swiper');
+                    if (swiperEl) {
+                        setTimeout(function () {
+                            initSwiper(swiperEl);
+                        }, 100);
+                    }
+                }
+
+                // Scroll tab into view (desktop)
+                e.target.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            });
+        });
+
+        // ── Custom mobile dropdown ──
+        (function () {
+            var dropdown = document.getElementById('expDropdown');
+            var trigger = document.getElementById('expDropdownTrigger');
+            var label = document.getElementById('expDropdownLabel');
+            var items = document.querySelectorAll('#expDropdownList .exp-dropdown-item');
+            if (!dropdown || !trigger) return;
+
+            // Toggle open/close
+            trigger.addEventListener('click', function () {
+                dropdown.classList.toggle('open');
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+
+            // Item click → switch tab + update label
+            items.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    var targetId = '#' + this.getAttribute('data-target');
+                    var tabTrigger = document.querySelector('[data-bs-target="' + targetId + '"]');
+
+                    // Update active state
+                    items.forEach(function (i) { i.classList.remove('active'); });
+                    this.classList.add('active');
+
+                    // Update label text (strip the dot marker)
+                    label.textContent = this.textContent.trim();
+
+                    // Close dropdown
+                    dropdown.classList.remove('open');
+
+                    // Show Bootstrap tab
+                    if (tabTrigger) {
+                        bootstrap.Tab.getOrCreateInstance(tabTrigger).show();
+                    }
+                });
+            });
+        })();
+    </script>
+    <script src="assets/js/section-indicator.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destination | Satguru DMC Russia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css"></noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"></noscript>
+
+    <style>html { scroll-snap-type: y proximity; }</style>
+</head>
+
+<body>
+
+    <div id="site-header"></div>
+
+    <main id="dest-main">
+
+        <!-- HERO -->
+        <section class="dest-hero-nameplate" data-section-name="OVERVIEW" data-parallax>
+            <div class="parallax-layer" id="destHeroBg"></div>
+            <div class="dest-nameplate">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h1 class="dest-nameplate__title" id="destTitle">Loading…</h1>
+                        <span class="dest-nameplate__sub">Most Popular Destinations</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXCURSION CARDS -->
+        <section class="excursion-grid-section" data-section-name="EXCURSIONS">
+            <div class="container reveal">
+                <div class="row excursion-grid-row" id="excursionGrid">
+                    <!-- populated by JS -->
+                    <div class="col-12 text-center py-5" id="destLoading">
+                        <p style="color:#888;font-size:1rem;">Loading excursions…</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- GSAP + ScrollTrigger + Parallax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.min.js?v=3"></script>
+    <script src="assets/js/cms.js"></script>
+    <script src="assets/js/parallax.js"></script>
+    <script src="assets/js/section-indicator.js"></script>
+
+    <script>
+    'use strict';
+    (async function () {
+        var params  = new URLSearchParams(window.location.search);
+        var slug    = params.get('slug');
+
+        if (!slug) { window.location.href = 'explore.html'; return; }
+
+        var data = await satguruCMS.get(
+            '/api/destinations?where[slug][equals]=' + encodeURIComponent(slug) + '&limit=1'
+        );
+        var dest = data && data.docs && data.docs[0];
+
+        if (!dest) {
+            document.getElementById('destLoading').innerHTML =
+                '<div style="padding:80px 0;text-align:center">' +
+                '<h2 style="color:#1e3a3e">Destination not found</h2>' +
+                '<a href="explore.html" class="btn contact-btn mt-3">' +
+                '<span class="icon"><img src="assets/img/arrow-icon-header.svg" alt=""></span>' +
+                'Back to Explore</a></div>';
+            return;
+        }
+
+        // Page title & meta
+        document.title = dest.name + ' | Satguru DMC Russia';
+        document.getElementById('destTitle').textContent = dest.name;
+
+        // Hero image
+        var heroBg = document.getElementById('destHeroBg');
+        if (dest.heroImage) {
+            heroBg.style.backgroundImage = "url('" + dest.heroImage + "')";
+        }
+
+        // Excursion cards
+        var grid = document.getElementById('excursionGrid');
+
+        if (dest.excursions && dest.excursions.length) {
+            grid.innerHTML = dest.excursions.map(function (ex) {
+                var highlights = (ex.highlights || []).map(function (h) {
+                    return '<li>' + escHtml(h.text || String(h)) + '</li>';
+                }).join('');
+
+                return '<div class="col-lg-4 col-md-6">' +
+                    '<div class="excursion-grid-card">' +
+                    '<div class="flip-card-inner">' +
+                    '<div class="flip-card-front">' +
+                    '<div class="excursion-grid-card__img">' +
+                    '<img src="' + escAttr(ex.img) + '" alt="' + escAttr(ex.title) + '" loading="lazy">' +
+                    '</div>' +
+                    '<div class="excursion-grid-card__body">' +
+                    '<h3 class="excursion-grid-card__title">' + escHtml(ex.title) + '</h3>' +
+                    '<p class="excursion-grid-card__location">' + escHtml(ex.location || '') + '</p>' +
+                    '<table class="excursion-grid-card__meta">' +
+                    (ex.duration  ? '<tr><td>Duration</td><td>: ' + escHtml(ex.duration) + '</td></tr>' : '') +
+                    (ex.startTour ? '<tr><td>Start Tour</td><td>: ' + escHtml(ex.startTour) + '</td></tr>' : '') +
+                    (ex.transport ? '<tr><td>Transportation</td><td>: ' + escHtml(ex.transport) + '</td></tr>' : '') +
+                    '</table>' +
+                    '</div>' +
+                    '<button type="button" class="btn contact-btn excursion-grid-card__btn">' +
+                    '<span class="icon"><img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy"></span>' +
+                    'View Details' +
+                    '</button>' +
+                    '</div>' +
+                    '<div class="flip-card-back">' +
+                    '<h4 class="flip-back__title">' + escHtml(ex.title) + '</h4>' +
+                    '<ul class="flip-back__list">' + highlights + '</ul>' +
+                    '<a href="contact.html" class="btn contact-btn flip-back__cta">' +
+                    '<span class="icon"><img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy"></span>' +
+                    'Request A Quote' +
+                    '</a>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+            }).join('');
+        } else {
+            grid.innerHTML = '<div class="col-12"><p style="padding:40px 0;color:#888;">Excursions coming soon.</p></div>';
+        }
+
+        // Re-trigger reveal animations if GSAP is loaded
+        if (typeof ScrollTrigger !== 'undefined') { ScrollTrigger.refresh(); }
+    })();
+
+    function escHtml(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+    function escAttr(str) { return escHtml(str); }
+    </script>
+
+</body>
+</html>

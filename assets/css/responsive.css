@@ -1,0 +1,2480 @@
+@media only screen and (max-width:1800px) {
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    .testimonial-card h3 {
+        font-size: 30px;
+    }
+
+    .custom-margin {
+        margin-left: 175px;
+    }
+
+    .quote-btn {
+        font-size: 14px;
+    }
+
+    .btn-view-all {
+        font-size: 14px;
+    }
+
+    .mice-float-3 img {
+        width: 250px;
+    }
+
+    .mice-float-2 img {
+        width: 250px;
+    }
+
+    .mice-float-1 img {
+        width: 250px;
+    }
+
+    .mice-float-3 {
+        top: 190px;
+        left: 56%;
+        rotate: -4deg;
+        animation: float 5s ease-in-out infinite;
+
+    }
+
+    .mice-float-4 {
+        top: 93px;
+        right: 7%;
+        rotate: -17deg;
+        animation: float 3.8s ease-in-out infinite;
+    }
+
+    .mice-float-4 img {
+        width: 250px;
+    }
+
+    .mice-float-2 {
+        top: 150px;
+        left: 29%;
+        rotate: 3deg;
+    }
+
+    .mice-float-1 {
+        top: 56px;
+        left: 6%;
+        rotate: -6deg;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .mice-images-wrapper {
+        position: relative;
+        margin-top: -35px;
+    }
+
+    .about-btn {
+        font-size: 14px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .btn-view-packages {
+        font-size: 14px;
+    }
+
+    .logo-wrapper img {
+        height: 40px;
+    }
+
+    .contact-btn {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:1700px) {
+
+    .hero-slider-nav {
+        position: absolute;
+        right: 109px;
+        bottom: 433px;
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+    }
+
+    .about-bg-img img {
+        left: -205px;
+    }
+
+    .mice-float-3 img {
+        width: 250px;
+    }
+
+    .mice-float-2 img {
+        width: 250px;
+    }
+
+    .mice-float-1 img {
+        width: 250px;
+    }
+
+    .mice-float-3 {
+        top: 140px;
+        left: 56%;
+        rotate: -4deg;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .mice-float-4 {
+        top: 75px;
+        right: 5%;
+        rotate: -17deg;
+        animation: float 3.8s ease-in-out infinite;
+    }
+
+    .mice-float-4 img {
+        width: 250px;
+    }
+
+    .mice-float-2 {
+        top: 150px;
+        left: 29%;
+        rotate: 3deg;
+    }
+
+    .mice-float-1 {
+        top: 86px;
+        left: 8%;
+        rotate: -6deg;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .mice-images-wrapper {
+        position: relative;
+        margin-top: -35px;
+    }
+
+}
+
+@media only screen and (max-width:1600px) {
+    .heroSLiderBox {
+        width: 1090px;
+    }
+
+    .blog-card__title {
+        font-size: 0.95rem;
+    }
+
+    .gallery-swiper-wrap {
+        padding: 20px 0 28px;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+    }
+
+    .cta-card-1 {
+        padding: 60px 40px;
+    }
+
+    .contact-section.section {
+        padding-top: 120px;
+    }
+
+    .main-footer.contact-footer {
+        padding: 130px 0 24px;
+    }
+
+    .about-bg-img img {
+        left: -215px;
+    }
+
+    .rqst-btn {
+        font-size: 14px;
+    }
+
+    .direction-btn {
+        font-size: 14px;
+    }
+
+    .achievement-title {
+        font-size: 31px;
+
+    }
+
+    .achievement-card {
+        height: 160px;
+        border-radius: 20px;
+    }
+
+    .achievement-card img {
+        object-fit: cover;
+        width: 127px;
+    }
+
+    /* --- CTA Button --- */
+    .btn-explore {
+        font-size: 14px;
+    }
+
+    .russia-explore-content h2 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 40px;
+        line-height: 1.3;
+    }
+
+    .tour-padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .faq-spaice {
+        --bs-gutter-x: 2rem;
+    }
+
+    .services-row {
+        --bs-gutter-x: 2.5rem;
+        --bs-gutter-y: 2.5rem;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .stat-number {
+        margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+        font-size: 40px;
+        font-weight: 700;
+        color: #114349;
+        margin-bottom: 20px;
+        line-height: 1;
+    }
+
+    .stats-card {
+        padding: 23px 25px;
+    }
+
+    .stats-card h3 {
+        margin-bottom: 10px;
+    }
+
+    .stats-card h3 span.odometer {
+        font-size: 35px;
+    }
+
+    .stat-number .plus {
+        font-size: 35px;
+        font-weight: 600;
+        margin-left: 0;
+        margin-top: 0;
+        color: #10713A;
+        line-height: 1;
+    }
+
+    .stats-space {
+        --bs-gutter-x: 2.5rem;
+        --bs-gutter-y: 2.5rem;
+    }
+
+    .about-stats-section.section {
+        padding: 80px 0;
+        padding-bottom: 136px;
+    }
+
+    .create-path img {
+        position: absolute;
+        left: -900px;
+        top: -602px;
+        bottom: 0;
+        right: 0;
+    }
+
+    .hero-tour-slider .tour-card.active .tour-overlay p {
+        line-height: 23px;
+        font-size: 14px;
+        max-width: 250px;
+    }
+
+    .tour-card h6 {
+        font-size: 20px;
+    }
+
+
+
+    .hero-tour-slider .tour-card.active {
+        height: 420px;
+        width: 295px;
+    }
+
+    .hero-tour-slider .tour-card {
+        width: 287px;
+        height: 354px;
+    }
+
+
+    .mice-float-3 img {
+        width: 230px;
+    }
+
+    .mice-float-2 img {
+        width: 230px;
+    }
+
+    .mice-float-4 img {
+        width: 230px;
+    }
+
+    .mice-float-1 img {
+        width: 230px;
+    }
+
+    .mice-float-3 {
+        top: 127px;
+        left: 54%;
+        rotate: 0deg;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .mice-float-4 {
+        top: 91px;
+        right: 8%;
+        rotate: -17deg;
+        animation: float 3.8s ease-in-out infinite;
+    }
+
+    .mice-float-2 {
+        top: 120px;
+        left: 28%;
+        rotate: 3deg;
+    }
+
+
+    .mice-float-1 {
+        top: 41px;
+        left: 6%;
+        rotate: 343deg;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .mice-images-wrapper {
+        position: relative;
+        margin-top: -25px;
+    }
+
+}
+
+@media only screen and (max-width:1500px) {
+    .wcu-padding {
+        --bs-gutter-x: 2rem;
+        --bs-gutter-y: 2rem;
+    }
+
+    .mision-card-padding {
+        --bs-gutter-x: 2rem;
+    }
+
+    .network-section .section-heading p {
+        max-width: 740px;
+    }
+
+    .dream-padding {
+        --bs-gutter-x: 2.5rem;
+        --bs-gutter-y: 2.5rem;
+    }
+
+    .dream-card {
+        height: 420px;
+    }
+
+    .about-bg-img img {
+        position: absolute;
+        left: -215px;
+        top: 90px;
+        bottom: 0;
+        z-index: -1;
+        width: 57%;
+    }
+
+    .banner-title {
+        font-size: 45px;
+        margin-bottom: 10px;
+    }
+
+    .banner-subtitle {
+        font-size: 35px;
+        font-weight: 400;
+        margin-bottom: 3px;
+        color: #ffffff;
+        line-height: 50px;
+    }
+
+    .main-footer {
+        padding: 20px 0 24px;
+    }
+
+    .location-padding {
+        --bs-gutter-x: 2.5rem;
+        --bs-gutter-y: 2.5rem;
+    }
+
+
+    .mice-float-3 img {
+        width: 200px;
+    }
+
+    .mice-float-2 img {
+        width: 200px;
+    }
+
+    .mice-float-4 img {
+        width: 200px;
+    }
+
+    .mice-float-1 img {
+        width: 200px;
+    }
+
+
+    .mice-section {
+        padding: 90px 0 100px;
+    }
+
+    .mice-float-3 {
+        top: 127px;
+        left: 54%;
+        rotate: 0deg;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .mice-float-4 {
+        top: 91px;
+        right: 8%;
+        rotate: -17deg;
+        animation: float 3.8s ease-in-out infinite;
+    }
+
+    .mice-float-2 {
+        top: 120px;
+        left: 28%;
+        rotate: 3deg;
+    }
+
+
+    .mice-float-1 {
+        top: 41px;
+        left: 6%;
+        rotate: 343deg;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .mice-images-wrapper {
+        position: relative;
+        margin-top: -25px;
+    }
+
+
+}
+
+@media only screen and (max-width:1400px) {
+    .testimonial-card h3 {
+        font-size: 25px;
+    }
+
+    .dream-card {
+        height: 380px;
+    }
+
+    .presence-padding {
+        --bs-gutter-x: 2.5rem;
+    }
+
+    .blogger-review-padding {
+        --bs-gutter-x: 2rem;
+    }
+
+    .gallery-card__title {
+        font-size: 1.125rem;
+    }
+
+    .blog-padding {
+        --bs-gutter-x: 2rem;
+        --bs-gutter-y: 2rem;
+    }
+
+    .pkg-card__footer {
+        flex-direction: column;
+    }
+
+    .pkg-card__body {
+        padding: 0px 18px 20px 18px;
+        text-align: center;
+    }
+
+    .pkg-card__desc {
+        font-size: 0.875rem;
+        color: #000;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    .pkg-card__img-wrap {
+        height: 212px;
+    }
+
+    .pkg-card__title {
+        font-size: 1.125rem;
+    }
+
+    .team-info h5 {
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .team-hover-card h3 {
+        font-size: 20px;
+    }
+
+    .team-hover-card span {
+        margin-top: 0;
+    }
+
+    .inner-banner-section {
+        height: 470px;
+    }
+
+    .location-map img {
+        width: 100%;
+        height: 520px;
+        object-fit: contain;
+    }
+
+    .vision-img {
+        max-width: 250px;
+    }
+
+    .team-card img {
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 15px;
+        height: 340px;
+        object-fit: cover;
+        padding-top: 0;
+    }
+
+    .team-hover-card span {
+        font-size: 12px;
+    }
+
+    .team-info span {
+        font-size: 12px;
+    }
+
+    .network-tabs button {
+        font-size: 14px;
+    }
+
+    .cta-card {
+        height: 400px;
+    }
+
+    .cta-card h4 {
+        font-size: 26px;
+    }
+
+    .cta-image {
+        width: 230px;
+    }
+
+    .phone {
+        font-size: 12px;
+        padding: 14px 13px;
+    }
+
+    .city-card h4 {
+        font-size: 18px;
+    }
+
+    .image-card {
+        height: 400px;
+    }
+
+    .custom-accordion .accordion-button {
+        font-size: 20px;
+    }
+
+    .faq-spaice {
+        --bs-gutter-x: 4rem;
+    }
+
+    .service-card h4 {
+        font-size: 20px;
+    }
+
+    .testimonial-avatars img {
+        width: 180px;
+    }
+
+    .heroSLiderBox {
+        width: 940px;
+    }
+
+    .stats-card p {
+        font-size: 13px;
+    }
+
+    .faq-left-image img {
+        max-width: 290px;
+    }
+
+    .testimonial-section {
+        padding: 80px 0;
+    }
+
+
+    .steps-container::before {
+        left: 39px;
+    }
+
+    .work-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border: 1px solid #56ff0036;
+        border-radius: 50px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #6aa84f;
+        font-weight: 700;
+        margin-bottom: 19px;
+    }
+
+    .step-item {
+        position: relative;
+        padding: 20px 18px 20px;
+
+    }
+
+    .book-image img {
+        width: 100%;
+        border-radius: 15px;
+        height: 569px;
+        object-fit: cover;
+    }
+
+    .steps-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 22px;
+    }
+
+    .mice-float-3 img {
+        width: 200px;
+    }
+
+    .mice-float-2 img {
+        width: 220px;
+    }
+
+    .mice-float-4 img {
+        width: 200px;
+    }
+
+    .mice-float-1 img {
+        width: 200px;
+    }
+
+    .mice-section {
+        padding: 90px 0 100px;
+    }
+
+
+    .mice-float-3 {
+        top: 127px;
+        left: 54%;
+        rotate: 0deg;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .mice-float-4 {
+        top: 91px;
+        right: 8%;
+        rotate: -17deg;
+        animation: float 3.8s ease-in-out infinite;
+    }
+
+    .mice-float-2 {
+        top: 90px;
+        left: 28%;
+        rotate: 3deg;
+    }
+
+
+    .mice-float-1 {
+        top: 41px;
+        left: 6%;
+        rotate: 343deg;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .mice-images-wrapper {
+        position: relative;
+        margin-top: -25px;
+    }
+
+}
+
+
+@media only screen and (max-width:1300px) {
+    .nav-pill .nav-link {
+        padding: 0 23px;
+    }
+
+    .dont--padding {
+        --bs-gutter-x: 2.5rem;
+    }
+
+    .mice-float-3 img {
+        width: 190px;
+    }
+
+    .mice-float-2 img {
+        width: 191px;
+    }
+
+    .mice-float-4 img {
+        width: 200px;
+    }
+
+    .mice-float-1 img {
+        width: 200px;
+    }
+
+    .mice-float-3 {
+        top: 97px;
+        left: 56%;
+        rotate: 0deg;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .mice-float-4 {
+        top: 61px;
+        right: 6%;
+        rotate: -17deg;
+        animation: float 3.8s ease-in-out infinite;
+    }
+
+    .mice-float-2 {
+        top: 90px;
+        left: 28%;
+        rotate: 3deg;
+    }
+
+
+    .mice-float-1 {
+        top: 41px;
+        left: 6%;
+        rotate: 343deg;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .mice-section {
+        padding: 90px 0 100px;
+    }
+
+
+
+    .mice-images-wrapper {
+        position: relative;
+        margin-top: -25px;
+    }
+
+    .hero-content p {
+        max-width: 350px;
+    }
+
+    .create-path img {
+        left: -990px;
+        top: -652px;
+    }
+
+    .heroSLiderBox {
+        width: 840px;
+    }
+
+    .linkedin-icon {
+        background: #F57C1B;
+        background: linear-gradient(90deg, rgba(245, 124, 27, 1) 0%, rgba(248, 197, 34, 1) 100%);
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: 400;
+        text-decoration: none;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+    }
+
+    .linkedin-hover {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    .faq-spaice {
+        --bs-gutter-x: 2rem;
+    }
+
+    .wcu-padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .location-padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .stats-icon {
+        font-size: 40px;
+        color: #F57F1B;
+        margin-bottom: 11px;
+    }
+
+    .stats-space {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .stats-card h3 span.odometer {
+        font-size: 30px;
+    }
+}
+
+
+@media only screen and (max-width:1200px) {
+    .heroSLiderBox {
+        width: 650px;
+    }
+
+    .cta-card {
+        height: 330px;
+    }
+
+    .testimonial-desc {
+        margin-bottom: 30px;
+    }
+
+    .info-list li {
+        padding: 8px 47px 8px 0px;
+        font-size: 0.875rem;
+
+    }
+
+    .placeholder-people.dream-1 img {
+        bottom: 0;
+    }
+
+    .placeholder-people.dream-2 img {
+        bottom: -36px;
+    }
+
+    .custom-tabs .nav-link {
+        padding: 12px 25px;
+        font-size: 0.875rem;
+    }
+
+    .placeholder-people.dream-3 img {
+        width: 100%;
+        left: -10px;
+    }
+
+    .placeholder-people.dream-5 img {
+        width: 100%;
+        left: 0;
+    }
+
+    .dream-card-content h3 {
+        font-size: 1.375rem;
+    }
+
+    .dream-card {
+        height: 350px;
+    }
+
+    .placeholder-people.dream-6 img {
+        width: 100%;
+        left: 0;
+        bottom: -20px;
+    }
+
+    .placeholder-people.dream-4 img {
+        width: 100%;
+        left: 0;
+        bottom: 0;
+    }
+
+    .badge-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 12px;
+    }
+
+    .custom-arrow {
+        height: 75px;
+    }
+
+    .testimonial-card-1 {
+        top: 60%;
+    }
+
+    .testimonial-desc p {
+        font-size: 1.125rem;
+        font-weight: bold;
+        color: #114349;
+        line-height: 1.55;
+        margin-bottom: 16px;
+    }
+
+    .ctc-pointer {
+        font-size: 1rem;
+    }
+
+    .info-panel {
+        padding: 36px 0px 36px 26px;
+    }
+
+    .form-card {
+        padding: 22px 22px;
+    }
+
+    .direction-btn {
+        font-size: 12px;
+    }
+
+    .contact-detail {
+        margin-bottom: 16px;
+    }
+
+    .detail-value {
+        font-size: 1rem;
+    }
+
+    .field-textarea {
+        min-height: 109px;
+    }
+
+    .presence-padding {
+        --bs-gutter-x: 2.5rem;
+        --bs-gutter-y: 3.5rem;
+    }
+
+    .map-placeholder img {
+        border-radius: 0px;
+        height: 121px;
+    }
+
+    .footer-contact-box {
+        padding: 17px;
+    }
+
+    .tourism-badge {
+        padding: 7px;
+        height: 121px;
+    }
+
+    .image-card {
+        height: 330px;
+    }
+
+    .create-path img {
+        left: -1080px;
+        top: -592px;
+    }
+
+    .section-heading h2 {
+        font-size: 35px;
+    }
+
+    .service-info-card {
+        position: unset;
+    }
+
+    .russia-explore-section {
+        padding: 100px 0 60px 0;
+    }
+
+    .team-slider-section {
+        padding: 80px 0px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    .location-map {
+        top: 7px;
+    }
+
+    .cta-image {
+        width: 187px;
+    }
+
+    .cta-card {
+        padding: 18px;
+    }
+
+    .main-footer {
+        padding: 58px 0 24px;
+    }
+
+    .team-card img {
+        height: 353px;
+    }
+
+    .card-overlay p {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        color: #fff;
+        line-height: 24px;
+    }
+
+    .location-padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 3.5rem;
+    }
+
+
+
+    .achievement-card {
+        height: 130px;
+    }
+
+    .card-overlay h5 {
+        font-size: 20px;
+    }
+
+    .russia-explore-content h2 {
+        font-size: 30px;
+    }
+
+    .russia-explore-content p {
+        max-width: 530px;
+    }
+
+    .vision-img {
+        max-width: 180px;
+    }
+
+    .mission-text {
+        font-size: 18px;
+        color: #12434A;
+        line-height: 1.6;
+        margin-bottom: 0;
+        max-width: 270px;
+        font-weight: 400;
+    }
+
+    .vision-card {
+        height: 421px;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+    .padding-left-1 {
+        padding-left: 12px;
+    }
+
+    .book-image img {
+        height: 519px;
+    }
+
+    .faq-left-image img {
+        max-width: 260px;
+        right: -20px;
+    }
+
+    .faq-left-card {
+        min-height: 490px;
+    }
+
+    .custom-accordion .accordion-item {
+        padding: 25px 30px;
+    }
+
+    .custom-accordion .accordion-body {
+        padding: 16px 0px 0px 0px;
+    }
+
+    .step-content p {
+        font-size: 14px;
+    }
+
+    .step-item.active .step-number {
+        transform: scale(1);
+    }
+
+    .step-item {
+        padding: 15px 18px 15px;
+    }
+
+    .step-number {
+        min-width: 45px;
+    }
+
+    .mice-section {
+        padding: 80px 0 10px;
+    }
+
+    .services-row {
+        --bs-gutter-x: 2.5rem;
+        --bs-gutter-y: 2.5rem;
+    }
+
+
+    .mice-float-3 img {
+        width: 180px;
+    }
+
+    .mice-float-2 img {
+        width: 180px;
+    }
+
+    .mice-float-4 img {
+        width: 180px;
+    }
+
+    .mice-float-1 img {
+        width: 180px;
+    }
+
+    .mice-float-3 {
+        top: 97px;
+        left: 56%;
+        rotate: 0deg;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .mice-float-4 {
+        top: 61px;
+        right: 6%;
+        rotate: -17deg;
+        animation: float 3.8s ease-in-out infinite;
+    }
+
+    .mice-float-2 {
+        top: 90px;
+        left: 28%;
+        rotate: 3deg;
+    }
+
+
+    .mice-float-1 {
+        top: 41px;
+        left: 6%;
+        rotate: 343deg;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .mice-section {
+        padding: 90px 0 100px;
+    }
+
+
+    .mice-images-wrapper {
+        position: relative;
+        margin-top: -25px;
+    }
+
+}
+
+
+@media only screen and (max-width:1100px) {
+    .footer-links-box ul li a {
+        font-size: 14px;
+    }
+
+    .cta-card p {
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        margin-bottom: 20px;
+        max-width: 250px;
+        line-height: 23px;
+    }
+
+    .cta-card {
+        height: 330px;
+    }
+
+    .experience-section {
+        padding: 60px 0;
+    }
+
+    .custom-arrow {
+        height: 58px;
+        font-size: 20px;
+    }
+
+    .testimonial-card-1 {
+        padding: 35px 112px 35px 25px;
+    }
+
+    .create-path img {
+        display: none;
+    }
+
+    .hero-content p {
+        max-width: 340px;
+        margin-top: 8px;
+    }
+
+    .heroSLiderBox {
+        width: 620px;
+    }
+
+    .tour-padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .faq-spaice {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .mice-section .section-heading h2 {
+        max-width: 620px;
+    }
+
+    .stats-card {
+        padding: 18px 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 35px;
+        line-height: 43px;
+    }
+
+    h2 {
+        font-size: 35px;
+        line-height: 1.3;
+    }
+
+    .tourism-badge {
+        height: 118px;
+    }
+
+    .services-row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .main-footer {
+        padding: 40px 0 24px;
+    }
+
+    .mice-float-3 img {
+        width: 150px;
+    }
+
+    .mice-float-2 img {
+        width: 150px;
+    }
+
+    .mice-float-4 img {
+        width: 150px;
+    }
+
+    .mice-float-1 img {
+        width: 150px;
+    }
+
+    .mice-float-3 {
+        top: 97px;
+        left: 56%;
+        rotate: 0deg;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .mice-float-4 {
+        top: 61px;
+        right: 6%;
+        rotate: -17deg;
+        animation: float 3.8s ease-in-out infinite;
+    }
+
+    .mice-float-2 {
+        top: 90px;
+        left: 28%;
+        rotate: 3deg;
+    }
+
+
+    .mice-float-1 {
+        top: 41px;
+        left: 6%;
+        rotate: 343deg;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .mice-section {
+        padding: 90px 0 100px;
+    }
+
+
+
+    .mice-images-wrapper {
+        position: relative;
+        margin-top: -25px;
+    }
+
+}
+
+
+@media only screen and (max-width:1024px) {
+    .main-footer.media-footer {
+        padding-top: 12px;
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .mice-images-wrapper {
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .mice-float-1,
+    .mice-float-2,
+    .mice-float-3,
+    .mice-float-4 {
+        rotate: 0deg;
+    }
+
+    .mice-float-img {
+        position: unset;
+        width: 100%;
+    }
+
+    .cta-card {
+        height: 330px;
+    }
+
+    .dream-padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .experience-section {
+        padding: 60px 0 12px 0;
+    }
+
+    .dos-card,
+    .donts-card {
+        padding: 30px 10px 10px 23px;
+    }
+
+    .placeholder-people.dream-2 img {
+        bottom: 0;
+        width: 100%;
+    }
+
+    .newsletter-section {
+        padding: 50px 0;
+    }
+
+    .dream-card {
+        height: 420px;
+    }
+
+    .nl-label {
+        margin-bottom: 8px;
+    }
+
+    .main-footer.media-footer {
+        padding-top: 12px;
+    }
+
+    .newsletter-heading {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .blogger-review-padding {
+        --bs-gutter-x: 2rem;
+        --bs-gutter-y: 2rem;
+    }
+
+    .main-footer.media-footer .cta-section {
+        margin-bottom: 40px;
+    }
+
+    .newsletter-subtitle {
+        color: #ffffff;
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto 20px;
+    }
+
+    .blog-card {
+        max-width: 100%;
+    }
+
+    .ctc-pointer {
+        padding: 13px 0;
+    }
+
+    .form-panel {
+        padding: 0px 36px 36px 36px;
+    }
+
+    .info-panel {
+        padding: 36px 26px 36px 26px;
+    }
+
+    .main-contact-details {
+        display: flex;
+        gap: 50px;
+    }
+
+    .presence-padding {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .info-heading {
+        margin-bottom: 14px;
+        font-size: 2rem;
+    }
+
+    .cta-card-1 {
+        padding: 45px 40px;
+    }
+
+    .cta-heading {
+        font-size: 30px;
+    }
+
+    .mice-images-wrapper img {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .experiencebanner .banner-description {
+        max-width: 540px;
+        margin-bottom: 0;
+    }
+
+    .about-section {
+        padding: 80px 0;
+    }
+
+    .inner-banner-section {
+        height: 400px;
+    }
+
+    .why-choose-section {
+        padding: 80px 0 0;
+    }
+
+    .pkg-card__footer {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .mision-card-padding {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .about-bg-img img {
+        display: none;
+    }
+
+    .mobileHero-slider {
+        padding: 0px 0 0px 0;
+        margin-top: -240px;
+        z-index: 3;
+    }
+
+    .explore-section h5 {
+        font-size: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .about-stats-section .section-heading h2 {
+        max-width: 100%;
+    }
+
+    .tour-package-section {
+        padding: 80px 0;
+        margin-top: 0;
+    }
+
+    .hero-banner {
+        padding: 130px 0 250px;
+    }
+
+    .hero-content p {
+        max-width: 450px;
+        margin-bottom: 11px;
+    }
+
+    .explore-section p {
+        margin-bottom: 0;
+    }
+
+    .trusted-users-inner {
+        margin-top: 23px;
+    }
+
+    .btn-view-packages {
+        font-size: 14px;
+        margin-top: 6px;
+    }
+
+    .explore-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .journey-bg {
+        background-image: none;
+    }
+
+    .heroSLiderBox {
+        position: unset;
+        bottom: 0px;
+        right: 0;
+        width: 1150px;
+        overflow: hidden;
+        z-index: 5;
+        padding: 50px 0 50px 0;
+    }
+
+    .hover-description p {
+        font-size: 14px;
+        max-width: 260px;
+    }
+
+    .russia-explore-content p {
+        font-size: 14px;
+    }
+
+    .why-choose-section .section-desc {
+        color: #000;
+        line-height: 1.8;
+        margin-top: 15px;
+        max-width: 730px;
+        margin: 15px auto 20px auto;
+    }
+
+    .location-padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 2.5rem;
+    }
+
+    .cta-image {
+        width: 207px;
+    }
+
+    .vision-img {
+        max-width: 220px;
+    }
+
+    .vision-card {
+        height: 100%;
+    }
+
+    .step-item {
+        padding: 15px 18px 15px;
+        margin-bottom: 10px;
+    }
+
+    .faq-spaice {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .book-image img {
+        height: 600px;
+    }
+
+    .custom-accordion .accordion-button {
+        font-size: 16px;
+    }
+
+    .custom-accordion .accordion-item.active {
+        padding: 20px;
+    }
+
+    .main-footer {
+        padding: 40px 0 24px 0;
+    }
+
+    .banner-title {
+        font-size: 40px;
+    }
+
+    .banner-subtitle {
+        font-size: 30px;
+    }
+
+    .footer-email,
+    .footer-phone {
+        margin-bottom: 13px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .achievement-section {
+        padding: 40px 0px 0px 0px;
+    }
+
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-social a svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .newsletter-wrapper {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .map-placeholder img {
+        border-radius: 0px;
+        height: auto;
+    }
+
+    .faq-left-card {
+        min-height: 440px;
+        padding: 16px;
+    }
+
+    .custom-accordion .accordion-item {
+        padding: 20px 16px;
+    }
+
+    .mice-section {
+        padding: 60px 0 60px;
+    }
+
+    .about-stats-section.section {
+        padding: 60px 0;
+    }
+
+    .services-row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .stats-card::before {
+        content: "";
+        position: absolute;
+        top: 56px;
+        right: 0;
+        width: 89%;
+        height: 1px;
+        background: #D1F8BD;
+    }
+
+    .about-left {
+        padding-top: 0;
+        padding-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .step-content h4 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #114349;
+        margin-bottom: 10px;
+    }
+
+    .hero-banner {
+        padding: 130px 0 250px;
+    }
+
+    .services-row {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1rem;
+    }
+
+    .map-placeholder img {
+        border-radius: 0px;
+        height: auto;
+    }
+
+    .faq-left-card {
+        min-height: 530px;
+    }
+}
+
+
+
+
+@media (max-width:767px) {
+    .how-book-scroll {
+        height: auto;
+        position: relative;
+    }
+
+    .mice-float-img {
+        border: 2px solid #fff;
+    }
+
+    .service-bgImg img {
+        opacity: 10%;
+        position: absolute;
+        bottom: -300px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: contain;
+    }
+
+    .newsletter-info {
+        padding-right: 0;
+    }
+
+    .tourism-badge {
+        height: auto;
+    }
+
+    .dont--padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .custom-tabs .nav-link {
+        padding: 10px 17px;
+        font-size: 0.75rem;
+    }
+
+    .dream-card-content h3 {
+        margin-bottom: 8px;
+    }
+
+    .dream-card {
+        height: 358px;
+    }
+
+    .testimonial-card-1 {
+        padding: 22px 112px 22px 25px;
+        max-width: 492px;
+    }
+
+    .experience-section {
+        padding: 60px 0 30px 0;
+    }
+
+    .testimonial-desc p {
+        font-size: 1rem;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .newsletter-heading {
+        font-size: 1.563rem;
+        text-align: center;
+    }
+
+    .blog-tabs {
+        overflow-x: auto;
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .nl-input {
+        padding: 12px 20px;
+    }
+
+    .cta-heading {
+        font-size: 26px;
+    }
+
+    .cta-card-1 {
+        padding: 30px 20px;
+    }
+
+    .cta-subtitle {
+        margin: 0 auto 23px auto;
+    }
+
+    .package-card-padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 2rem;
+    }
+
+    .footer-links-box {
+        padding: 25px 20px;
+    }
+
+    .footer-links-box ul li {
+        margin-bottom: 15px;
+        line-height: 1;
+    }
+
+    .main-footer {
+        padding: 12px 0 24px 0;
+    }
+
+    .newsletter-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .newsletter-btn img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .newsletterTitle {
+        font-size: 14px;
+        margin-bottom: 11px;
+    }
+
+    .newsletter-form {
+        padding: 14px 18px;
+    }
+
+    .experience-page .faq-section.section {
+        padding-top: 0;
+    }
+
+    .footer-bottom {
+        font-size: 11px;
+    }
+
+    .mice-section {
+        padding: 52px 0 50px;
+    }
+
+    .mice-images-wrapper img {
+        width: 100%;
+    }
+
+    .experiencebanner .banner-description {
+        max-width: 440px;
+        margin-bottom: 0;
+    }
+
+    .pkg-card__footer {
+        flex-direction: column;
+    }
+
+    .mision-card-padding {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .about-bg-img img {
+        display: none;
+    }
+
+    .hero-banner {
+        padding: 130px 0 210px;
+    }
+
+    .step-item {
+        position: relative;
+        margin-bottom: 18px;
+        gap: 20px;
+        display: flex;
+        padding: 20px 26px 20px;
+        background: #FFFEF0;
+        border-radius: 13px;
+        border: 1px solid #D1F8BD;
+    }
+
+    .steps-container::before {
+        left: 50px;
+    }
+
+    .step-number {
+        background: linear-gradient(90deg, rgba(245, 124, 27, 1) 0%, rgba(248, 197, 34, 1) 100%);
+        color: #fff;
+    }
+
+    .tour-package-section {
+        padding: 60px 0;
+    }
+
+    .team-arrows {
+        margin-top: 20px;
+    }
+
+    .custom-accordion .accordion-button {
+        font-size: 16px;
+        gap: 15px;
+    }
+
+    .footer-contact-box .section-heading {
+        margin-bottom: 20px;
+    }
+
+    .banner-subtitle {
+        font-size: 25px;
+        line-height: 1;
+    }
+
+    .service-info-card {
+        margin: 40px auto 0 auto;
+    }
+
+    .team-card img {
+        height: 393px;
+    }
+
+    .banner-description {
+        font-size: 14px;
+        max-width: 490px;
+    }
+
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .banner-title {
+        font-size: 35px;
+    }
+
+    .russia-explore-content p {
+        font-size: 14px;
+        margin: 0 auto;
+    }
+
+    .why-choose-section {
+        padding: 60px 0;
+    }
+
+    .cta-image {
+        width: 207px;
+    }
+
+    .team-slider-section {
+        padding: 60px 0px;
+    }
+
+    .team-header p {
+        max-width: 460px;
+        line-height: 25px;
+    }
+
+    .hover-description p {
+        font-size: 14px;
+        max-width: 340px;
+    }
+
+    .cta-card p {
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        margin-bottom: 20px;
+        max-width: 330px;
+        line-height: 23px;
+    }
+
+    .russia-explore-section {
+        padding: 40px 0 60px 0;
+        background-size: cover;
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url(../img/explloring-banner.webp);
+    }
+
+    .russia-explore-content {
+        position: relative;
+        z-index: 2;
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .vision-img {
+        max-width: 140px;
+    }
+
+    .mission-text {
+        font-size: 16px;
+    }
+
+    .mission-card {
+        background: #FFFEF0;
+        border: 1px solid #d7e4c6;
+        border-radius: 20px;
+        padding: 20px;
+        height: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 1.3;
+    }
+
+    .testimonial-section {
+        padding: 60px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+        line-height: 33px;
+    }
+
+    .testiImg img {
+        position: absolute;
+        top: -70px;
+        width: 100%;
+        left: 0px;
+        right: 0;
+    }
+
+    .faq-left-card {
+        min-height: 400px;
+    }
+
+    .map-placeholder img {
+        border-radius: 0px;
+        height: 118px;
+    }
+
+    .footer-padding {
+        --bs-gutter-y: 1.5rem;
+    }
+
+    .testimonial-card h3 {
+        font-size: 25px;
+        max-width: 430px;
+    }
+
+    .book-image img {
+        height: 360px;
+    }
+
+    .swiper.hero-tour-slider-mobile {
+        padding: 0 22px;
+    }
+
+    .how-book-sticky {
+        position: unset;
+        top: 0;
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 650px) {
+    .dream-card {
+        height: 338px;
+    }
+
+    .testimonial-card-1 {
+        top: 66%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .hero-tour-slider-mobile .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        padding: 0 22px;
+    }
+
+    .placeholder-people.dream-1 img {
+        bottom: 0;
+        width: 69%;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+
+    .placeholder-people.dream-2 img {
+        bottom: 0;
+        width: 66%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .placeholder-people.dream-6 img {
+        bottom: 0;
+        width: 56%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .placeholder-people.dream-3 img {
+        bottom: 0;
+        width: 60%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .placeholder-people.dream-5 img {
+        bottom: 0;
+        width: 63%;
+        left: unset;
+        right: 0;
+    }
+
+    .placeholder-people.dream-4 img {
+        bottom: 0;
+        width: 77%;
+        left: unset;
+        right: 0;
+        /* margin: 0 auto; */
+    }
+
+    .testimonial-card-1 {
+        max-width: 422px;
+    }
+
+    .testimonial-desc p {
+        font-size: 0.875rem;
+    }
+
+    .blog-card__img-wrap {
+        height: 260px;
+    }
+
+    .nl-btn {
+        margin-top: 17px;
+    }
+
+    .form-panel {
+        padding: 0px 25px 36px 25px;
+    }
+
+    .main-contact-details {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .vision-card {
+        height: 390px;
+    }
+
+    .map-placeholder img {
+        border-radius: 0px;
+        height: auto;
+    }
+
+    .explore-section {
+        display: flex;
+        align-items: start;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .map-placeholder {
+        margin-bottom: 23px;
+    }
+
+    .service-info-card p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        color: #000;
+        max-width: 100%;
+    }
+
+    .vision-img {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .testimonial-card h3 {
+        font-size: 20px;
+        max-width: 340px;
+    }
+
+    .testimonial-card-1 {
+        max-width: 362px;
+        padding: 22px 82px 22px 25px;
+    }
+
+    .dream-card {
+        height: 318px;
+    }
+
+    .custom-arrow {
+        height: 48px;
+        font-size: 20px;
+        width: 36px;
+    }
+
+    .ctc-pointer {
+        font-size: 0.875rem;
+        line-height: 18px;
+    }
+
+    .feature-list {
+        margin: 0 0 11px 0;
+    }
+
+    .info-panel {
+        padding: 36px 26px 16px 26px;
+    }
+
+    .teamSwiper {
+        margin-top: 22px;
+    }
+
+    .cta-image {
+        width: 287px;
+    }
+
+    .network-tabs {
+        margin-top: 0;
+        gap: 0;
+        margin-bottom: 24px;
+    }
+
+    .achievement-wrapper {
+        padding: 25px 30px 30px;
+    }
+
+    .map-placeholder {
+        margin-bottom: 23px;
+    }
+
+    .faq-left-image img {
+        max-width: 231px;
+    }
+
+    .testimonial-card .author {
+        font-size: 17px;
+    }
+
+    .footer-email,
+    .footer-phone {
+        margin-bottom: 11px;
+    }
+
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-social a svg {
+        width: 17px;
+        height: 17px;
+    }
+
+
+    .footer-contact-box .section-heading {
+        margin-bottom: 0;
+    }
+
+    .map-placeholder img {
+        border-radius: 0px;
+        height: auto;
+    }
+}
+
+
+@media (max-width: 400px) {
+    p {
+        font-size: 14px;
+    }
+
+    .custom-tabs .nav-link {
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+
+    .testimonial-card-1 {
+        max-width: 302px;
+        padding: 22px 65px 22px 13px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        bottom: unset;
+        height: auto;
+        top: 65%;
+    }
+
+    .dream-card {
+        height: 278px;
+    }
+
+    .hero-tour-slider-mobile .swiper-slide {
+        padding: 0 0px;
+    }
+
+    .tour-package-section .tour-card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 12px;
+    }
+
+    .tour-package-section .tour-card h5 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-align: left;
+        font-size: 17px;
+        color: #114349;
+        padding-left: 13px;
+    }
+}
+
+
+/* ===================================================
+   MICE MOBILE/TABLET SLIDER CONTROLS
+   (tablet: 3 items visible, mobile: 1 item)
+=================================================== */
+
+@media (max-width: 991.98px) {
+    .mice-images-wrapper {
+        position: relative;
+        overflow: hidden;
+        margin-top: 36px;
+    }
+
+    .mice-float-slider {
+        display: flex;
+        transition: transform 0.4s ease;
+        will-change: transform;
+        gap: 20px;
+    }
+
+    /* Tablet: 3 items */
+    @media (min-width: 576px) {
+        .mice-float-slider .mice-float-img {
+            flex: 0 0 31.333%;
+            max-width: 31.333%;
+            box-sizing: border-box;
+            animation: none;
+            border: 2px solid #fff;
+        }
+    }
+
+    /* Mobile: 1 item */
+    @media (max-width: 575.98px) {
+        .mice-float-slider .mice-float-img {
+            flex: 0 0 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            animation: none;
+        }
+
+        .mice-float-slider {
+            gap: 0;
+        }
+    }
+
+    .mice-float-img img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+    }
+
+    /* Slider Controls */
+    .mice-slider-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    .mice-slider-btn {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.2s, border-color 0.2s;
+    }
+
+    .mice-slider-btn:hover {
+        background: #f0f0f0;
+        border-color: #aaa;
+    }
+
+    .mice-slider-dots {
+        display: flex;
+        gap: 6px;
+    }
+
+    .mice-slider-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .mice-slider-dot.active {
+        background: #333;
+        transform: scale(1.2);
+    }
+}
+
+/* Desktop: hide slider controls */
+@media (min-width: 992px) {
+    .mice-slider-controls {
+        display: none;
+    }
+}

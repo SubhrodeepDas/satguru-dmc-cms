@@ -1,0 +1,86 @@
+[
+  {
+    "destinationName": "Saint Petersburg",
+    "destinationSlug": "saint-petersburg-excursions",
+    "description": "Russia's cultural heart dazzles with baroque palaces, the world-renowned Hermitage Museum, romantic canals, and the legendary White Nights.",
+    "image": "/uploads/mr4le3a1-ejyhfb.webp",
+    "homeFeature": true,
+    "order": 2,
+    "active": true,
+    "id": "mr4le3njhja7d7",
+    "createdAt": "2026-07-03T07:08:47.743Z",
+    "updatedAt": "2026-07-03T07:45:04.831Z"
+  },
+  {
+    "destinationName": "Sochi",
+    "destinationSlug": "sochi-excursions",
+    "description": "Known as the 'Russian Riviera', Sochi blends golden Black Sea beaches with alpine mountain resorts, the lush Sochi National Park, and year-round outdoor adventures.",
+    "image": "/uploads/mr4le3x9-0y3fu8.webp",
+    "homeFeature": true,
+    "order": 6,
+    "active": true,
+    "id": "mr4le45ptx1tw4",
+    "createdAt": "2026-07-03T07:08:48.397Z",
+    "updatedAt": "2026-07-03T07:45:04.931Z"
+  },
+  {
+    "destinationName": "Kazan",
+    "destinationSlug": "kazan-excursions",
+    "description": "The multicultural capital of Tatarstan — UNESCO Kazan Kremlin, the grand Qolsharif Mosque and a unique blend of Russian and Eastern cultures.",
+    "image": "/uploads/mr4le495-wf9o9r.webp",
+    "homeFeature": true,
+    "order": 5,
+    "active": true,
+    "id": "mr4le4a6svy6x8",
+    "createdAt": "2026-07-03T07:08:48.558Z",
+    "updatedAt": "2026-07-03T07:45:04.909Z"
+  },
+  {
+    "destinationName": "Golden Ring",
+    "destinationSlug": "golden-ring",
+    "description": "A circle of ancient Russian towns — Sergiev Posad, Vladimir, Suzdal and Yaroslavl — preserving medieval kremlin walls and Orthodox heritage.",
+    "image": "/uploads/mr4le4f9-otju90.webp",
+    "homeFeature": true,
+    "order": 3,
+    "active": true,
+    "id": "mr4le4ojh9yqjs",
+    "createdAt": "2026-07-03T07:08:49.075Z",
+    "updatedAt": "2026-07-03T07:45:04.867Z"
+  },
+  {
+    "destinationName": "Moscow",
+    "destinationSlug": "moscow-excursions",
+    "description": "Russia's dynamic capital blends Soviet grandeur with modern energy — from the iconic Red Square and the Kremlin to world-class restaurants, galleries, and a thriving arts scene.",
+    "image": "/uploads/mr4le4qs-g1xuc2.webp",
+    "homeFeature": true,
+    "order": 1,
+    "active": true,
+    "id": "mr4le4rw5bt3t2",
+    "createdAt": "2026-07-03T07:08:49.196Z",
+    "updatedAt": "2026-07-03T07:45:04.779Z"
+  },
+  {
+    "destinationName": "Murmansk",
+    "destinationSlug": "murmansk-excursions",
+    "description": "Above the Arctic Circle, Murmansk delivers breathtaking Northern Lights spectacles, polar day adventures, dramatic tundra landscapes, and authentic Russian Arctic culture.",
+    "image": "/uploads/mr4mplzf-9y75sb.webp",
+    "homeFeature": true,
+    "order": 4,
+    "active": true,
+    "id": "mr4mpm8mjn2hzf",
+    "createdAt": "2026-07-03T07:45:44.662Z",
+    "updatedAt": "2026-07-03T07:45:44.662Z"
+  },
+  {
+    "destinationName": "Nizhny Novgorod – The Volga Capital of Russia",
+    "destinationSlug": "nizhny-novgorod-the-volga-capital-of-russia",
+    "description": "Discover Nizhny Novgorod, Russia’s 5th largest city and one of its most underrated gems. Located at the confluence of the Volga and Oka rivers, just 400 km east of Moscow, this 800-year-old city blends medieval history, Soviet heritage, and modern Russian culture. Perfect for travelers seeking authentic Russia beyond Moscow and St. Petersburg.",
+    "image": "",
+    "homeFeature": false,
+    "order": 7,
+    "active": true,
+    "id": "mr4t209f6rk1p2",
+    "createdAt": "2026-07-03T10:43:20.403Z",
+    "updatedAt": "2026-07-03T10:43:23.958Z"
+  }
+]

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8">
+    <title>Contact Us | Satguru DMC Russia</title>
+    <meta name="description"
+        content="Get in touch with Satguru DMC Russia. Our expert team is ready to help you plan your perfect Russia tour, MICE event, or corporate travel experience.">
+    <meta property="og:title" content="Contact Us | Satguru DMC Russia">
+    <meta property="og:description"
+        content="Reach out to our team for Russia tour packages, MICE services, and corporate travel planning.">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect: warm up CDN connections before they are discovered -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Critical CSS — render-blocking (defines above-the-fold layout) -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <!-- Non-critical CSS — loaded asynchronously (fonts & icon libraries) -->
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    </noscript>
+    <style>
+        html {
+            scroll-snap-type: none !important;
+        }
+
+        .page-section {
+            height: auto !important;
+            min-height: 0 !important;
+            scroll-snap-align: none !important;
+            padding-top: 100px !important;
+            padding-bottom: 100px !important;
+        }
+
+        .contact-section.page-section {
+            /* height: 100vh !important; */
+            /* min-height: 100vh !important; */
+            overflow: auto !important;
+            display: flex !important;
+            align-items: center !important;
+            padding-top: 100px !important;
+            padding-bottom: 100px !important;
+        }
+
+        .contact-section.page-section .container {
+            width: 100%;
+        }
+
+        .network-section {
+            background-image: none !important;
+            background-color: transparent !important;
+            padding-top: 0 !important;
+            margin-top: 0px !important;
+        }
+
+        .network-section .city-card {
+            padding-top: 36px !important;
+            padding-bottom: 36px !important;
+        }
+
+        .network-section .city-card .phone {
+            margin-bottom: 16px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 7px !important;
+            width: max-content;
+            margin: 0 auto;
+        }
+
+        .network-section .city-card .phone::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232d8c6e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.29 6.29l1.94-1.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .cta-section.page-section {
+            padding: 0 !important;
+            margin-bottom: 2px !important;
+        }
+
+        .cta-section .container {
+            max-width: 100% !important;
+            padding: 0 !important;
+        }
+
+        .cta-card-1 {
+            border-radius: 0 !important;
+        }
+
+        .cta-subtitle {
+            font-size: 18px !important;
+            line-height: 30px !important;
+        }
+
+        .location-entry {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .location-pin-icon {
+            color: #69AA48;
+            font-size: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .location-entry .detail-value {
+            margin-bottom: 0;
+        }
+
+        .location-divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- =============================
+       SECTION: Get in Touch
+  ============================== -->
+        <section class="contact-section section page-section" data-section-name="CONTACT">
+            <div class="container reveal">
+                <div class="row">
+                    <div class="col-12">
+
+                        <!-- Section Inner Dark Card -->
+                        <div class="contact-card">
+                            <div class="row g-0">
+
+                                <!-- =============================
+                   LEFT COLUMN: Info Panel
+                   col-lg-5
+              ============================== -->
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="info-panel">
+
+                                        <!-- Info: Heading -->
+                                        <h2 class="info-heading">Get in Touch with Us</h2>
+
+                                        <!-- Info: Contact Details -->
+                                        <div class="main-contact-details">
+                                            <div class="contact-detail">
+                                                <p class="detail-label">Location:</p>
+                                                <div class="location-entry">
+                                                    <i class="ri-map-pin-2-fill location-pin-icon"></i>
+                                                    <p class="detail-value detail-small"> <span
+                                                            style="font-weight: 700; margin-bottom: 10px; display: block;">Moscow</span>
+                                                        9th Floor, Entrance
+                                                        1,
+                                                        Street 1, Building 1,
+                                                        Mytnaya St., Moscow 119049, Russia
+                                                    </p>
+                                                </div>
+                                                <hr class="location-divider">
+                                                <div class="location-entry">
+                                                    <i class="ri-map-pin-2-fill location-pin-icon"></i>
+                                                    <p class="detail-value detail-small"><span
+                                                            style="font-weight: 700; margin-bottom: 10px; display: block;">Novosibirsk:</span>
+                                                        28 Romanova
+                                                        street, off.318,
+                                                        Novosibirsk, Russia. 630099</p>
+                                                </div>
+                                                <hr class="location-divider">
+                                                <div class="location-entry">
+                                                    <i class="ri-map-pin-2-fill location-pin-icon"></i>
+                                                    <p class="detail-value detail-small"><span
+                                                            style="font-weight: 700; margin-bottom: 10px; display: block;">Yekaterinburg:</span>
+                                                        Ulitsa Belinskogo, off. 108, Ekaterinburg, Sverdlovsk Oblast, 620063, Russia
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="contact-detail">
+                                                <p class="detail-label">Email:</p>
+                                                <div class="location-entry">
+                                                    <i class="ri-mail-fill location-pin-icon"></i>
+                                                    <p class="detail-value">inbound.russia@satgurutravel.com</p>
+                                                </div>
+                                            </div>
+                                            <div class="contact-detail">
+                                                <p class="detail-label">Phone:</p>
+                                                <div class="location-entry">
+                                                    <div>
+                                                        <p class="detail-value" style="margin-bottom: 5px;"> <i class="ri-phone-fill location-pin-icon"></i> +7 495 259 25 33</p>
+                                                        <p class="detail-value">  <i class="ri-phone-fill location-pin-icon"></i> +7 985 540 01 44</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- END LEFT COLUMN -->
+
+                                <!-- =============================
+                   RIGHT COLUMN: Contact Form
+                   col-lg-7
+              ============================== -->
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="form-panel">
+
+                                        <!-- White Form Card -->
+                                        <form id="contactForm" action="/assets/email-php/contact-form.php" method="post"
+                                            class="form-card">
+
+                                            <!-- ---- Row: First Name + Last Name ---- -->
+                                            <div class="row g-3">
+
+                                                <!-- First Name -->
+                                                <div class="col-sm-6 col-12">
+                                                    <label class="field-label" for="first_name">First Name<span
+                                                            class="req">*</span></label>
+                                                    <input type="text" id="first_name" name="first_name"
+                                                        class="field-input" placeholder="First Name*" required />
+                                                </div>
+
+                                                <!-- Last Name -->
+                                                <div class="col-sm-6 col-12">
+                                                    <label class="field-label" for="last_name">Last Name<span
+                                                            class="req">*</span></label>
+                                                    <input type="text" id="last_name" name="last_name"
+                                                        class="field-input" placeholder="Last Name*" required />
+                                                </div>
+
+                                            </div>
+                                            <!-- End Row: Name -->
+
+                                            <!-- ---- Row: Phone + Email ---- -->
+                                            <div class="row g-3 mt-1">
+                                                <div class="col-sm-6 col-12">
+                                                    <label class="field-label" for="phone">Phone<span
+                                                            class="req">*</span></label>
+                                                    <input type="tel" id="phone" name="phone" class="field-input"
+                                                        placeholder="Phone*" required />
+                                                </div>
+                                                <div class="col-sm-6 col-12">
+                                                    <label class="field-label" for="email">Email<span
+                                                            class="req">*</span></label>
+                                                    <input type="email" id="email" name="email" class="field-input"
+                                                        placeholder="Email*" required />
+                                                </div>
+                                            </div>
+                                            <!-- End Row: Phone + Email -->
+
+                                            <!-- ---- Row: Location ---- -->
+                                            <div class="row g-3 mt-1">
+                                                <div class="col-12">
+                                                    <label class="field-label" for="location">Location<span
+                                                            class="req">*</span></label>
+                                                    <input type="text" id="location" name="location" class="field-input"
+                                                        placeholder="Location*" required />
+                                                </div>
+                                            </div>
+                                            <!-- End Row: Location -->
+
+
+                                            <!-- ---- Row: How Can We Help ---- -->
+                                            <div class="row g-3 mt-1">
+                                                <div class="col-12">
+                                                    <label class="field-label" for="message">How Can We Help
+                                                        You..</label>
+                                                    <textarea id="message" name="message"
+                                                        class="field-input field-textarea" placeholder="How Can We Help You.."></textarea>
+                                                </div>
+                                            </div>
+                                            <!-- End Row: Textarea -->
+
+                                            <!-- ---- Row: Custom Checkbox - Terms ---- -->
+                                            <div class="row mt-3">
+                                                <div class="col-12">
+
+                                                    <!-- =============================
+                             COMPONENT: Custom Checkbox
+                        ============================== -->
+                                                    <label class="custom-check-label" for="terms">
+                                                        <input type="checkbox" id="terms" name="terms"
+                                                            class="custom-check-input" required />
+                                                        <span class="custom-check-box">
+                                                            <svg class="custom-check-tick"
+                                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                                fill="none" stroke="currentColor" stroke-width="3.5"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                width="11" height="11">
+                                                                <polyline points="20 6 9 17 4 12" />
+                                                            </svg>
+                                                        </span>
+                                                        <span class="custom-check-text">I Agree To The Terms And
+                                                            Conditions</span>
+                                                    </label>
+                                                    <!-- END COMPONENT: Custom Checkbox -->
+
+                                                </div>
+                                            </div>
+                                            <!-- End Row: Checkbox -->
+
+                                            <!-- ---- Row: Submit Button ---- -->
+                                            <div class="row mt-4">
+                                                <div class="col-12">
+                                                    <button type="submit" name="submit" class="btn contact-btn">
+                                                        <span class="icon">
+                                                            <img src="assets/img/arrow-icon-header.svg" alt="">
+                                                        </span>
+                                                        SUBMIT INFORMATION
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- End Row: Submit Button -->
+
+                                        </form>
+                                        <!-- End White Form Card -->
+
+                                    </div>
+                                </div>
+                                <!-- END RIGHT COLUMN -->
+
+                            </div>
+                            <!-- End row g-0 -->
+                        </div>
+                        <!-- End Section Inner Dark Card -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END SECTION: Get in Touch -->
+
+
+        <!-- ===================================== -->
+        <!-- OUR NETWORK SECTION START -->
+        <!-- ===================================== -->
+
+
+        <section class="network-section section pt-0 page-section" data-section-name="LOCATIONS">
+
+            <div class="container z-3 position-relative">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+
+                        <!-- Heading -->
+                        <div class="section-heading">
+                            <h2>Our <span>Presence</span></h2>
+                            <p>
+                                Our pan-Russia network enables us to maintain the highest standards of service delivery
+                                as well as scout for innovative products.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= TAB CONTENT ================= -->
+
+            <div class="container">
+                <div class="location-map">
+                    <img src="assets/img/location-section-map.webp" alt="" loading="lazy">
+                </div>
+                <div class="tab-content" id="networkTabContent">
+                    <!-- ================= TAB 1 ================= -->
+                    <div class="tab-pane fade show active" id="russia" role="tabpanel">
+
+                        <div class="network-cards">
+
+                            <!-- ROW 1 -->
+                            <div class="row location-padding justify-content-center">
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                    <div class="city-card">
+                                        <h4>Moscow</h4>
+                                        <span class="phone">+7 (985) 540-01-44</span>
+                                        <a href="#" class="btn quote-btn">
+                                            <span class="rqst-icon">
+                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
+                                            </span>
+                                            GET DIRECTION
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                    <div class="city-card">
+                                        <h4>St. Petersburg</h4>
+                                        <span class="phone">+7 (916) 462-19-56</span>
+                                        <a href="#" class="btn quote-btn">
+                                            <span class="rqst-icon">
+                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
+                                            </span>
+                                            GET DIRECTION
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                    <div class="city-card">
+                                        <h4>Ekaterinburg</h4>
+                                        <span class="phone">+7 (985) 540-01-56</span>
+                                        <a href="#" class="btn quote-btn">
+                                            <span class="rqst-icon">
+                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
+                                            </span>
+                                            GET DIRECTION
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                    <div class="city-card">
+                                        <h4>Kazan</h4>
+                                        <span class="phone">+7 (985) 151-91-64</span>
+                                        <a href="#" class="btn quote-btn">
+                                            <span class="rqst-icon">
+                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
+                                            </span>
+                                            GET DIRECTION
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                    <div class="city-card">
+                                        <h4>Novosibirsk</h4>
+                                        <span class="phone">+7 (985) 530-11-92</span>
+                                        <a href="#" class="btn quote-btn">
+                                            <span class="rqst-icon">
+                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
+                                            </span>
+                                            GET DIRECTION
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                    <div class="city-card">
+                                        <h4>Khabarovsk</h4>
+                                        <span class="phone">+7 (915) 157-96-02</span>
+                                        <a href="#" class="btn quote-btn">
+                                            <span class="rqst-icon">
+                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
+                                            </span>
+                                            GET DIRECTION
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                    <div class="city-card">
+                                        <h4>Vladivostok</h4>
+                                        <span class="phone">+7 (915) 157-96-02</span>
+                                        <a href="#" class="btn quote-btn">
+                                            <span class="rqst-icon">
+                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
+                                            </span>
+                                            GET DIRECTION
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                    <div class="city-card">
+                                        <h4>Rostov-on-Don</h4>
+                                        <span class="phone">+7 (916) 192-60-64</span>
+                                        <a href="#" class="btn quote-btn">
+                                            <span class="rqst-icon">
+                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
+                                            </span>
+                                            GET DIRECTION
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =============================
+       SECTION: CTA - Call To Action
+  ============================== -->
+        <section class="cta-section page-section" data-section-name="GET A QUOTE">
+            <div class="container">
+
+                <!-- =============================
+           ROW: CTA Card Wrapper
+           Orange gradient bg + shapes + content — all inside .container
+      ============================== -->
+                <div class="row">
+                    <div class="col-12">
+
+                        <!-- CTA Card: Orange background rounded box -->
+                        <div class="cta-card-1">
+
+                            <!-- ---- Inner Row: Content centered ---- -->
+                            <div class="row justify-content-center">
+                                <div class="col-xl-10 col-lg-12 col-md-12 col-12 text-center">
+
+                                    <!-- CTA: Heading -->
+                                    <h2 class="cta-heading">
+                                        Need to Know Details About Our Packages?<br />
+                                        Or Have Any Special Request?
+                                    </h2>
+
+                                    <!-- CTA: Subtitle -->
+                                    <p class="cta-subtitle">
+                                        Satguru DMC Russia is Russia's premier Destination Management Company with a
+                                        country-wide network and dedicated teams that specialise in every aspect of
+                                        travel.<br>
+                                        The Company has an elaborate network of owned offices across Russia.
+                                    </p>
+
+                                    <!-- CTA: Button -->
+                                    <a href="#" class="btn quote-btn customize-nav-btn">
+                                        <span class="rqst-icon">
+                                            <img src="assets/img/arrow-icon-header.svg" alt="">
+                                        </span>
+                                        CUSTOMIZE YOUR REQUEST
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- END SECTION: CTA -->
+
+
+
+        <div id="site-footer"></div>
+
+    </main>
+
+
+
+
+
+
+
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.min.js?v=3"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const teamSwiperEl = document.querySelector(".teamSwiper");
+
+            if (teamSwiperEl && !teamSwiperEl.classList.contains("swiper-initialized")) {
+
+                const teamSwiperInstance = new Swiper(".teamSwiper", {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                    loop: false,
+
+                    navigation: {
+                        nextEl: ".custom-next",
+                        prevEl: ".custom-prev",
+                    },
+
+                    breakpoints: {
+                        1800: { slidesPerView: 3, spaceBetween: 30 },
+                        1600: { slidesPerView: 3, spaceBetween: 30 },
+                        1500: { slidesPerView: 3, spaceBetween: 20 },
+                        1440: { slidesPerView: 3, spaceBetween: 30 },
+                        1400: { slidesPerView: 3, spaceBetween: 30 },
+                        1200: { slidesPerView: 2, spaceBetween: 30 },
+                        1100: { slidesPerView: 2.5, spaceBetween: 30 },
+                        991: { slidesPerView: 2.5, spaceBetween: 30 },
+                        767: { slidesPerView: 2.3, spaceBetween: 30 },
+                        600: { slidesPerView: 1.6, spaceBetween: 30 },
+                        320: { slidesPerView: 1, spaceBetween: 30 },
+                    },
+
+
+                    on: {
+                        init: function () {
+                            updateProgress(this);
+                        },
+                        slideChange: function () {
+                            updateProgress(this);
+                        },
+                        resize: function () {
+                            updateProgress(this);
+                        }
+                    }
+                });
+
+                function updateProgress(swiper) {
+
+                    const totalSlides = swiper.slides.length;
+
+                    const slidesPerView = swiper.params.slidesPerView === 'auto'
+                        ? swiper.slidesPerViewDynamic()
+                        : swiper.params.slidesPerView;
+
+                    const maxIndex = totalSlides - slidesPerView;
+
+                    let progress = 0;
+
+                    if (maxIndex > 0) {
+                        progress = ((swiper.activeIndex + slidesPerView) / totalSlides) * 100;
+                    } else {
+                        progress = 100;
+                    }
+
+                    const progressBar = document.querySelector(".progress-fill");
+
+                    if (progressBar) {
+                        progressBar.style.width = progress + "%";
+                    }
+                }
+
+            }
+
+        });
+    </script>
+    <script src="assets/js/section-indicator.js"></script>
+
+    <script>
+        (function () {
+            var form = document.getElementById('contactForm');
+            if (!form) return;
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var btn = form.querySelector('button[type="submit"]');
+                var origText = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = '<span class="icon"><img src="assets/img/arrow-icon-header.svg" alt=""></span>SENDING…';
+
+                fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(Object.fromEntries(new FormData(form)))
+                })
+                    .then(function (r) { return r.json(); })
+                    .then(function (data) {
+                        if (data.success) {
+                            btn.disabled = false;
+                            btn.innerHTML = origText;
+                            showSuccess('Your message has been sent successfully! We\'ll get back to you shortly.');
+                        } else {
+                            showError(data.error || 'Something went wrong. Please try again.');
+                            btn.disabled = false;
+                            btn.innerHTML = origText;
+                        }
+                    })
+                    .catch(function () {
+                        showError('Network error. Please check your connection and try again.');
+                        btn.disabled = false;
+                        btn.innerHTML = origText;
+                    });
+            });
+
+            function showSuccess(msg) {
+                var el = document.getElementById('contactSuccess');
+                if (!el) {
+                    el = document.createElement('div');
+                    el.id = 'contactSuccess';
+                    form.appendChild(el);
+                }
+                el.style.cssText = 'display:flex;align-items:center;gap:10px;margin-top:16px;padding:14px 18px;background:#eafaf1;border:1.5px solid #69AA48;border-radius:10px;color:#1a6b35;font-size:15px;font-weight:500;';
+                el.innerHTML = '<span style="font-size:22px;color:#69AA48;">&#10003;</span>' + msg;
+            }
+
+            function showError(msg) {
+                var el = document.getElementById('contactError');
+                if (!el) {
+                    el = document.createElement('div');
+                    el.id = 'contactError';
+                    form.appendChild(el);
+                }
+                el.style.cssText = 'display:flex;align-items:center;gap:10px;margin-top:16px;padding:14px 18px;background:#fff0f0;border:1.5px solid #e53935;border-radius:10px;color:#c62828;font-size:15px;font-weight:500;';
+                el.innerHTML = '<span style="font-size:20px;">&#9888;</span>' + msg;
+            }
+        })();
+    </script>
+
+</body>
+
+</html>

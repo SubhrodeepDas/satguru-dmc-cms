@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+**/node_modules/
+
+# next.js build output
+.next/
+**/.next/
+
+# secrets / local env (never commit)
+.env.local
+.env*.local
+**/.env.local
+
+# vercel
+.vercel/
+
+# claude code / editor tooling
+.claude/
+
+# os / logs
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/explore/:slug", "destination": "/explore/_template.html" },
+    { "source": "/itinerary/:slug", "destination": "/itinerary/_template.html" }
+  ]
+}

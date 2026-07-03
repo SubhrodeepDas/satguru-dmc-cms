@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Media | Satguru DMC Russia</title>
+    <meta name="description"
+        content="Stay updated with the latest news, photo galleries, and stories from Satguru DMC Russia. Explore our media coverage and travel highlights.">
+    <meta property="og:title" content="Media | Satguru DMC Russia">
+    <meta property="og:description" content="Latest news, galleries, and travel stories from Satguru DMC Russia.">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect: warm up CDN connections before they are discovered -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Critical CSS — render-blocking (defines above-the-fold layout) -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+
+    <!-- Non-critical CSS — loaded asynchronously (fonts & icon libraries) -->
+    <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    </noscript>
+    <style>
+        html {
+            scroll-snap-type: none !important;
+        }
+
+        .inner-banner-section,
+        .page-section {
+            height: auto !important;
+            min-height: 0 !important;
+            scroll-snap-align: none !important;
+            scroll-snap-stop: normal !important;
+            padding-top: 100px !important;
+            padding-bottom: 100px !important;
+        }
+
+        .inner-banner-section .parallax-layer {
+            inset: 0 !important;
+        }
+
+        .blog-section {
+            padding-top: 40px !important;
+        }
+
+        .blog-tabs-sticky {
+            padding: 6px 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        .blog-section .row.mt-4 {
+            margin-top: 8px !important;
+        }
+
+        .gallery-section {
+            padding-top: 0 !important;
+            padding-bottom: 50px !important;
+            overflow: hidden !important;
+        }
+
+        .testimonial-section {
+            overflow: hidden !important;
+        }
+
+        .cta-section.page-section {
+            padding: 0 !important;
+            margin-bottom: 2px !important;
+        }
+
+        .cta-section .container {
+            max-width: 100% !important;
+            padding: 0 !important;
+        }
+
+        .cta-card-1 {
+            border-radius: 0 !important;
+        }
+
+        .blog-tab-link {
+            position: relative;
+            padding-bottom: 20px !important;
+        }
+
+        .blog-tab-link::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 28px;
+            height: 4px;
+            border-radius: 4px;
+            background-color: #097C3B;
+            transition: transform 0.25s ease;
+        }
+
+        .blog-tab-link.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .blogger-card__img-wrap {
+            position: relative;
+        }
+
+        .blogger-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F57C1B 0%, #F8C522 100%);
+            border: 2.5px solid #fff;
+            color: #fff;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(245, 124, 27, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .blogger-play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 6px 24px rgba(245, 124, 27, 0.5);
+        }
+
+        .blogger-play-btn i {
+            margin-left: 3px;
+        }
+
+        /* ── Inline video player ── */
+        .blogger-card__video-wrap {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: #000;
+            border-radius: inherit;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .blogger-card__img-wrap.video-active .blogger-card__video-wrap {
+            display: block;
+        }
+
+        .blogger-card__img-wrap.video-active .blogger-card__img {
+            opacity: 0;
+        }
+
+        .blogger-video-iframe,
+        .blogger-video-player {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Keep play button above the video overlay */
+        .blogger-play-btn {
+            z-index: 3;
+        }
+
+        /* ── Mobile blogger Swiper (below 767px) ── */
+        @media (max-width: 767px) {
+            .blogger-review-padding { display: none !important; }
+        }
+        .blogger-mobile-swiper-wrap { position: relative; }
+        .blogger-mobile-swiper {
+            padding-bottom: 44px !important;
+            overflow: visible;
+        }
+        .blogger-mobile-dots {
+            bottom: 0 !important;
+        }
+        .blogger-mobile-dots .swiper-pagination-bullet {
+            width: 9px;
+            height: 9px;
+            background: #114349;
+            opacity: 0.25;
+            transition: opacity 0.25s;
+        }
+        .blogger-mobile-dots .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+        /* ── Media hero — breathing room below banner text ── */
+        .mediaBanner .banner-content {
+            padding-bottom: 48px;
+        }
+
+        /* ── Media hero banner — restore standard 700px inner-banner height ── */
+        .mediaBanner {
+            height: 700px !important;
+            min-height: 700px !important;
+            overflow: hidden !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        @media (max-width: 767px) {
+            .mediaBanner {
+                height: 480px !important;
+                min-height: 480px !important;
+            }
+        }
+        @media (max-width: 991px) {
+            /* Hide horizontal tabs below 991px — dropdown shown instead */
+            .blog-tabs-sticky { display: none !important; }
+        }
+
+        /* ── Mobile blog tabs dropdown ── */
+        .media-blog-dropdown {
+            position: relative;
+            margin-bottom: 24px;
+            user-select: none;
+        }
+        .media-blog-dropdown-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 18px;
+            background: #fff;
+            border: 1.5px solid rgba(17, 67, 73, 0.2);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 2px 10px rgba(17, 67, 73, 0.06);
+        }
+        .media-blog-dropdown-trigger:hover { border-color: rgba(17, 67, 73, 0.4); }
+        .media-blog-dropdown.open .media-blog-dropdown-trigger {
+            border-color: #114349;
+            border-bottom-color: transparent;
+            border-radius: 12px 12px 0 0;
+        }
+        .media-blog-dropdown-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #114349;
+            font-family: 'Satoshi-Variable', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        .media-blog-dropdown-arrow i {
+            color: #114349;
+            font-size: 22px;
+            display: block;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .media-blog-dropdown.open .media-blog-dropdown-arrow i {
+            transform: rotate(180deg);
+        }
+        .media-blog-dropdown-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1.5px solid #114349;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 12px 32px rgba(17, 67, 73, 0.14);
+            z-index: 200;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+            animation: mediaBlogDropDown 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes mediaBlogDropDown {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .media-blog-dropdown.open .media-blog-dropdown-list { display: block; }
+        .media-blog-dropdown-item {
+            padding: 13px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #4a5a5e;
+            cursor: pointer;
+            transition: background 0.18s ease, color 0.18s ease, padding-left 0.18s ease;
+            border-bottom: 1px solid rgba(17, 67, 73, 0.07);
+            font-family: 'Satoshi-Variable', sans-serif;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .media-blog-dropdown-item:last-child { border-bottom: none; }
+        .media-blog-dropdown-item:hover {
+            background: rgba(17, 67, 73, 0.05);
+            color: #114349;
+            padding-left: 24px;
+        }
+        .media-blog-dropdown-item.active {
+            background: linear-gradient(135deg, rgba(17, 67, 73, 0.08), rgba(105, 170, 72, 0.08));
+            color: #114349;
+            font-weight: 700;
+        }
+        .media-blog-dropdown-item.active::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #69AA48;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="site-header"></div>
+
+    <main>
+
+        <!-- ===================================== -->
+        <!-- INNER PAGE FULL WIDTH BANNER START -->
+        <!-- ===================================== -->
+        <section class="inner-banner-section mediaBanner" data-section-name="MEDIA" data-parallax>
+            <div class="parallax-layer" style="background-image: url('./assets/img/media-banner.webp');">
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center banner-height">
+                    <div class="col-lg-10 col-md-12">
+
+                        <div class="banner-content">
+                            <h1 class="banner-title">Stay Updated with Our Latest Travel Packages & Exclusive Deals</h1>
+                            <p class="banner-description">
+                                Get updates on new packages, seasonal promotions, destination insights, and must-visit
+                                attractions delivered straight to your inbox.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- ===================================== -->
+        <!-- INNER PAGE FULL WIDTH BANNER END -->
+        <!-- ===================================== -->
+
+        <!-- =============================
+       SECTION: Blog / News Tabs
+  ============================== -->
+        <section class="blog-section section page-section" data-section-name="NEWS">
+            <div class="container reveal">
+
+                <!-- ── Tablet/mobile dropdown (below 991px) ── -->
+                <div class="d-lg-none">
+                    <div class="media-blog-dropdown" id="mediaBlogDropdown">
+                        <div class="media-blog-dropdown-trigger" id="mediaBlogDropdownTrigger">
+                            <span class="media-blog-dropdown-label" id="mediaBlogDropdownLabel">ABOUT NEW PACKAGES</span>
+                            <span class="media-blog-dropdown-arrow"><i class="ri-arrow-down-s-line"></i></span>
+                        </div>
+                        <ul class="media-blog-dropdown-list" id="mediaBlogDropdownList">
+                            <li class="media-blog-dropdown-item active" data-bs-target="#packages">ABOUT NEW PACKAGES</li>
+                            <li class="media-blog-dropdown-item" data-bs-target="#promotion">PROMOTION</li>
+                            <li class="media-blog-dropdown-item" data-bs-target="#destination">DESTINATION INFORMATION</li>
+                            <li class="media-blog-dropdown-item" data-bs-target="#attractions">ATTRACTIONS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ---- Row: Tab Navigation ---- -->
+                <div class="blog-tabs-sticky">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+
+                            <!-- =============================
+                     COMPONENT: Bootstrap Nav Tabs
+                ============================== -->
+                            <ul class="nav blog-tabs" id="blogTabs" role="tablist">
+
+                                <!-- Tab 1: About New Packages -->
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link blog-tab-link active" id="packages-tab"
+                                        data-bs-target="#packages" type="button" role="tab" aria-controls="packages"
+                                        aria-selected="false">
+                                        ABOUT NEW PACKAGES
+                                    </button>
+                                </li>
+
+                                <!-- Tab 2: Promotion (Active) -->
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link blog-tab-link" id="promotion-tab"
+                                        data-bs-target="#promotion" type="button" role="tab" aria-controls="promotion"
+                                        aria-selected="true">
+                                        PROMOTION
+                                    </button>
+                                </li>
+
+                                <!-- Tab 3: Destination Information -->
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link blog-tab-link" id="destination-tab"
+                                        data-bs-target="#destination" type="button" role="tab"
+                                        aria-controls="destination" aria-selected="false">
+                                        DESTINATION INFORMATION
+                                    </button>
+                                </li>
+
+                                <!-- Tab 4: Attractions -->
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link blog-tab-link" id="attractions-tab"
+                                        data-bs-target="#attractions" type="button" role="tab"
+                                        aria-controls="attractions" aria-selected="false">
+                                        ATTRACTIONS
+                                    </button>
+                                </li>
+
+                            </ul>
+                            <!-- END COMPONENT: Bootstrap Nav Tabs -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End Row: Tab Navigation -->
+
+                <!-- ---- Row: Tab Content ---- -->
+                <div class="row mt-4">
+                    <div class="col-12">
+
+                        <!-- =============================
+                     COMPONENT: Blog Tab Content
+                ============================== -->
+                        <div class="blog-tab-content" id="blogTabsContent">
+
+                            <!-- ========================
+                         TAB PANE 1: About New Packages
+                    ======================== -->
+                            <div class="blog-tab-pane blog-tab-pane--active" id="packages" role="tabpanel"
+                                aria-labelledby="packages-tab">
+                                <div class="row blog-padding justify-content-center">
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="assets/img/blog-1.webp" alt="Modern Corporate Travel"
+                                                    class="blog-card__img" / loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="assets/img/blog-2.webp" alt="Modern Corporate Travel"
+                                                    class="blog-card__img" / loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="assets/img/blog-3.webp" alt="Modern Corporate Travel"
+                                                    class="blog-card__img" / loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="assets/img/blog-4.webp" alt="Modern Corporate Travel"
+                                                    class="blog-card__img" / loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="assets/img/blog-5.webp" alt="Modern Corporate Travel"
+                                                    class="blog-card__img" / loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="assets/img/blog-6.webp" alt="Modern Corporate Travel"
+                                                    class="blog-card__img" / loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="assets/img/blog-7.webp" alt="Modern Corporate Travel"
+                                                    class="blog-card__img" / loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="assets/img/blog-8.webp" alt="Modern Corporate Travel"
+                                                    class="blog-card__img" / loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- END TAB PANE 1 -->
+
+                            <!-- ========================
+                         TAB PANE 2: Promotion (Active / Default)
+                    ======================== -->
+                            <div class="blog-tab-pane" id="promotion" role="tabpanel" aria-labelledby="promotion-tab">
+                                <div class="row blog-padding justify-content-center">
+
+                                    <!-- Blog Card 1 -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card 2 -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card 3 -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card 4 -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card 5 -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card 6 -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card 7 -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card 8 -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- END TAB PANE 2 -->
+
+                            <!-- ========================
+                         TAB PANE 3: Destination Information
+                    ======================== -->
+                            <div class="blog-tab-pane" id="destination" role="tabpanel"
+                                aria-labelledby="destination-tab">
+                                <div class="row blog-padding justify-content-center">
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- END TAB PANE 3 -->
+
+                            <!-- ========================
+                         TAB PANE 4: Attractions
+                    ======================== -->
+                            <div class="blog-tab-pane" id="attractions" role="tabpanel"
+                                aria-labelledby="attractions-tab">
+                                <div class="row blog-padding justify-content-center">
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Blog Card -->
+                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="blog-card">
+                                            <div class="blog-card__img-wrap">
+                                                <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700"
+                                                    alt="Modern Corporate Travel" class="blog-card__img" /
+                                                    loading="lazy">
+                                            </div>
+                                            <div class="blog-card__body">
+                                                <h5 class="blog-card__title">Modern Corporate Travel: Key Benefits,
+                                                    Challenges And Future</h5>
+                                                <p class="blog-card__excerpt">Explore curated insights on travel trends,
+                                                    destinations, and corporate solutions tailored to simplify every
+                                                    journey.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- END TAB PANE 4 -->
+
+                        </div>
+                        <!-- END COMPONENT: Blog Tab Content -->
+
+                    </div>
+                </div>
+                <!-- End Row: Tab Content -->
+
+            </div>
+        </section>
+        <!-- END SECTION: Blog / News Tabs -->
+
+
+        <!-- SECTION: Explore Our Gallery -->
+        <section class="gallery-section section page-section" id="glimpses" data-section-name="GALLERY">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-lg-3 mb-md-3 mb-3">
+                    <div class="col-lg-8">
+                        <h2 class="section-title">
+                            Explore <span> Our Gallery</span>
+                        </h2>
+                        <p class="section-desc">
+                            Satguru DMC Russia is Russia's premier Destination Management Company with a country-wide
+                            network and dedicated teams that specialise in every aspect of travel. The Company has an
+                            elaborate network of owned offices across Russia.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Swiper: Full width outside container for edge bleed -->
+            <div class="gallery-swiper-wrap">
+                <div class="swiper gallerySwiper">
+                    <div class="swiper-wrapper">
+
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+
+                                <!-- Card: Image (inset with own border-radius) -->
+                                <div class="gallery-card__img-wrap">
+                                    <img src="assets/img/gallery-img.webp" alt="Moscow" class="gallery-card__img" /
+                                        loading="lazy">
+                                </div>
+
+                                <!-- Card: Body -->
+                                <div class="gallery-card__body">
+                                    <h5 class="gallery-card__title">Where every journey turns into a lifetime memory.
+                                    </h5>
+                                    <p class="gallery-card__desc">Satguru DMC Russia as an elaborate country-wide
+                                        network.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+
+                                <!-- Card: Image (inset with own border-radius) -->
+                                <div class="gallery-card__img-wrap">
+                                    <img src="assets/img/gallery-2.webp" alt="Moscow" class="gallery-card__img" /
+                                        loading="lazy">
+                                </div>
+
+                                <!-- Card: Body -->
+                                <div class="gallery-card__body">
+                                    <h5 class="gallery-card__title">Where every journey turns into a lifetime memory.
+                                    </h5>
+                                    <p class="gallery-card__desc">Satguru DMC Russia as an elaborate country-wide
+                                        network.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+
+                                <!-- Card: Image (inset with own border-radius) -->
+                                <div class="gallery-card__img-wrap">
+                                    <img src="assets/img/gallery-3.webp" alt="Moscow" class="gallery-card__img" /
+                                        loading="lazy">
+                                </div>
+
+                                <!-- Card: Body -->
+                                <div class="gallery-card__body">
+                                    <h5 class="gallery-card__title">Where every journey turns into a lifetime memory.
+                                    </h5>
+                                    <p class="gallery-card__desc">Satguru DMC Russia as an elaborate country-wide
+                                        network.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+
+                                <!-- Card: Image (inset with own border-radius) -->
+                                <div class="gallery-card__img-wrap">
+                                    <img src="assets/img/gallery-img.webp" alt="Moscow" class="gallery-card__img" /
+                                        loading="lazy">
+                                </div>
+
+                                <!-- Card: Body -->
+                                <div class="gallery-card__body">
+                                    <h5 class="gallery-card__title">Where every journey turns into a lifetime memory.
+                                    </h5>
+                                    <p class="gallery-card__desc">Satguru DMC Russia as an elaborate country-wide
+                                        network.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+
+                                <!-- Card: Image (inset with own border-radius) -->
+                                <div class="gallery-card__img-wrap">
+                                    <img src="assets/img/gallery-2.webp" alt="Moscow" class="gallery-card__img" /
+                                        loading="lazy">
+                                </div>
+
+                                <!-- Card: Body -->
+                                <div class="gallery-card__body">
+                                    <h5 class="gallery-card__title">Where every journey turns into a lifetime memory.
+                                    </h5>
+                                    <p class="gallery-card__desc">Satguru DMC Russia as an elaborate country-wide
+                                        network.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="gallery-card">
+
+                                <!-- Card: Image (inset with own border-radius) -->
+                                <div class="gallery-card__img-wrap">
+                                    <img src="assets/img/gallery-3.webp" alt="Moscow" class="gallery-card__img" /
+                                        loading="lazy">
+                                </div>
+
+                                <!-- Card: Body -->
+                                <div class="gallery-card__body">
+                                    <h5 class="gallery-card__title">Where every journey turns into a lifetime memory.
+                                    </h5>
+                                    <p class="gallery-card__desc">Satguru DMC Russia as an elaborate country-wide
+                                        network.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- End Swiper -->
+
+        </section>
+        <!-- END SECTION: Explore Our Gallery -->
+
+        <section class="testimonial-section page-section" id="testimonials" data-section-name="REVIEWS">
+
+            <div class="swiper testimonialSwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+
+                <div class="swiper-wrapper" id="swiper-wrapper-9d33ba5da226d55c" aria-live="off"
+                    style="transition-duration: 0ms; transform: translate3d(-1279.33px, 0px, 0px); transition-delay: 0ms;">
+
+                    <!-- Slide -->
+
+
+                    <!-- Duplicate slides for slider -->
+
+
+
+                    <!-- Slide -->
+
+
+                    <!-- Duplicate slides for slider -->
+
+
+
+
+                    <div class="swiper-slide" role="group" aria-label="3 / 6"
+                        style="width: 599.667px; margin-right: 40px;" data-swiper-slide-index="2">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatars">
+                                <img src="assets/img/testimonial-img.webp" alt="" loading="lazy">
+                            </div>
+                            <h3>
+                                The memories made on our trip will last a lifetime. Thank you for an incredible journey
+                            </h3>
+
+                            <p class="author">Olivia Turner, Traveler</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" role="group" aria-label="4 / 6"
+                        style="width: 599.667px; margin-right: 40px;" data-swiper-slide-index="3">
+                        <div class="testimonial-card">
+
+                            <div class="testimonial-avatars">
+                                <img src="assets/img/testimonial-img.webp" alt="" loading="lazy">
+                            </div>
+
+                            <h3>
+                                The memories made on our trip
+                                will last a lifetime. Thank you for
+                                an incredible journey
+                            </h3>
+
+                            <p class="author">Sophia Bennett, Tourist</p>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-prev" role="group" aria-label="5 / 6"
+                        style="width: 599.667px; margin-right: 40px;" data-swiper-slide-index="4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatars">
+                                <img src="assets/img/testimonial-img.webp" alt="" loading="lazy">
+                            </div>
+
+                            <h3>
+                                The memories made on our trip
+                                will last a lifetime. Thank you for
+                                an incredible journey
+                            </h3>
+
+                            <p class="author">Daniel Carter, Explorer</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="6 / 6"
+                        style="width: 599.667px; margin-right: 40px;" data-swiper-slide-index="5">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatars">
+                                <img src="assets/img/testimonial-img.webp" alt="" loading="lazy">
+                            </div>
+                            <h3>
+                                The memories made on our trip
+                                will last a lifetime. Thank you for
+                                an incredible journey
+                            </h3>
+
+                            <p class="author">Olivia Turner, Traveler</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-next" role="group" aria-label="1 / 6"
+                        style="width: 599.667px; margin-right: 40px;" data-swiper-slide-index="0">
+                        <div class="testimonial-card">
+
+                            <div class="testimonial-avatars">
+                                <img src="assets/img/testimonial-img.webp" alt="" loading="lazy">
+                            </div>
+
+                            <h3>
+                                The memories made on our trip will last a lifetime. Thank you for an incredible journey
+                            </h3>
+
+                            <p class="author">Sophia Bennett, Tourist</p>
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide" role="group" aria-label="2 / 6"
+                        style="width: 599.667px; margin-right: 40px;" data-swiper-slide-index="1">
+                        <div class="testimonial-card">
+                            <div class="testimonial-avatars">
+                                <img src="assets/img/testimonial-img.webp" alt="" loading="lazy">
+                            </div>
+
+                            <h3>
+                                The memories made on our trip will last a lifetime. Thank you for an incredible journey
+                            </h3>
+
+                            <p class="author">Daniel Carter, Explorer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+            <div class="testiImg">
+                <img src="assets/img/testimonail-element.svg" alt="" loading="lazy">
+            </div>
+        </section>
+
+
+        <!-- =============================
+       SECTION: Blogger Reviews
+  ============================== -->
+        <section class="blogger-section section page-section" data-section-name="BLOGGERS">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-lg-3 mb-md-3 mb-3">
+                    <div class="col-lg-8">
+                        <h2 class="section-title">
+                            Blogger <span> Reviews</span>
+                        </h2>
+                        <p class="section-desc">
+                            Satguru DMC Russia is Russia's premier Destination Management Company with a country-wide
+                            network and dedicated teams that specialise in every aspect of travel. The Company has an
+                            elaborate network of owned offices across Russia.
+                        </p>
+                    </div>
+                </div>
+                <!-- Mobile Swiper (below 767px) -->
+                <div class="d-md-none blogger-mobile-swiper-wrap">
+                    <div class="swiper blogger-mobile-swiper">
+                        <div class="swiper-wrapper" id="bloggerMobileWrapper"></div>
+                        <div class="swiper-pagination blogger-mobile-dots"></div>
+                    </div>
+                </div>
+
+                <div class="row blogger-review-padding">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="blogger-card">
+                            <div class="blogger-card__img-wrap">
+                                <img src="assets/img/blogger-review.webp" alt="Raghunath Subramanian"
+                                    class="blogger-card__img" / loading="lazy">
+                                <button class="blogger-play-btn" aria-label="Play video"><i
+                                        class="ri-play-fill"></i></button>
+                            </div>
+                            <div class="blogger-card__body">
+                                <h5 class="blogger-card__name">Raghunath Subramanian</h5>
+                                <p class="blogger-card__role">GLOBAL CEO &amp; EXECUTIVE CHAIRMAN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="blogger-card">
+                            <div class="blogger-card__img-wrap">
+                                <img src="assets/img/blogger-review1.webp" alt="Raghunath Subramanian"
+                                    class="blogger-card__img" / loading="lazy">
+                                <button class="blogger-play-btn" aria-label="Play video"><i
+                                        class="ri-play-fill"></i></button>
+                            </div>
+                            <div class="blogger-card__body">
+                                <h5 class="blogger-card__name">Raghunath Subramanian</h5>
+                                <p class="blogger-card__role">GLOBAL CEO &amp; EXECUTIVE CHAIRMAN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="blogger-card">
+                            <div class="blogger-card__img-wrap">
+                                <img src="assets/img/blogger-review2.webp" alt="Raghunath Subramanian"
+                                    class="blogger-card__img" / loading="lazy">
+                                <button class="blogger-play-btn" aria-label="Play video"><i
+                                        class="ri-play-fill"></i></button>
+                            </div>
+                            <div class="blogger-card__body">
+                                <h5 class="blogger-card__name">Raghunath Subramanian</h5>
+                                <p class="blogger-card__role">GLOBAL CEO &amp; EXECUTIVE CHAIRMAN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="blogger-card">
+                            <div class="blogger-card__img-wrap">
+                                <img src="assets/img/blogger-review3.webp" alt="Raghunath Subramanian"
+                                    class="blogger-card__img" / loading="lazy">
+                                <button class="blogger-play-btn" aria-label="Play video"><i
+                                        class="ri-play-fill"></i></button>
+                            </div>
+                            <div class="blogger-card__body">
+                                <h5 class="blogger-card__name">Raghunath Subramanian</h5>
+                                <p class="blogger-card__role">GLOBAL CEO &amp; EXECUTIVE CHAIRMAN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END SECTION: Blogger Reviews -->
+
+        <!-- =============================
+       SECTION: CTA - Call To Action
+  ============================== -->
+        <section class="cta-section page-section" data-section-name="GET A QUOTE">
+            <div class="container">
+
+                <!-- =============================
+           ROW: CTA Card Wrapper
+           Orange gradient bg + shapes + content — all inside .container
+      ============================== -->
+                <div class="row">
+                    <div class="col-12">
+
+                        <!-- CTA Card: Orange background rounded box -->
+                        <div class="cta-card-1">
+
+                            <!-- ---- Inner Row: Content centered ---- -->
+                            <div class="row justify-content-center">
+                                <div class="col-xl-10 col-lg-12 col-md-12 col-12 text-center">
+
+                                    <!-- CTA: Heading -->
+                                    <h2 class="cta-heading">
+                                       Download Brochure
+                                    </h2>
+
+                                    <!-- CTA: Subtitle -->
+                                    <p class="cta-subtitle">
+                                        Satguru DMC Russia is Russia's premier Destination Management Company with a
+                                        country-wide network and dedicated teams that specialise in every aspect of
+                                        travel.<br>
+                                        The Company has an elaborate network of owned offices across Russia.
+                                    </p>
+
+                                    <!-- CTA: Button -->
+                                    <a href="#" class="btn cta-primary-btn">
+                                        <span class="rqst-icon">
+                                            <img src="assets/img/arrow-icon-header.svg" alt="">
+                                        </span>
+                                        DOWNLOAD BROCHURE
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- END SECTION: CTA -->
+
+
+        <div id="site-footer"></div>
+
+    </main>
+
+
+
+    <script src="assets/js/includes.js?v=5"></script>
+    <script src="assets/js/jquery-4.0.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.min.js?v=3"></script>
+    <!-- GSAP + ScrollTrigger + Parallax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SCRIPT: Blog Tab Switching (reusable — called after static load AND after CMS dynamic render) -->
+    <script>
+        function initBlogTabs() {
+            var tabsList = document.getElementById('blogTabs');
+            if (!tabsList) return;
+            // Use event delegation so it works whether tabs are static or CMS-rendered
+            var fresh = tabsList.cloneNode(true);
+            tabsList.parentNode.replaceChild(fresh, tabsList);
+            fresh.addEventListener('click', function (e) {
+                var btn = e.target.closest('.blog-tab-link');
+                if (!btn) return;
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                if (btn.classList.contains('active')) return;
+
+                var targetId = btn.getAttribute('data-bs-target');
+                var targetPane = document.querySelector(targetId);
+                if (!targetPane) return;
+
+                var activePane = document.querySelector('.blog-tab-pane.blog-tab-pane--active');
+                fresh.querySelectorAll('.blog-tab-link').forEach(function (b) {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+
+                if (activePane) {
+                    activePane.classList.add('blog-tab-pane--leaving');
+                    activePane.addEventListener('animationend', function onExit() {
+                        activePane.classList.remove('blog-tab-pane--active', 'blog-tab-pane--leaving');
+                        activePane.removeEventListener('animationend', onExit);
+                        targetPane.classList.add('blog-tab-pane--active', 'blog-tab-pane--entering');
+                        targetPane.addEventListener('animationend', function onEnter() {
+                            targetPane.classList.remove('blog-tab-pane--entering');
+                        }, { once: true });
+                    }, { once: true });
+                } else {
+                    targetPane.classList.add('blog-tab-pane--active', 'blog-tab-pane--entering');
+                    targetPane.addEventListener('animationend', function onEnter() {
+                        targetPane.classList.remove('blog-tab-pane--entering');
+                    }, { once: true });
+                }
+            });
+        }
+        // ── Sync mobile dropdown from current #blogTabs state ──
+        function syncMediaBlogDropdown() {
+            var tabsList = document.getElementById('blogTabs');
+            var listEl   = document.getElementById('mediaBlogDropdownList');
+            var labelEl  = document.getElementById('mediaBlogDropdownLabel');
+            if (!tabsList || !listEl || !labelEl) return;
+
+            var btns = tabsList.querySelectorAll('.blog-tab-link');
+            if (!btns.length) return;
+
+            listEl.innerHTML = '';
+            btns.forEach(function (btn, i) {
+                var li = document.createElement('li');
+                li.className = 'media-blog-dropdown-item' + (i === 0 ? ' active' : '');
+                li.setAttribute('data-bs-target', btn.getAttribute('data-bs-target'));
+                li.textContent = btn.textContent.trim();
+                li.addEventListener('click', function () {
+                    listEl.querySelectorAll('.media-blog-dropdown-item').forEach(function (it) { it.classList.remove('active'); });
+                    this.classList.add('active');
+                    labelEl.textContent = this.textContent.trim();
+                    document.getElementById('mediaBlogDropdown').classList.remove('open');
+                    var target = this.getAttribute('data-bs-target');
+                    var tabBtn = document.querySelector('#blogTabs .blog-tab-link[data-bs-target="' + target + '"]');
+                    if (tabBtn) tabBtn.click();
+                });
+                listEl.appendChild(li);
+            });
+
+            var activeBtn = tabsList.querySelector('.blog-tab-link.active');
+            if (activeBtn) labelEl.textContent = activeBtn.textContent.trim();
+        }
+
+        // ── Patch initBlogTabs to rebuild dropdown after each tab reinit ──
+        var _origInitBlogTabs = initBlogTabs;
+        initBlogTabs = function () {
+            _origInitBlogTabs();
+            syncMediaBlogDropdown();
+        };
+
+        // ── Dropdown open/close toggle ──
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdown = document.getElementById('mediaBlogDropdown');
+            var trigger  = document.getElementById('mediaBlogDropdownTrigger');
+            if (!dropdown || !trigger) return;
+
+            trigger.addEventListener('click', function () {
+                dropdown.classList.toggle('open');
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+            });
+
+            syncMediaBlogDropdown();
+        });
+
+        // Init for static HTML fallback
+        document.addEventListener('DOMContentLoaded', initBlogTabs);
+    </script>
+    <!-- END SCRIPT: Blog Tab Switching -->
+
+    <!-- SCRIPT: Gallery Swiper — initialised by CMS loader below (falls back to static slides) -->
+    <script>
+        var gallerySwiper = new Swiper('.gallerySwiper', {
+            centeredSlides: true,
+            slidesPerView: 1.2,
+            spaceBetween: 24,
+            loop: false,
+            speed: 600,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            breakpoints: {
+                576: { slidesPerView: 1.4, spaceBetween: 30 },
+                768: { slidesPerView: 1.8, spaceBetween: 30 },
+                992: { slidesPerView: 2.2, spaceBetween: 30 },
+                1200: { slidesPerView: 2.6, spaceBetween: 10 },
+            },
+        });
+    </script>
+    <script src="assets/js/section-indicator.js"></script>
+    <script src="assets/js/cms.js"></script>
+
+    <!-- SCRIPT: Blogger inline video player (YouTube + direct mp4) -->
+    <script>
+        function getBloggerVideoHtml(url) {
+            if (!url) return '';
+            // Detect YouTube: watch?v=ID | youtu.be/ID | embed/ID | shorts/ID
+            var ytMatch = url.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([a-zA-Z0-9_-]{11})/);
+            if (ytMatch) {
+                return '<iframe class="blogger-video-iframe"' +
+                    ' src="https://www.youtube.com/embed/' + ytMatch[1] + '?autoplay=1&rel=0"' +
+                    ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+                    ' allowfullscreen></iframe>';
+            }
+            // Direct video file (mp4, webm, etc.)
+            return '<video class="blogger-video-player" autoplay controls playsinline>' +
+                '<source src="' + url + '">' +
+                '</video>';
+        }
+
+        function toggleBloggerVideo(btn) {
+            var url = btn.getAttribute('data-video');
+            if (!url) return;
+
+            var wrap = btn.closest('.blogger-card__img-wrap');
+            var videoWrap = wrap.querySelector('.blogger-card__video-wrap');
+            var icon = btn.querySelector('i');
+            var playing = wrap.classList.contains('video-active');
+
+            if (playing) {
+                // ── PAUSE / STOP ──
+                videoWrap.innerHTML = '';
+                wrap.classList.remove('video-active');
+                icon.className = 'ri-play-fill';
+                icon.style.marginLeft = '3px';
+                btn.setAttribute('aria-label', 'Play video');
+            } else {
+                // ── PLAY ──
+                videoWrap.innerHTML = getBloggerVideoHtml(url);
+                wrap.classList.add('video-active');
+                icon.className = 'ri-pause-fill';
+                icon.style.marginLeft = '0';
+                btn.setAttribute('aria-label', 'Pause video');
+
+                // Auto-reset when a direct video ends
+                var video = videoWrap.querySelector('video');
+                if (video) {
+                    video.addEventListener('ended', function () { toggleBloggerVideo(btn); });
+                }
+            }
+        }
+
+        var _bloggerMobileSwiper = null;
+        function syncBloggerMobileSwiper() {
+            var cards = document.querySelectorAll('.blogger-review-padding .blogger-card');
+            var wrapper = document.getElementById('bloggerMobileWrapper');
+            if (!wrapper || !cards.length) return;
+
+            if (_bloggerMobileSwiper) { _bloggerMobileSwiper.destroy(true, true); _bloggerMobileSwiper = null; }
+
+            wrapper.innerHTML = Array.from(cards).map(function (card) {
+                return '<div class="swiper-slide">' + card.outerHTML + '</div>';
+            }).join('');
+
+            _bloggerMobileSwiper = new Swiper('.blogger-mobile-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: cards.length > 1,
+                autoplay: { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true },
+                pagination: { el: '.blogger-mobile-dots', clickable: true }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.innerWidth < 768) syncBloggerMobileSwiper();
+        });
+    </script>
+
+    <!-- ══════════════════════════════════════════════════════
+         CMS Dynamic Loaders — media.html (Payload CMS)
+         Sections: blog-section, gallery-section,
+                   testimonial-section, blogger-section
+    ══════════════════════════════════════════════════════ -->
+    <script>
+        (async function () {
+            function escHtml(s) {
+                return s ? String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') : '';
+            }
+
+            var BLOG_IMGS = ['assets/img/blog-1.webp', 'assets/img/blog-2.webp', 'assets/img/blog-3.webp', 'assets/img/blog-4.webp', 'assets/img/blog-5.webp', 'assets/img/blog-6.webp', 'assets/img/blog-7.webp', 'assets/img/blog-8.webp'];
+            var GAL_IMGS = ['assets/img/gallery-img.webp', 'assets/img/gallery-2.webp', 'assets/img/gallery-3.webp'];
+            var BLOG_IMGS_PROMO = ['https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700'];
+
+            function blogCardHtml(post, index, category) {
+                var fallback = (category === 'packages') ? BLOG_IMGS[index % BLOG_IMGS.length] : BLOG_IMGS_PROMO[0];
+                var img = satguruCMS.imgUrl(post.image) || fallback;
+                return '<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">' +
+                    '<div class="blog-card">' +
+                    '<div class="blog-card__img-wrap">' +
+                    '<img src="' + escHtml(img) + '" alt="' + escHtml(post.title) + '" class="blog-card__img" loading="lazy">' +
+                    '</div>' +
+                    '<div class="blog-card__body">' +
+                    '<h5 class="blog-card__title">' + escHtml(post.title) + '</h5>' +
+                    '<p class="blog-card__excerpt">' + escHtml(post.excerpt || '') + '</p>' +
+                    '</div></div></div>';
+            }
+
+            // ── 1. Blog Section — dynamic categories + posts from CMS ──
+            var catsData = await satguruCMS.getBlogCategories();
+
+            if (catsData && catsData.docs && catsData.docs.length) {
+                var cats = catsData.docs;
+
+                // Fetch posts for all active categories in parallel
+                var allPosts = await Promise.all(
+                    cats.map(function (cat) { return satguruCMS.getBlogPosts(cat.slug); })
+                );
+
+                // Build tabs nav
+                var tabsList = document.getElementById('blogTabs');
+                if (tabsList) {
+                    tabsList.innerHTML = cats.map(function (cat, i) {
+                        return '<li class="nav-item" role="presentation">' +
+                            '<button class="nav-link blog-tab-link' + (i === 0 ? ' active' : '') + '"' +
+                            ' data-bs-target="#blog-cat-' + escHtml(cat.slug) + '"' +
+                            ' type="button" role="tab"' +
+                            ' aria-selected="' + (i === 0 ? 'true' : 'false') + '">' +
+                            escHtml(cat.name.toUpperCase()) +
+                            '</button></li>';
+                    }).join('');
+                }
+
+                // Build tab panes
+                var tabContent = document.getElementById('blogTabsContent');
+                if (tabContent) {
+                    tabContent.innerHTML = cats.map(function (cat, i) {
+                        var posts = allPosts[i] && allPosts[i].docs ? allPosts[i].docs : [];
+                        var cards = posts.length
+                            ? posts.map(function (post, j) { return blogCardHtml(post, j, cat.slug); }).join('')
+                            : '<p class="text-center w-100 py-4" style="color:#888">No posts yet in this category.</p>';
+                        return '<div class="blog-tab-pane' + (i === 0 ? ' blog-tab-pane--active' : '') + '"' +
+                            ' id="blog-cat-' + escHtml(cat.slug) + '" role="tabpanel">' +
+                            '<div class="row blog-padding justify-content-center">' + cards + '</div>' +
+                            '</div>';
+                    }).join('');
+                }
+
+                // Re-init tab switching for the newly created buttons
+                initBlogTabs();
+            }
+
+            // ── 2. Gallery Section — destroy → replace slides → reinit ──
+            var galleryData = await satguruCMS.getGalleryItems();
+            if (galleryData && galleryData.docs && galleryData.docs.length) {
+                var galEl = document.querySelector('.gallerySwiper');
+                if (galEl) {
+                    // Destroy existing instance so Swiper recalculates loop clones
+                    if (typeof gallerySwiper !== 'undefined' && gallerySwiper.destroy) {
+                        gallerySwiper.destroy(true, true);
+                    }
+                    var galWrapper = galEl.querySelector('.swiper-wrapper');
+                    if (galWrapper) {
+                        galWrapper.innerHTML = galleryData.docs.map(function (item, i) {
+                            var img = satguruCMS.imgUrl(item.image) || GAL_IMGS[i % GAL_IMGS.length];
+                            return '<div class="swiper-slide">' +
+                                '<div class="gallery-card">' +
+                                '<div class="gallery-card__img-wrap">' +
+                                '<img src="' + escHtml(img) + '" alt="' + escHtml(item.title) + '" class="gallery-card__img" loading="lazy">' +
+                                '</div>' +
+                                '<div class="gallery-card__body">' +
+                                '<h5 class="gallery-card__title">' + escHtml(item.title) + '</h5>' +
+                                '<p class="gallery-card__desc">' + escHtml(item.description || '') + '</p>' +
+                                '</div></div></div>';
+                        }).join('');
+                    }
+                    // Loop needs enough slides to fill 2× the max slidesPerView
+                    var galCount = galleryData.docs.length;
+                    new Swiper('.gallerySwiper', {
+                        centeredSlides: true,
+                        slidesPerView: 1.2,
+                        spaceBetween: 24,
+                        loop: galCount >= 6,
+                        speed: 600,
+                        autoplay: { delay: 3000, disableOnInteraction: false },
+                        breakpoints: {
+                            576: { slidesPerView: Math.min(1.4, galCount), spaceBetween: 30 },
+                            768: { slidesPerView: Math.min(1.8, galCount), spaceBetween: 30 },
+                            992: { slidesPerView: Math.min(2.2, galCount), spaceBetween: 30 },
+                            1200: { slidesPerView: Math.min(2.6, galCount), spaceBetween: 10 },
+                        },
+                    });
+                }
+            }
+
+            // ── 3. Testimonial Section — destroy → replace slides → reinit ──
+            var testiData = await satguruCMS.getTestimonials();
+            if (testiData && testiData.docs && testiData.docs.length) {
+                var testiEl = document.querySelector('.testimonialSwiper');
+                if (testiEl) {
+                    // Destroy existing instance
+                    if (testiEl.swiper) testiEl.swiper.destroy(true, true);
+                    var testiWrapper = testiEl.querySelector('.swiper-wrapper');
+                    if (testiWrapper) {
+                        testiWrapper.innerHTML = testiData.docs.map(function (t) {
+                            var img = satguruCMS.imgUrl(t.image) || 'assets/img/testimonial-img.webp';
+                            return '<div class="swiper-slide">' +
+                                '<div class="testimonial-card">' +
+                                '<div class="testimonial-avatars">' +
+                                '<img src="' + escHtml(img) + '" alt="' + escHtml(t.author) + '" loading="lazy">' +
+                                '</div>' +
+                                '<h3>' + escHtml(t.quote) + '</h3>' +
+                                '<p class="author">' + escHtml(t.author) + (t.role ? ', ' + escHtml(t.role) : '') + '</p>' +
+                                '</div></div>';
+                        }).join('');
+                    }
+                    // Loop needs 2× max slidesPerView slides (3 per view → need 6+)
+                    var testiCount = testiData.docs.length;
+                    new Swiper('.testimonialSwiper', {
+                        slidesPerView: Math.min(3, testiCount),
+                        centeredSlides: true,
+                        spaceBetween: 40,
+                        loop: testiCount >= 6,
+                        speed: 800,
+                        autoplay: { delay: 4000, disableOnInteraction: false },
+                        breakpoints: {
+                            0: { slidesPerView: 1 },
+                            768: { slidesPerView: Math.min(2, testiCount) },
+                            1200: { slidesPerView: Math.min(3, testiCount) },
+                        },
+                    });
+                }
+            }
+
+            // ── 4. Blogger Section — update blogger cards ──
+            var bloggerData = await satguruCMS.getBloggers();
+            if (bloggerData && bloggerData.docs && bloggerData.docs.length) {
+                var bloggerGrid = document.querySelector('.blogger-review-padding');
+                if (bloggerGrid) {
+                    bloggerGrid.innerHTML = bloggerData.docs.map(function (b, i) {
+                        var BLOGGER_IMGS = ['assets/img/blogger-review.webp', 'assets/img/blogger-review1.webp', 'assets/img/blogger-review2.webp', 'assets/img/blogger-review3.webp'];
+                        var img = satguruCMS.imgUrl(b.image) || BLOGGER_IMGS[i % BLOGGER_IMGS.length];
+                        var playBtn = b.videoUrl
+                            ? '<button class="blogger-play-btn" aria-label="Play video"' +
+                            ' data-video="' + escHtml(b.videoUrl) + '"' +
+                            ' onclick="toggleBloggerVideo(this)">' +
+                            '<i class="ri-play-fill" style="margin-left:3px"></i></button>'
+                            : '';
+                        return '<div class="col-lg-3 col-md-6 col-sm-6 col-12">' +
+                            '<div class="blogger-card">' +
+                            '<div class="blogger-card__img-wrap">' +
+                            '<img src="' + escHtml(img) + '" alt="' + escHtml(b.name) + '" class="blogger-card__img" loading="lazy">' +
+                            '<div class="blogger-card__video-wrap"></div>' +
+                            playBtn +
+                            '</div>' +
+                            '<div class="blogger-card__body">' +
+                            '<h5 class="blogger-card__name">' + escHtml(b.name) + '</h5>' +
+                            '<p class="blogger-card__role">' + escHtml(b.role || '') + '</p>' +
+                            '</div></div></div>';
+                    }).join('');
+                    if (window.innerWidth < 768) syncBloggerMobileSwiper();
+                }
+            }
+
+            // ── 5. Media Page Banner (inner-banner-section) ──
+            var banner = await satguruCMS.getMediaBanner('media');
+            if (banner && banner.docs && banner.docs[0]) {
+                var bData = banner.docs[0];
+                var bannerSection = document.querySelector('.inner-banner-section.mediaBanner');
+                if (bannerSection) {
+                    if (bData.backgroundImage) {
+                        var layer = bannerSection.querySelector('.parallax-layer');
+                        if (layer) layer.style.backgroundImage = 'url(' + satguruCMS.imgUrl(bData.backgroundImage) + ')';
+                    }
+                    var titleEl = bannerSection.querySelector('.banner-title');
+                    if (titleEl && bData.title) titleEl.textContent = bData.title;
+                    var subEl = bannerSection.querySelector('.banner-subtitle');
+                    if (subEl && bData.subtitle) subEl.textContent = bData.subtitle;
+                    var descEl = bannerSection.querySelector('.banner-description');
+                    if (descEl && bData.description) descEl.textContent = bData.description;
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

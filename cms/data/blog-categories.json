@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Attractions",
+    "slug": "attractions",
+    "order": 4,
+    "active": true,
+    "id": "mr4olutxypu5it",
+    "createdAt": "2026-07-03T08:38:48.405Z",
+    "updatedAt": "2026-07-03T08:38:48.405Z"
+  },
+  {
+    "name": "Destination Information",
+    "slug": "destination",
+    "order": 3,
+    "active": true,
+    "id": "mr4oluuyslk76e",
+    "createdAt": "2026-07-03T08:38:48.442Z",
+    "updatedAt": "2026-07-03T08:38:48.442Z"
+  },
+  {
+    "name": "Promotion",
+    "slug": "promotion",
+    "order": 2,
+    "active": true,
+    "id": "mr4oluwdf2u3jo",
+    "createdAt": "2026-07-03T08:38:48.493Z",
+    "updatedAt": "2026-07-03T08:38:48.493Z"
+  },
+  {
+    "name": "About New Packages",
+    "slug": "packages",
+    "order": 1,
+    "active": true,
+    "id": "mr4oluwz24ldp2",
+    "createdAt": "2026-07-03T08:38:48.515Z",
+    "updatedAt": "2026-07-03T08:38:48.515Z"
+  }
+]

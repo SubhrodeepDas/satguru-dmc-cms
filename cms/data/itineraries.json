@@ -1,0 +1,1005 @@
+[
+  {
+    "title": "Sochi",
+    "slug": "sochi",
+    "image": "/uploads/mr4o2u3c-4lrnob.webp",
+    "duration": "4 Days / 3 Nights",
+    "price": "From $370",
+    "heroTitle": "Sochi",
+    "heroBadge": "4 Days Tour",
+    "featured": true,
+    "priceDouble": "$370",
+    "priceSingle": "$590",
+    "hotelNotes": "",
+    "description": "Explore Sochi — Olympic Park, city sights, Stalin's Dacha, and the stunning Black Sea coast.",
+    "order": 1,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in Sochi",
+        "description": "Morning arrival. Meet with our representative at the airport.\nIndividual transfer to the city by comfortable coach.\nHotel check in. Early check-in is subject to availability.",
+        "highlights": []
+      },
+      {
+        "day": 2,
+        "title": "Panoramic City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — Panoramic city tour which includes the most interesting sights of Sochi: the famous Olympic Park and Fisht Olympic Stadium, the Sea Port Embankment, Riviera Park, Stalin's Dacha, the Sochi Art Museum, the iconic Sochi Arboretum botanical gardens, and the breathtaking views of the Black Sea coast.\nDuring the tour you will have several stops to enjoy the views and take pictures.\n15:00 — Return to the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 3,
+        "title": "Free Day in Sochi",
+        "description": "Breakfast at the hotel.\nDay free for leisure. Enjoy the Black Sea beaches, explore the Krasnaya Polyana mountain resort, or take a stroll along the Sochi seafront promenade.",
+        "highlights": []
+      },
+      {
+        "day": 4,
+        "title": "Departure",
+        "description": "Breakfast at the hotel.\nCheck out and transfer to the airport. We bid you farewell and hope to welcome you back to the wonders of Russia soon.",
+        "highlights": []
+      }
+    ],
+    "gallery": [
+      {
+        "image": "/uploads/mr4o2u5o-jpumwi.webp",
+        "alt": "Sochi — Olympic Park"
+      },
+      {
+        "image": "/uploads/mr4o2u7h-7u44an.webp",
+        "alt": "Sochi — Black Sea"
+      },
+      {
+        "image": "/uploads/mr4o2u9c-ly85iz.webp",
+        "alt": "Sochi — Riviera Park"
+      },
+      {
+        "image": "/uploads/mr4o2ub2-lz7kz8.webp",
+        "alt": "Sochi — City View"
+      },
+      {
+        "image": "/uploads/mr4o2udc-dru191.webp",
+        "alt": "Sochi — Arboretum"
+      }
+    ],
+    "inclusions": [
+      {
+        "text": "3 nights stay in Sochi BB (Park Inn Radisson Sochi / Gorki Grand Hotel 4★ or similar)"
+      },
+      {
+        "text": "3 buffet breakfasts in the hotel"
+      },
+      {
+        "text": "Sochi city tour with guide (4 hours)"
+      },
+      {
+        "text": "Professional English speaking guide during the tours"
+      },
+      {
+        "text": "Comfortable transport with A/C during the tours"
+      },
+      {
+        "text": "Return airport & railway station transfer without guide (Russian speaking driver — English speaking guide available at $60 for 2 pax)"
+      },
+      {
+        "text": "Return PCR test with transfer"
+      }
+    ],
+    "id": "mr4o2uns0xg0jo",
+    "createdAt": "2026-07-03T08:24:01.720Z",
+    "updatedAt": "2026-07-03T08:24:01.720Z"
+  },
+  {
+    "title": "Moscow",
+    "slug": "moscow",
+    "image": "/uploads/mr4o2upx-slq5o2.webp",
+    "duration": "5 Days / 4 Nights",
+    "price": "From $280",
+    "heroTitle": "Moscow",
+    "heroBadge": "5 Days Tour",
+    "featured": true,
+    "priceDouble": "$280",
+    "priceSingle": "$423",
+    "hotelNotes": "Moscow: Cosmos / Maxima Slavia 3★ or similar",
+    "description": "",
+    "order": 2,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Moscow",
+        "description": "Morning arrival. Meet with our representative at the airport. Individual transfer to the city by comfortable coach. Hotel check in. Early check-in is due to availability.",
+        "highlights": []
+      },
+      {
+        "day": 2,
+        "title": "Moscow City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — Panoramic city tour which includes the most interesting historical sights of the city: the Red Square, the Kremlin (outside), GUM mall, Nikolskaya st., Alexander's garden, Zaryadie park, the Floating Bridge, Christ the Savior Cathedral, New Maiden Convent (outside), Victory Park, Sparrow hills observation platform where the amazing view of the city opens. During the tour you will have several stops to enjoy the views and take pictures.\nMetro tour. Walk along the Arbat street — so-called Russian Montmartre — one of the oldest streets of Moscow with more than 500 years history.\n15:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 3,
+        "title": "Free Day in Moscow",
+        "description": "Breakfast at the hotel.\nDay free for leisure.",
+        "highlights": []
+      },
+      {
+        "day": 4,
+        "title": "Free Day & PCR Test",
+        "description": "Breakfast at the hotel.\nDay free for leisure.\nTransfer to the clinic for PCR test. The exact time will be communicated in advance.",
+        "highlights": []
+      },
+      {
+        "day": 5,
+        "title": "Departure",
+        "description": "Breakfast at the hotel.\nCheck out and transfer to the airport.",
+        "highlights": []
+      }
+    ],
+    "gallery": [
+      {
+        "image": "/uploads/mr4o2urm-wmavcd.webp",
+        "alt": "Moscow — Red Square"
+      },
+      {
+        "image": "/uploads/mr4o2uth-vhyax5.webp",
+        "alt": "Moscow — City View"
+      },
+      {
+        "image": "/uploads/mr4o2uvw-weawsi.webp",
+        "alt": "Moscow — Red Square Night"
+      },
+      {
+        "image": "/uploads/mr4o2uxn-nge2le.webp",
+        "alt": "Moscow — GUM Mall"
+      },
+      {
+        "image": "/uploads/mr4o2uzi-0w2jj8.webp",
+        "alt": "Moscow — New Maiden Convent"
+      },
+      {
+        "image": "/uploads/mr4o2v1d-xzv8fb.webp",
+        "alt": "Moscow — Victory Park"
+      },
+      {
+        "image": "/uploads/mr4o2v36-3x6o5q.webp",
+        "alt": "Moscow — Victory Park 2"
+      }
+    ],
+    "inclusions": [
+      {
+        "text": "4 nights stay in Moscow BB (Cosmos / Maxima Slavia 3★ or similar)"
+      },
+      {
+        "text": "4 buffet breakfasts in the hotel"
+      },
+      {
+        "text": "Moscow city tour with metro ride (5 hours)"
+      },
+      {
+        "text": "Professional English speaking guide during the tours"
+      },
+      {
+        "text": "Comfortable transport with A/C during the tours"
+      },
+      {
+        "text": "Return airport & railway station transfer without guide (Russian speaking driver — English speaking guide available at $60 for 2 pax)"
+      },
+      {
+        "text": "Return PCR test with transfer"
+      }
+    ],
+    "id": "mr4o2vcasxt3ve",
+    "createdAt": "2026-07-03T08:24:02.602Z",
+    "updatedAt": "2026-07-03T08:24:02.602Z"
+  },
+  {
+    "title": "Moscow & Sochi",
+    "slug": "moscow-sochi",
+    "image": "/uploads/mr4o2ve4-mu1qwh.webp",
+    "duration": "8 Days / 7 Nights",
+    "price": "From $665",
+    "heroTitle": "Moscow & Sochi",
+    "heroBadge": "8 Days Tour",
+    "featured": true,
+    "priceDouble": "$665",
+    "priceSingle": "$320",
+    "hotelNotes": "Moscow: Holiday Inn / Novotel 4★ or similar | Sochi: Park Inn Radisson / Gorki Grand Hotel 4★ or similar",
+    "description": "",
+    "order": 3,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Moscow",
+        "description": "Morning arrival. Meet with our representative at the airport. Individual transfer to the city by comfortable coach. Hotel check in. Early check-in is due to availability.",
+        "highlights": []
+      },
+      {
+        "day": 2,
+        "title": "Moscow City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — Panoramic city tour which includes the most interesting historical sights of the city: the Red Square, the Kremlin (outside), GUM mall, Nikolskaya st., Alexander's garden, Zaryadie park, Christ the Savior Cathedral, New Maiden Convent (outside), Victory Park, Sparrow hills observation platform where the amazing view of the city opens. During the tour you will have several stops to enjoy the views and take pictures.\nMetro tour. Walk along the Arbat street — so-called Russian Montmartre.\n15:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 3,
+        "title": "Free Day in Moscow",
+        "description": "Breakfast at the hotel.\nDay free for leisure.",
+        "highlights": []
+      },
+      {
+        "day": 4,
+        "title": "Free Day in Moscow",
+        "description": "Breakfast at the hotel.\nDay free for leisure.",
+        "highlights": []
+      },
+      {
+        "day": 5,
+        "title": "Moscow – Sochi",
+        "description": "Breakfast at the hotel. Check out and transfer to the airport.\nFlight to Sochi. Meet with our representative at Sochi airport. Transfer to the hotel. Check in at the hotel. Time for rest.",
+        "highlights": []
+      },
+      {
+        "day": 6,
+        "title": "Sochi City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — City orientation tour. Our professional guide will tell you about the history of the resort town. Walk along the seaside promenade, stroll through the alleys of the famous Riviera park and visit the healing springs Matsesta. The program will continue in Arboretum park where you will learn about the flora and fauna of the region. Visit the Olympic Park — venue of the Olympic Games 2014.\n14:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 7,
+        "title": "Free Day in Sochi",
+        "description": "Breakfast at the hotel.\nDay free for leisure.",
+        "highlights": []
+      },
+      {
+        "day": 8,
+        "title": "Departure",
+        "description": "Breakfast at the hotel.\nCheck out and transfer to the airport.",
+        "highlights": []
+      }
+    ],
+    "gallery": [
+      {
+        "image": "/uploads/mr4o2vg4-zg1mqw.webp",
+        "alt": "Sochi — Nature"
+      },
+      {
+        "image": "/uploads/mr4o2vhu-8rt7i7.webp",
+        "alt": "Sochi — Autodrom"
+      },
+      {
+        "image": "/uploads/mr4o2vl8-tql3x4.webp",
+        "alt": "Sochi — Agurski Waterfalls"
+      },
+      {
+        "image": "/uploads/mr4o2vn2-27co61.webp",
+        "alt": "Sochi — Waterfalls 2"
+      },
+      {
+        "image": "/uploads/mr4o2vp0-zd804w.webp",
+        "alt": "Moscow — Zaryadie Park"
+      },
+      {
+        "image": "/uploads/mr4o2vqy-iqydhm.webp",
+        "alt": "Moscow — VDNH"
+      },
+      {
+        "image": "/uploads/mr4o2vt3-kshgv8.webp",
+        "alt": "Moscow — Red Square"
+      },
+      {
+        "image": "/uploads/mr4o2vvc-mbwslt.webp",
+        "alt": "Moscow — Kremlin"
+      }
+    ],
+    "inclusions": [
+      {
+        "text": "4 nights stay in Moscow BB (Holiday Inn Moscow / Novotel Moscow 4★ or similar)"
+      },
+      {
+        "text": "3 nights stay in Sochi BB (Park Inn Radisson Sochi / Gorki Grand Hotel 4★ or similar)"
+      },
+      {
+        "text": "7 buffet breakfasts in the hotel"
+      },
+      {
+        "text": "Moscow city tour with metro ride (5 hours)"
+      },
+      {
+        "text": "Sochi city tour with guide (4 hours)"
+      },
+      {
+        "text": "Professional English speaking guide during the tours"
+      },
+      {
+        "text": "Comfortable transport with A/C during the tours"
+      },
+      {
+        "text": "Return airport & railway station transfer without guide (Russian speaking driver — English speaking guide available at $60 for 2 pax)"
+      },
+      {
+        "text": "Return PCR test with transfer"
+      }
+    ],
+    "id": "mr4o2w460pl3em",
+    "createdAt": "2026-07-03T08:24:03.606Z",
+    "updatedAt": "2026-07-03T08:24:03.606Z"
+  },
+  {
+    "title": "Golden Ring Tour",
+    "slug": "golden-ring-tour",
+    "image": "/uploads/mr4o2w70-2l9a0w.webp",
+    "duration": "13 Days / 12 Nights",
+    "price": "From $2,680",
+    "heroTitle": "Golden Ring Tour",
+    "heroBadge": "13 Days Tour",
+    "featured": true,
+    "priceDouble": "$2,680",
+    "priceSingle": "",
+    "hotelNotes": "Moscow: Holiday Inn / Novotel 4★ | Saint Petersburg: Park Inn Radisson / Dostoevsky 4★ | Suzdal: Azimut 3★ | Rostov: Marins 3★ | Kostroma: Azimut 3★ | Yaroslavl: IBIS or similar",
+    "description": "",
+    "order": 4,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Moscow",
+        "description": "Arrival at the airport. Meet with our representative. Transfer to the city. Hotel check in. Early check-in is due to availability. Dinner. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 2,
+        "title": "Moscow City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — Panoramic city tour: Red Square, GUM mall, Nikolskaya st., Alexander's garden, Zaryadie park, the Floating Bridge, Christ the Savior Cathedral, New Maiden Convent (outside), Victory Park, Sparrow Hills observation platform. During the tour you will have several stops to enjoy the views and take pictures.\nMetro tour. Walk along the Arbat street — so-called Russian Montmartre — one of the oldest streets of Moscow with more than 500 years history.\nTour to the territory of the Kremlin.\n15:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 3,
+        "title": "Moscow – Sergiev Posad",
+        "description": "Breakfast at the hotel.\n09:00 — Departure to Sergiev Posad. Excursion to the Saint Trinity Sergius Lavra. You will be impressed by the medieval Russian architecture: gorgeous cathedrals with gold covered domes and the tallest in Russia 88-metre-high beautiful belfry.\nLunch in the local café.\n15:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 4,
+        "title": "Moscow – Suzdal",
+        "description": "Breakfast at the hotel.\n08:00 — Departure to Vladimir (200 km north-east from Moscow). City tour: the Golden Gates (1158), Cathedral of St. Demetrius (outside), and the Assumption Cathedral (outside) — a magnificent 12th-century Orthodox temple.\nLunch in the local café. Departure to Suzdal. Check in at the hotel. Dinner in the local café. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 5,
+        "title": "Suzdal – Kostroma",
+        "description": "Breakfast at the hotel. Visit the Kremlin of Suzdal (outside) — formed since the 12th century under the influence of each prince of Suzdal.\nLunch in the local café. Departure to Kostroma. On the way, sightseeing tour in Ivanovo — the textile capital of Russia and city of brides.\nArrival in Kostroma. Check in at the hotel. Dinner in the local café. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 6,
+        "title": "Kostroma – Yaroslavl",
+        "description": "Breakfast at the hotel. City tour in Kostroma.\nDeparture to Yaroslavl.\nLunch in the local café. City tour in Yaroslavl: the arrow of the Volga and Kotorosl rivers, the Assumption Cathedral, the Volzhskaya embankment, and the unique architectural ensemble of the central part of Yaroslavl — included in the UNESCO World Heritage List.\nDinner in the local café. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 7,
+        "title": "Yaroslavl – Rostov",
+        "description": "Breakfast at the hotel. Departure to Rostov the Great — mentioned in chronicles of 862 AD. City tour: serene Lake Nero, strict and elegant monasteries, the stately Kremlin.\nLunch in the local café. Check in at the hotel in Yaroslavl. Dinner in the local café. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 8,
+        "title": "Rostov – Moscow",
+        "description": "Breakfast at the hotel. Departure to Moscow. Check in at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 9,
+        "title": "Moscow – Saint Petersburg",
+        "description": "Breakfast at the hotel. Transfer to the train station. Sapsan train to Saint Petersburg. Meet with your driver at the station. Check in at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 10,
+        "title": "Saint Petersburg",
+        "description": "Breakfast at the hotel.\n10:00 — Tour to the Hermitage. Panoramic city tour: Nevsky Prospect, the Admiralty, the Winter Palace, St. Isaac's Cathedral, Church of Resurrection on Spilled Blood, Fine Arts Square, Smolny Cathedral, Bronze Horseman, Mars Field, Kazan Cathedral. Several stops to enjoy the views and take pictures.\n15:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 11,
+        "title": "Saint Petersburg",
+        "description": "Breakfast in the hotel.\n10:00 — Tour to the Peterhof Palace and Park. Neva river boat ride. Transfer to the clinic for PCR test. The exact time will be given in advance.\n14:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 12,
+        "title": "Saint Petersburg",
+        "description": "Breakfast at the hotel.\nDay free for leisure.",
+        "highlights": []
+      },
+      {
+        "day": 13,
+        "title": "Departure",
+        "description": "Breakfast at the hotel.\nCheck out and transfer to the airport.",
+        "highlights": []
+      }
+    ],
+    "gallery": [
+      {
+        "image": "/uploads/mr4o2w8n-i6eco4.webp",
+        "alt": "Yaroslavl"
+      },
+      {
+        "image": "/uploads/mr4o2war-3hnq6s.webp",
+        "alt": "Suzdal"
+      },
+      {
+        "image": "/uploads/mr4o2wci-un1hli.webp",
+        "alt": "Sergiev Posad"
+      },
+      {
+        "image": "/uploads/mr4o2web-s8544q.webp",
+        "alt": "Saint Petersburg — Church on Spilled Blood"
+      },
+      {
+        "image": "/uploads/mr4o2wg8-wj0e3b.webp",
+        "alt": "Rostov the Great"
+      },
+      {
+        "image": "/uploads/mr4o2wi3-1sjodk.webp",
+        "alt": "Saint Petersburg — Hermitage"
+      },
+      {
+        "image": "/uploads/mr4o2wk0-yvuliz.webp",
+        "alt": "Moscow — Nikolskaya Street"
+      },
+      {
+        "image": "/uploads/mr4o2wlt-v6kbps.webp",
+        "alt": "Kostroma"
+      }
+    ],
+    "inclusions": [
+      {
+        "text": "3 nights in Moscow BB (Holiday Inn / Novotel 4★ or similar)"
+      },
+      {
+        "text": "4 nights in Saint Petersburg BB (Park Inn Radisson / Hotel Dostoevsky 4★ or similar)"
+      },
+      {
+        "text": "1 night in Suzdal BB (Azimut 3★ or similar)"
+      },
+      {
+        "text": "1 night in Rostov BB (Marins 3★ or similar)"
+      },
+      {
+        "text": "1 night in Kostroma BB (Azimut 3★ or similar)"
+      },
+      {
+        "text": "1 night in Yaroslavl BB (IBIS or similar)"
+      },
+      {
+        "text": "12 buffet breakfasts"
+      },
+      {
+        "text": "4 lunches & dinners during Golden Ring"
+      },
+      {
+        "text": "Moscow city tour with metro ride (5 hours)"
+      },
+      {
+        "text": "Saint Petersburg city tour (5 hours)"
+      },
+      {
+        "text": "Entry tickets: Metro, Kremlin, Hermitage, Peterhof, Neva boat ride"
+      },
+      {
+        "text": "Professional English speaking guide during all tours"
+      },
+      {
+        "text": "Comfortable transport with A/C during the tours"
+      },
+      {
+        "text": "Sapsan train ticket Moscow – Saint Petersburg, economy class"
+      },
+      {
+        "text": "Airport / station transfers"
+      },
+      {
+        "text": "Return PCR test with transfer"
+      }
+    ],
+    "id": "mr4o2wua694qw0",
+    "createdAt": "2026-07-03T08:24:04.546Z",
+    "updatedAt": "2026-07-03T08:24:04.546Z"
+  },
+  {
+    "title": "Moscow & Saint Petersburg",
+    "slug": "moscow-spb",
+    "image": "/uploads/mr4o2wx9-vy09ev.webp",
+    "duration": "7 Days / 6 Nights",
+    "price": "From $587",
+    "heroTitle": "Moscow & Saint Petersburg",
+    "heroBadge": "7 Days Tour",
+    "featured": true,
+    "priceDouble": "$587",
+    "priceSingle": "+$210",
+    "hotelNotes": "Moscow: Holiday Inn Moscow / Novotel Moscow 4★ or similar | Saint Petersburg: Park Inn Radisson Pribaltiyskaya / Hotel Dostoevsky 4★ or similar",
+    "description": "",
+    "order": 5,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Moscow",
+        "description": "Arrival at the airport. Meet with our representative. Transfer to the city. Hotel check in. Early check-in is due to availability. Dinner. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 2,
+        "title": "Moscow City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — Panoramic city tour: Red Square, the Kremlin (outside), GUM mall, Nikolskaya st., Alexander's garden, Zaryadie park, the Floating Bridge, Christ the Savior Cathedral, New Maiden Convent (outside), Victory Park, Sparrow hills observation platform. During the tour you will have several stops to enjoy the views and take pictures.\nMetro tour. Walk along the Arbat street — so-called Russian Montmartre — one of the oldest streets of Moscow with more than 500 years history.\n15:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 3,
+        "title": "Free Day in Moscow",
+        "description": "Breakfast in the hotel.\nDay free for leisure.",
+        "highlights": []
+      },
+      {
+        "day": 4,
+        "title": "Moscow – Saint Petersburg",
+        "description": "Breakfast at the hotel. Check out and transfer to the railway station.\nSapsan or Nevski Express fast train to Saint Petersburg. Meet with your guide at the station. Check in at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 5,
+        "title": "Saint Petersburg City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — Panoramic city tour: Nevsky Prospect, the Admiralty, the Winter Palace, St. Isaac's Cathedral, Church of Resurrection on Spilled Blood, Fine Arts Square, Smolny Cathedral, Bronze Horseman, Mars Field, Kazan Cathedral. During the excursion you have short stops to enjoy the views and take pictures.\nTransfer to the clinic for PCR test. The exact time will be given in advance.\n15:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 6,
+        "title": "Free Day in Saint Petersburg",
+        "description": "Breakfast in the hotel.\nDay free for leisure.",
+        "highlights": []
+      },
+      {
+        "day": 7,
+        "title": "Departure",
+        "description": "Breakfast at the hotel.\nCheck out and transfer to the airport.",
+        "highlights": []
+      }
+    ],
+    "gallery": [
+      {
+        "image": "/uploads/mr4o2wz2-loi7jy.webp",
+        "alt": "Saint Petersburg"
+      },
+      {
+        "image": "/uploads/mr4o2x0s-fphhsy.webp",
+        "alt": "Saint Petersburg — Canal"
+      },
+      {
+        "image": "/uploads/mr4o2x2l-6aco18.webp",
+        "alt": "Saint Petersburg — Bridge"
+      },
+      {
+        "image": "/uploads/mr4o2x4d-c290kn.webp",
+        "alt": "Moscow"
+      },
+      {
+        "image": "/uploads/mr4o2x63-eqayz4.webp",
+        "alt": "Moscow — Ukraine Hotel"
+      },
+      {
+        "image": "/uploads/mr4o2x7w-fl9vp2.webp",
+        "alt": "Moscow — Nikolskaya Street"
+      },
+      {
+        "image": "",
+        "alt": "Moscow — Metro"
+      },
+      {
+        "image": "",
+        "alt": "Moscow — Kremlin"
+      },
+      {
+        "image": "/uploads/mr4o2xew-ulz9yx.webp",
+        "alt": "Moscow — City"
+      }
+    ],
+    "inclusions": [
+      {
+        "text": "3 nights stay in Moscow BB (Holiday Inn Moscow / Novotel Moscow 4★ or similar)"
+      },
+      {
+        "text": "3 nights stay in Petersburg BB (Park Inn Radisson Pribaltiyskaya / Hotel Dostoevsky 4★ or similar)"
+      },
+      {
+        "text": "6 buffet breakfasts in the hotel"
+      },
+      {
+        "text": "Moscow city tour with metro ride (5 hours)"
+      },
+      {
+        "text": "Saint Petersburg city tour (5 hours)"
+      },
+      {
+        "text": "Professional English speaking guide during the tours"
+      },
+      {
+        "text": "Comfortable transport with A/C during the tours"
+      },
+      {
+        "text": "Sapsan train ticket Moscow – Saint Petersburg, economy class"
+      },
+      {
+        "text": "Return airport & railway station transfer without guide (Russian speaking driver — English speaking guide available at $60 for 2 pax)"
+      },
+      {
+        "text": "Return PCR test with transfer"
+      }
+    ],
+    "id": "mr4o2xo6y06lh8",
+    "createdAt": "2026-07-03T08:24:05.622Z",
+    "updatedAt": "2026-07-03T08:24:05.622Z"
+  },
+  {
+    "title": "Moscow, St. Petersburg & Sochi",
+    "slug": "moscow-spb-sochi",
+    "image": "/uploads/mr4o2xpv-mynj92.webp",
+    "duration": "11 Days / 10 Nights",
+    "price": "From $977",
+    "heroTitle": "Moscow, St. Petersburg & Sochi",
+    "heroBadge": "11 Days Tour",
+    "featured": true,
+    "priceDouble": "$977",
+    "priceSingle": "+$415",
+    "hotelNotes": "Moscow: Holiday Inn Moscow / Novotel Moscow 4★ or similar | Saint Petersburg: Park Inn Radisson Pribaltiyskaya / Hotel Dostoevsky 4★ or similar | Sochi: Park Inn Radisson Sochi / Gorki Grand Hotel 4★ or similar",
+    "description": "",
+    "order": 6,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Moscow",
+        "description": "Morning arrival. Meet with our representative at the airport. Individual transfer to the city by comfortable coach. Hotel check in. Early check-in is due to availability.",
+        "highlights": []
+      },
+      {
+        "day": 2,
+        "title": "Moscow City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — Meet with your guide at the lobby and depart for the tour. Panoramic city tour: Red Square, the Kremlin (outside), GUM mall, Nikolskaya st., Alexander's garden, Zaryadie park, Christ the Savior Cathedral, New Maiden Convent (outside), Victory Park, Sparrow hills observation platform. During the tour you will have several stops to enjoy the views and take pictures.\nMetro tour. Walk along the Arbat street — so-called Russian Montmartre.\n15:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 3,
+        "title": "Free Day in Moscow",
+        "description": "Breakfast at the hotel.\nDay free for leisure.",
+        "highlights": []
+      },
+      {
+        "day": 4,
+        "title": "Moscow – Sochi",
+        "description": "Breakfast at the hotel. Check out and transfer to the airport.\nFlight to Sochi. Meet with our representative at Sochi airport. Transfer to the hotel. Check in at the hotel. Time for rest.",
+        "highlights": []
+      },
+      {
+        "day": 5,
+        "title": "Sochi City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — City orientation tour. Our professional guide will tell you about the history of the resort town. Walk along the seaside promenade, stroll through the alleys of the famous Riviera park and visit the healing springs Matsesta. The program will continue in Arboretum park where you will learn about the flora and fauna of the region. Visit the Olympic Park — venue of the Olympic Games 2014.\n14:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 6,
+        "title": "Free Day in Sochi",
+        "description": "Breakfast at the hotel.\nDay free for leisure.",
+        "highlights": []
+      },
+      {
+        "day": 7,
+        "title": "Sochi – Saint Petersburg",
+        "description": "Breakfast at the hotel. Check out and transfer to the airport.\nFlight to Saint Petersburg. Meet with our representative at the airport. Transfer to the hotel. Check in at the hotel. Time for rest.",
+        "highlights": []
+      },
+      {
+        "day": 8,
+        "title": "Saint Petersburg City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — Panoramic city tour: Nevsky Prospect, the Winter Palace, the Admiralty, St. Isaac's Cathedral, Fine Arts Square, Church of Resurrection on Spilled Blood, Smolny Cathedral, Bronze Horseman, Mars Field (all outside). During the tour you will have several stops to enjoy the views and take pictures.\n14:00 — Arrival at the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 9,
+        "title": "Free Day & PCR Test",
+        "description": "Breakfast at the hotel.\nDay free for leisure.\nTransfer to the clinic for PCR test. The exact time will be communicated in advance.",
+        "highlights": []
+      },
+      {
+        "day": 10,
+        "title": "Saint Petersburg – Moscow",
+        "description": "Breakfast at the hotel. Check out and transfer to the train station.\nFast train to Moscow. Meet with our representative. Transfer to the hotel. Check in at the hotel. Time for rest.",
+        "highlights": []
+      },
+      {
+        "day": 11,
+        "title": "Departure",
+        "description": "Breakfast at the hotel.\nCheck out and transfer to the airport.",
+        "highlights": []
+      }
+    ],
+    "gallery": [
+      {
+        "image": "/uploads/mr4o2xrk-qd08km.webp",
+        "alt": "Tour Gallery 1"
+      },
+      {
+        "image": "/uploads/mr4o2xth-4rfsub.webp",
+        "alt": "Tour Gallery 2"
+      },
+      {
+        "image": "/uploads/mr4o2xv9-df7p2y.webp",
+        "alt": "Tour Gallery 3"
+      },
+      {
+        "image": "/uploads/mr4o2xwy-fxgbug.webp",
+        "alt": "Tour Gallery 4"
+      },
+      {
+        "image": "/uploads/mr4o2xyn-d5bpyo.webp",
+        "alt": "Tour Gallery 5"
+      },
+      {
+        "image": "/uploads/mr4o2y08-546dtn.webp",
+        "alt": "Tour Gallery 6"
+      },
+      {
+        "image": "/uploads/mr4o2y22-etpo5m.webp",
+        "alt": "Tour Gallery 7"
+      },
+      {
+        "image": "/uploads/mr4o2y3w-uhscs8.webp",
+        "alt": "Tour Gallery 8"
+      },
+      {
+        "image": "/uploads/mr4o2y5p-bcufsp.webp",
+        "alt": "Tour Gallery 9"
+      },
+      {
+        "image": "/uploads/mr4o2y7q-hnv0nc.webp",
+        "alt": "Tour Gallery 10"
+      },
+      {
+        "image": "/uploads/mr4o2y9f-bujpla.webp",
+        "alt": "Tour Gallery 11"
+      },
+      {
+        "image": "/uploads/mr4o2ybd-kj06yv.webp",
+        "alt": "Tour Gallery 12"
+      }
+    ],
+    "inclusions": [
+      {
+        "text": "4 nights stay in Moscow BB (Holiday Inn Moscow / Novotel Moscow 4★ or similar)"
+      },
+      {
+        "text": "3 nights stay in Petersburg BB (Park Inn Radisson Pribaltiyskaya / Hotel Dostoevsky 4★ or similar)"
+      },
+      {
+        "text": "3 nights stay in Sochi BB (Park Inn Radisson Sochi / Gorki Grand Hotel 4★ or similar)"
+      },
+      {
+        "text": "10 buffet breakfasts in the hotel"
+      },
+      {
+        "text": "Moscow city tour with metro ride (5 hours)"
+      },
+      {
+        "text": "Saint Petersburg city tour (5 hours)"
+      },
+      {
+        "text": "Sochi city tour with guide (4 hours)"
+      },
+      {
+        "text": "Professional English speaking guide during the tours"
+      },
+      {
+        "text": "Comfortable transport with A/C during the tours"
+      },
+      {
+        "text": "Sapsan train ticket Saint Petersburg – Moscow, economy class"
+      },
+      {
+        "text": "Return airport & railway station transfer without guide (Russian speaking driver — English speaking guide available at $60 for 2 pax)"
+      },
+      {
+        "text": "Return PCR test with transfer"
+      }
+    ],
+    "id": "mr4o2yjtg5durp",
+    "createdAt": "2026-07-03T08:24:06.761Z",
+    "updatedAt": "2026-07-03T08:24:06.761Z"
+  },
+  {
+    "title": "Murmansk",
+    "slug": "murmansk",
+    "image": "/uploads/mr4o2ylm-c69hri.webp",
+    "duration": "4 Days / 3 Nights",
+    "price": "From $344",
+    "heroTitle": "Murmansk",
+    "heroBadge": "4 Days Tour",
+    "featured": true,
+    "priceDouble": "$344",
+    "priceSingle": "",
+    "hotelNotes": "3★ Hotel",
+    "description": "Experience the Arctic city of Murmansk — city tour, the Lenin icebreaker museum, and an unforgettable Aurora Borealis hunting tour.",
+    "order": 7,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival & Murmansk City Tour",
+        "description": "Arrival at the airport. Meet with our representative.\nHotel check in. Early check-in is subject to availability.\nTransfer to the city — Murmansk city tour exploring the monuments, Alyosha Memorial (the famous soldier statue overlooking the bay), the Seamen's Memorial, and the Arctic city's unique landscapes.\nOvernight at the hotel.",
+        "highlights": [
+          {
+            "icon": "ri-ship-line",
+            "boldText": "Visit the \"Lenin\" Icebreaker Museum",
+            "text": "— board the world's first nuclear-powered icebreaker, now a museum ship docked in Murmansk harbour."
+          },
+          {
+            "icon": "ri-flashlight-line",
+            "boldText": "Aurora Hunting Tour",
+            "text": "— head out into the Arctic wilderness in search of the spectacular Northern Lights dancing across the polar sky."
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Free Day in Murmansk",
+        "description": "Breakfast at the hotel.\nDay free for leisure. Explore the Murmansk Regional Museum, visit the local markets for Arctic delicacies, or take a stroll along the Kola Bay waterfront.",
+        "highlights": []
+      },
+      {
+        "day": 3,
+        "title": "Free Day in Murmansk",
+        "description": "Breakfast at the hotel.\nDay free for leisure. Optional activities include husky sledding, snowmobile tours (seasonal), or a visit to the Sami Village to learn about the indigenous peoples of the Kola Peninsula.",
+        "highlights": []
+      },
+      {
+        "day": 4,
+        "title": "Departure",
+        "description": "Breakfast at the hotel.\nCheck out and transfer to the airport. We bid you farewell and hope to welcome you back to the wonders of Arctic Russia soon.",
+        "highlights": []
+      }
+    ],
+    "gallery": [
+      {
+        "image": "",
+        "alt": "Murmansk — Arctic Landscape"
+      },
+      {
+        "image": "",
+        "alt": "Murmansk — Northern Lights"
+      },
+      {
+        "image": "",
+        "alt": "Murmansk — Lenin Icebreaker"
+      },
+      {
+        "image": "",
+        "alt": "Murmansk — Kola Bay"
+      },
+      {
+        "image": "",
+        "alt": "Murmansk — City View"
+      }
+    ],
+    "inclusions": [
+      {
+        "text": "3 nights stay in Murmansk 3★ hotel BB"
+      },
+      {
+        "text": "City tour of Murmansk with guide"
+      },
+      {
+        "text": "Icebreaker \"Lenin\" museum entry ticket"
+      },
+      {
+        "text": "Aurora Borealis hunting tour"
+      },
+      {
+        "text": "Transportation and guide as per the itinerary"
+      },
+      {
+        "text": "Transfers airport – hotel – airport"
+      }
+    ],
+    "id": "mr4o2ym05n8bof",
+    "createdAt": "2026-07-03T08:24:06.840Z",
+    "updatedAt": "2026-07-03T08:24:06.840Z"
+  },
+  {
+    "title": "Saint Petersburg",
+    "slug": "saint-petersburg",
+    "image": "/uploads/mr4o2ynw-zwvtcg.webp",
+    "duration": "5 Days / 4 Nights",
+    "price": "From $323",
+    "heroTitle": "Saint Petersburg",
+    "heroBadge": "5 Days Tour",
+    "featured": true,
+    "priceDouble": "$323",
+    "priceSingle": "$435",
+    "hotelNotes": "",
+    "description": "Discover the cultural capital of Russia — Nevsky Prospect, the Winter Palace, St. Isaac's Cathedral, and the stunning metro tour.",
+    "order": 8,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in St. Petersburg",
+        "description": "Morning arrival. Meet with our representative at the airport.\nIndividual transfer to the city by comfortable coach.\nHotel check in. Early check-in is subject to availability.",
+        "highlights": []
+      },
+      {
+        "day": 2,
+        "title": "Panoramic City Tour",
+        "description": "Breakfast at the hotel.\n10:00 — Panoramic city tour which includes the most interesting historical sights of the city: Nevsky Prospect, the Admiralty, the Winter Palace, St. Isaac's Cathedral, Church of the Resurrection on Spilled Blood, Fine Arts Square, Smolny Cathedral, the Bronze Horseman, Mars Field, and a visit to Kazan Cathedral.\nMetro tour — explore the stunning architecture of St. Petersburg's famous metro stations. During the excursion you will have short stops to enjoy the views and take pictures.\nTransfer to the clinic for PCR test. The exact time will be communicated in advance.\n15:00 — Return to the hotel. Overnight at the hotel.",
+        "highlights": []
+      },
+      {
+        "day": 3,
+        "title": "Free Day in St. Petersburg",
+        "description": "Breakfast at the hotel.\nDay free for leisure. Explore the world-famous Hermitage Museum, stroll along the Neva River embankment, or visit the Peterhof Palace and its spectacular fountains.",
+        "highlights": []
+      },
+      {
+        "day": 4,
+        "title": "Leisure & PCR Test",
+        "description": "Breakfast at the hotel.\nDay free for leisure.\nTransfer to the clinic for PCR test. The exact time will be communicated in advance.",
+        "highlights": []
+      },
+      {
+        "day": 5,
+        "title": "Departure",
+        "description": "Breakfast at the hotel.\nCheck out and transfer to the airport. We bid you farewell and hope to welcome you back to the wonders of Russia soon.",
+        "highlights": []
+      }
+    ],
+    "gallery": [
+      {
+        "image": "",
+        "alt": "Saint Petersburg — Winter Palace"
+      },
+      {
+        "image": "",
+        "alt": "Saint Petersburg — Nevsky Prospect"
+      },
+      {
+        "image": "",
+        "alt": "Saint Petersburg — St. Isaac's Cathedral"
+      },
+      {
+        "image": "",
+        "alt": "Saint Petersburg — Church on Spilled Blood"
+      },
+      {
+        "image": "",
+        "alt": "Saint Petersburg — Neva River"
+      }
+    ],
+    "inclusions": [
+      {
+        "text": "4 nights stay in Petersburg BB (Park Inn Radisson Pribaltiyskaya / Hotel Dostoevsky 4★ or similar)"
+      },
+      {
+        "text": "4 buffet breakfasts in the hotel"
+      },
+      {
+        "text": "St. Petersburg city tour with metro ride (5 hours)"
+      },
+      {
+        "text": "Professional English speaking guide during the tours"
+      },
+      {
+        "text": "Comfortable transport with A/C during the tours"
+      },
+      {
+        "text": "Return airport & railway station transfer without guide (Russian speaking driver — English speaking guide available at $60 for 2 pax)"
+      },
+      {
+        "text": "Return PCR test with transfer"
+      }
+    ],
+    "id": "mr4o2yo8ci4kh4",
+    "createdAt": "2026-07-03T08:24:06.920Z",
+    "updatedAt": "2026-07-03T08:24:06.920Z"
+  }
+]
