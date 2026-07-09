@@ -3,3 +3,18 @@ node_modules
 convert_to_webp.py
 satguru-agent.md
 DEPLOY.md
+
+# Local-only / heavy — not part of the deployed site
+# (leading slash = root only, so assets/img/uploads/ is NOT excluded)
+/uploads
+.next
+**/.next
+.git
+.claude
+.vscode
+*.log
+
+# Secrets — never deploy
+.env
+.env.local
+**/.env.local
