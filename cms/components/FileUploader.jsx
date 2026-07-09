@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { upload } from '@vercel/blob/client';
 
 // Same upload flow as ImageUploader, but for non-image files (e.g. a PDF
 // brochure) — shows a file name/link instead of an image preview.
@@ -15,14 +16,37 @@ export default function FileUploader({ value, onChange, accept }) {
     setUploading(true);
     setError('');
     try {
-      const formData = new FormData();
-      formData.append('file', file);
-      const res = await fetch('/api/upload', { method: 'POST', body: formData });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Upload failed');
+      let url;
+      try {
+        // Preferred: upload straight from the browser to Vercel Blob. This
+        // bypasses Vercel's ~4.5 MB serverless request-body limit, so large
+        // PDF brochures upload fine (the plain /api/upload route 413s on those).
+        const blob = await upload(file.name, file, {
+          access: 'public',
+          handleUploadUrl: '/api/upload/client',
+          contentType: file.type || undefined,
+        });
+        url = blob.url;
+      } catch (clientErr) {
+        // Fallback (e.g. local dev with no Blob token): stream through the
+        // server route, which writes to public/uploads.
+        const formData = new FormData();
+        formData.append('file', file);
+        const res = await fetch('/api/upload', { method: 'POST', body: formData });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          throw new Error(
+            data.error ||
+              (res.status === 413
+                ? 'File is too large to upload.'
+                : 'Upload failed (' + res.status + ').')
+          );
+        }
+        url = data.url;
+      }
       // Keep the original file name alongside the (randomized, collision-safe)
       // storage URL, so the admin sees the name they actually uploaded.
-      onChange({ url: data.url, name: file.name });
+      onChange({ url, name: file.name });
     } catch (err) {
       setError(err.message || 'Upload failed');
     } finally {
