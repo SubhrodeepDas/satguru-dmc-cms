@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { readAll, create, parseWhere, applyWhere, applySort, qualifyUrls, dequalifyUrls } from '../../../lib/db';
+import { readAll, create, parseWhere, applyWhere, applySort, qualifyUrls, dequalifyUrls, checkFeatureLimit } from '../../../lib/db';
 import { getCollection } from '../../../lib/collections';
 import { requireAuth } from '../../../lib/auth';
 
@@ -42,6 +42,8 @@ export async function POST(req, { params }) {
     return NextResponse.json({ error: 'Unknown collection' }, { status: 404 });
   }
   const body = dequalifyUrls(await req.json(), new URL(req.url).origin);
+  const limitErr = await checkFeatureLimit(collection, body, null);
+  if (limitErr) return NextResponse.json({ error: limitErr }, { status: 400 });
   const doc = await create(collection, body);
   return NextResponse.json(doc, { status: 201 });
 }

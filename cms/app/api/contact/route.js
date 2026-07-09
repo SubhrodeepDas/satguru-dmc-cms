@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { isEmailVerified } from '../../../lib/db';
 
 function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -17,10 +18,16 @@ export async function POST(req) {
   const phone = String(body.phone || '').trim();
   const email = sanitizeHeaderValue(body.email || '');
   const location = String(body.location || '').trim();
-  const message = String(body.message || '').trim();
+  const organization = sanitizeHeaderValue(body.organization || '');
+  // Contact form uses `message`; the MICE/experience form uses `description`.
+  const message = String(body.message || body.description || '').trim();
 
-  if (!firstName || !lastName || !phone || !email || !location) {
+  if (!firstName || !lastName || !phone || !email) {
     return NextResponse.json({ success: false, error: 'Please fill in all required fields.' }, { status: 400 });
+  }
+
+  if (!(await isEmailVerified(email))) {
+    return NextResponse.json({ success: false, error: 'Please verify your email address before submitting.' }, { status: 400 });
   }
 
   if (!process.env.SMTP_USER || !process.env.SMTP_PASS || !process.env.CONTACT_TO) {
@@ -39,6 +46,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: `"Satguru DMC Russia" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_TO,
+      cc: process.env.CONTACT_CC || undefined,
       replyTo: `"${firstName} ${lastName}" <${email}>`,
       subject: `Satguru DMC | Contact Enquiry from ${firstName} ${lastName}`,
       html: `
@@ -48,7 +56,8 @@ export async function POST(req) {
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Last Name</td><td style="padding:8px;border:1px solid #ddd;">${esc(lastName)}</td></tr>
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Phone</td><td style="padding:8px;border:1px solid #ddd;">${esc(phone)}</td></tr>
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Email</td><td style="padding:8px;border:1px solid #ddd;">${esc(email)}</td></tr>
-          <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Location</td><td style="padding:8px;border:1px solid #ddd;">${esc(location)}</td></tr>
+          ${organization ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Organization</td><td style="padding:8px;border:1px solid #ddd;">${esc(organization)}</td></tr>` : ''}
+          ${location ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Location</td><td style="padding:8px;border:1px solid #ddd;">${esc(location)}</td></tr>` : ''}
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Message</td><td style="padding:8px;border:1px solid #ddd;">${esc(message).replace(/\n/g, '<br>')}</td></tr>
         </table>
       `,
@@ -59,4 +68,16 @@ export async function POST(req) {
     console.error('[contact] send failed:', err.message);
     return NextResponse.json({ success: false, error: 'Message could not be sent. Please try again.' }, { status: 502 });
   }
+}
+
+// Preflight for cross-origin POST from the static site (different origin/port).
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
 }

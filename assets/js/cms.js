@@ -154,6 +154,11 @@
       return this.get('/api/media-banners?where[page][equals]=' + encodeURIComponent(page) + '&limit=1');
     },
 
+    /* ── Brochure ─────────────────────────────────────── */
+    getBrochure: async function () {
+      return this.get('/api/brochures?where[active][equals]=true&sort=-updatedAt&limit=1');
+    },
+
     /* ── Image URL helper ────────────────────────────── */
     imgUrl: function (imgField) {
       if (!imgField) return '';

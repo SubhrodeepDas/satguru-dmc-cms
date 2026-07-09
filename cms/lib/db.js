@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { Redis } from '@upstash/redis';
+import { getCollection } from './collections';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Dual-backend storage.
@@ -65,6 +66,36 @@ async function writeStore(slug, docs) {
 
 export async function readAll(slug) {
   return readStore(slug);
+}
+
+// Shared by /api/contact and /api/quote — both require the visitor to have
+// confirmed a 6-digit code sent to the email they typed (see
+// /api/verify-email/*) before their submission is accepted.
+export async function isEmailVerified(email) {
+  const normalized = String(email || '').trim().toLowerCase();
+  if (!normalized) return false;
+  const verified = await readStore('email-verifications');
+  const entry = verified.find((v) => v.email === normalized);
+  return Boolean(entry && entry.expiresAt > Date.now());
+}
+
+// Enforce a per-collection cap on how many docs may have a boolean flag set to
+// true (e.g. only 5 Explore Listings can be featured on the home page). Only
+// blocks when the change *turns the flag on* and the cap is already reached, so
+// editing an already-featured item never gets stuck. Returns an error string to
+// show the user, or null when the change is allowed.
+export async function checkFeatureLimit(slug, body, existingDoc) {
+  const limit = getCollection(slug)?.featureLimit;
+  if (!limit) return null;
+  const { field, max, label } = limit;
+  const turningOn = body[field] === true && !(existingDoc && existingDoc[field] === true);
+  if (!turningOn) return null;
+  const docs = await readStore(slug);
+  const count = docs.filter((d) => d[field] === true).length;
+  if (count >= max) {
+    return `Only ${max} can be shown on the ${label || 'home page'} at once. Turn one off first, then try again.`;
+  }
+  return null;
 }
 
 export async function writeAll(slug, docs) {

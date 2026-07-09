@@ -11,9 +11,10 @@
                         inspiration.</p>
                 </div>
                 <div class="col-lg-7">
-                    <form class="nl-inline-form" onsubmit="return false;">
-                        <input type="email" placeholder="Enter your email address">
-                        <button type="submit">
+                    <form class="nl-inline-form" id="newsletterForm" onsubmit="return false;">
+                        <input type="email" id="newsletterEmailInput" placeholder="Enter your email address" required>
+                        <input type="text" id="newsletterCodeInput" placeholder="Enter the 6-digit code" maxlength="6" inputmode="numeric" pattern="[0-9]{6}" style="display:none;">
+                        <button type="submit" id="newsletterSubmitBtn">
                             <span class="bannerPackage"><img src="/assets/img/org-arrow.svg" alt=""
                                     loading="lazy"></span>
                             Subscribe Now
@@ -52,13 +53,14 @@
                         <div class="col-md-6 col-6">
                             <div class="footer-nav">
                                 <h5>Explore</h5>
-                                <ul>
-                                    <li><a href="/explore.html">Destinations</a></li>
-                                    <li><a href="/popular-itineraries.html">Moscow</a></li>
-                                    <li><a href="/saint-petersburg.html">Saint Petersburg</a></li>
-                                    <li><a href="/sochi.html">Sochi</a></li>
-                                    <li><a href="/murmansk.html">Murmansk</a></li>
+                                <ul class="footer-explore-list">
+                                    <li><a href="/explore/moscow-excursions">Moscow</a></li>
+                                    <li><a href="/explore/saint-petersburg-excursions">Saint Petersburg</a></li>
+                                    <li><a href="/explore/golden-ring">Golden Ring</a></li>
+                                    <li><a href="/explore/murmansk-excursions">Murmansk</a></li>
+                                    <li><a href="/explore/kazan-excursions">Kazan</a></li>
                                 </ul>
+                                <a href="/explore.html" class="footer-readmore-link">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -110,12 +112,16 @@
                                     <span>inbound.russia@satgurutravel.com</span>
                                 </div>
                                 <div class="footer-socials">
+                                    <!-- Other socials temporarily hidden — re-enable by uncommenting below
                                     <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
                                     <a href="#" aria-label="Telegram"><i class="ri-telegram-line"></i></a>
                                     <a href="#" aria-label="Facebook"><i class="ri-facebook-line"></i></a>
-                                    <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                                    -->
+                                    <a href="https://www.instagram.com/satgurutravelrussia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                                    <!--
                                     <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-line"></i></a>
                                     <a href="#" aria-label="Max Messenger" class="footer-social-max"><img src="/assets/img/max-messenger.svg" alt="Max Messenger" width="18" height="18"></a>
+                                    -->
                                 </div>
                             </div>
                         </div>

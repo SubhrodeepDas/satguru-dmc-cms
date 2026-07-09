@@ -1476,7 +1476,7 @@
                                     </p>
 
                                     <!-- CTA: Button -->
-                                    <a href="#" class="btn cta-primary-btn">
+                                    <a href="#" id="downloadBrochureBtn" class="btn cta-primary-btn">
                                         <span class="rqst-icon">
                                             <img src="assets/img/arrow-icon-header.svg" alt="">
                                         </span>
@@ -1913,6 +1913,53 @@
                     if (subEl && bData.subtitle) subEl.textContent = bData.subtitle;
                     var descEl = bannerSection.querySelector('.banner-description');
                     if (descEl && bData.description) descEl.textContent = bData.description;
+                }
+            }
+
+            // ── 6. Download Brochure button ──
+            var brochureBtn = document.getElementById('downloadBrochureBtn');
+            if (brochureBtn) {
+                var brochureData = await satguruCMS.getBrochure();
+                var brochure = brochureData && brochureData.docs && brochureData.docs[0];
+                if (brochure && brochure.file) {
+                    var brochureUrl = satguruCMS.imgUrl(brochure.file);
+                    // Use the real uploaded file's name (falls back to the URL's
+                    // own file name for older/legacy plain-string data).
+                    var brochureName = (brochure.file && typeof brochure.file === 'object' && brochure.file.name)
+                        || decodeURIComponent(brochureUrl.split('/').pop())
+                        || 'brochure.pdf';
+                    brochureBtn.href = brochureUrl;
+                    brochureBtn.setAttribute('download', brochureName);
+                    brochureBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        downloadFile(brochureUrl, brochureName, brochureBtn);
+                    });
+                } else {
+                    brochureBtn.style.display = 'none';
+                }
+            }
+
+            // Forces a real file download (not an inline PDF view) even when the
+            // file lives on a different origin than this page (the CMS is always
+            // a separate deployment from the frontend — see DEPLOY.md) by pulling
+            // the bytes into a same-origin blob: URL before triggering <a download>.
+            async function downloadFile(url, filename, triggerEl) {
+                try {
+                    var res = await fetch(url);
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    var blob = await res.blob();
+                    var blobUrl = URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = blobUrl;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    setTimeout(function () { URL.revokeObjectURL(blobUrl); }, 4000);
+                } catch (e) {
+                    // Fetch/CORS failed for some reason — fall back to a plain
+                    // navigation so the user can still reach the file.
+                    window.open(url, '_blank');
                 }
             }
         })();

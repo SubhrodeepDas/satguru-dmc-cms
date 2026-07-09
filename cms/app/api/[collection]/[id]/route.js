@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getById, update, remove, qualifyUrls, dequalifyUrls } from '../../../../lib/db';
+import { getById, update, remove, qualifyUrls, dequalifyUrls, checkFeatureLimit } from '../../../../lib/db';
 import { getCollection } from '../../../../lib/collections';
 import { requireAuth } from '../../../../lib/auth';
 
@@ -22,6 +22,9 @@ export async function PATCH(req, { params }) {
     return NextResponse.json({ error: 'Unknown collection' }, { status: 404 });
   }
   const body = dequalifyUrls(await req.json(), new URL(req.url).origin);
+  const existing = await getById(collection, id);
+  const limitErr = await checkFeatureLimit(collection, body, existing);
+  if (limitErr) return NextResponse.json({ error: limitErr }, { status: 400 });
   const doc = await update(collection, id, body);
   if (!doc) return NextResponse.json({ error: 'Not found' }, { status: 404 });
   return NextResponse.json(doc);

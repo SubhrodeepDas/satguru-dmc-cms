@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import ImageUploader from './ImageUploader';
+import FileUploader from './FileUploader';
 import { defaultForFields, slugify } from '../lib/defaults';
 
 // Renders a single field's input based on its schema type. Recurses into itself
@@ -63,6 +64,8 @@ export default function FieldEditor({ field, value, onChange, allValues }) {
       );
     case 'image':
       return <ImageUploader value={value} onChange={onChange} />;
+    case 'file':
+      return <FileUploader value={value} onChange={onChange} accept={field.accept} />;
     case 'array':
       return (
         <ArrayField field={field} value={Array.isArray(value) ? value : []} onChange={onChange} />

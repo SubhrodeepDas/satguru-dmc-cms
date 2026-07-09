@@ -863,24 +863,20 @@
     ],
     "gallery": [
       {
-        "image": "",
+        "image": "/uploads/mr5cqh7a-8rzwpa.webp",
         "alt": "Murmansk — Arctic Landscape"
       },
       {
-        "image": "",
+        "image": "/uploads/mr5cqk6r-ergrmv.webp",
         "alt": "Murmansk — Northern Lights"
       },
       {
-        "image": "",
+        "image": "/uploads/mr5cqm3o-uj74n3.webp",
         "alt": "Murmansk — Lenin Icebreaker"
       },
       {
-        "image": "",
+        "image": "/uploads/mr5cqo3k-g480a3.webp",
         "alt": "Murmansk — Kola Bay"
-      },
-      {
-        "image": "",
-        "alt": "Murmansk — City View"
       }
     ],
     "inclusions": [
@@ -905,7 +901,7 @@
     ],
     "id": "mr4o2ym05n8bof",
     "createdAt": "2026-07-03T08:24:06.840Z",
-    "updatedAt": "2026-07-03T08:24:06.840Z"
+    "updatedAt": "2026-07-03T19:54:36.274Z"
   },
   {
     "title": "Saint Petersburg",
@@ -955,23 +951,23 @@
     ],
     "gallery": [
       {
-        "image": "",
+        "image": "/uploads/mr5ctj4y-e2rd74.webp",
         "alt": "Saint Petersburg — Winter Palace"
       },
       {
-        "image": "",
+        "image": "/uploads/mr5ctmzk-5slrn6.webp",
         "alt": "Saint Petersburg — Nevsky Prospect"
       },
       {
-        "image": "",
+        "image": "/uploads/mr5ctp3a-0mkrgi.webp",
         "alt": "Saint Petersburg — St. Isaac's Cathedral"
       },
       {
-        "image": "",
+        "image": "/uploads/mr5cttc6-78iru2.webp",
         "alt": "Saint Petersburg — Church on Spilled Blood"
       },
       {
-        "image": "",
+        "image": "/uploads/mr5ctx3h-zk83at.webp",
         "alt": "Saint Petersburg — Neva River"
       }
     ],
@@ -1000,6 +996,6 @@
     ],
     "id": "mr4o2yo8ci4kh4",
     "createdAt": "2026-07-03T08:24:06.920Z",
-    "updatedAt": "2026-07-03T08:24:06.920Z"
+    "updatedAt": "2026-07-03T20:02:08.778Z"
   }
 ]

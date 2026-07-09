@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <title>Contact Us | Satguru DMC Russia</title>
     <meta name="description"
@@ -74,8 +74,8 @@
         }
 
         .network-section .city-card {
-            padding-top: 36px !important;
-            padding-bottom: 36px !important;
+            padding-top: 24px !important;
+            padding-bottom: 24px !important;
         }
 
         .network-section .city-card .phone {
@@ -202,7 +202,8 @@
                                                     <i class="ri-map-pin-2-fill location-pin-icon"></i>
                                                     <p class="detail-value detail-small"><span
                                                             style="font-weight: 700; margin-bottom: 10px; display: block;">Yekaterinburg:</span>
-                                                        Ulitsa Belinskogo, off. 108, Ekaterinburg, Sverdlovsk Oblast, 620063, Russia
+                                                        Ulitsa Belinskogo, off. 108, Ekaterinburg, Sverdlovsk Oblast,
+                                                        620063, Russia
                                                     </p>
                                                 </div>
                                             </div>
@@ -217,8 +218,12 @@
                                                 <p class="detail-label">Phone:</p>
                                                 <div class="location-entry">
                                                     <div>
-                                                        <p class="detail-value" style="margin-bottom: 5px;"> <i class="ri-phone-fill location-pin-icon"></i> +7 495 259 25 33</p>
-                                                        <p class="detail-value">  <i class="ri-phone-fill location-pin-icon"></i> +7 985 540 01 44</p>
+                                                        <p class="detail-value" style="margin-bottom: 5px;"> <i
+                                                                class="ri-phone-fill location-pin-icon"></i> +7 495 259
+                                                            25 33</p>
+                                                        <p class="detail-value"> <i
+                                                                class="ri-phone-fill location-pin-icon"></i> +7 985 540
+                                                            01 44</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -261,7 +266,20 @@
                                             </div>
                                             <!-- End Row: Name -->
 
-                                            <!-- ---- Row: Phone + Email ---- -->
+                                            <!-- ---- Row: Email ---- -->
+                                            <div class="row g-3 mt-1">
+                                                <div class="col-12">
+                                                    <label class="field-label" for="email">Email<span
+                                                            class="req">*</span></label>
+                                                    <div class="email-verify-wrap" data-email-verify>
+                                                        <input type="email" id="email" name="email" class="field-input"
+                                                            placeholder="Email*" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Row: Email -->
+
+                                            <!-- ---- Row: Phone + Location ---- -->
                                             <div class="row g-3 mt-1">
                                                 <div class="col-sm-6 col-12">
                                                     <label class="field-label" for="phone">Phone<span
@@ -270,23 +288,13 @@
                                                         placeholder="Phone*" required />
                                                 </div>
                                                 <div class="col-sm-6 col-12">
-                                                    <label class="field-label" for="email">Email<span
-                                                            class="req">*</span></label>
-                                                    <input type="email" id="email" name="email" class="field-input"
-                                                        placeholder="Email*" required />
-                                                </div>
-                                            </div>
-                                            <!-- End Row: Phone + Email -->
-
-                                            <!-- ---- Row: Location ---- -->
-                                            <div class="row g-3 mt-1">
-                                                <div class="col-12">
                                                     <label class="field-label" for="location">Location<span
                                                             class="req">*</span></label>
                                                     <input type="text" id="location" name="location" class="field-input"
                                                         placeholder="Location*" required />
                                                 </div>
                                             </div>
+                                            <!-- End Row: Phone + Location -->
                                             <!-- End Row: Location -->
 
 
@@ -296,7 +304,8 @@
                                                     <label class="field-label" for="message">How Can We Help
                                                         You..</label>
                                                     <textarea id="message" name="message"
-                                                        class="field-input field-textarea" placeholder="How Can We Help You.."></textarea>
+                                                        class="field-input field-textarea"
+                                                        placeholder="How Can We Help You.."></textarea>
                                                 </div>
                                             </div>
                                             <!-- End Row: Textarea -->
@@ -373,9 +382,9 @@
                     <div class="col-lg-12 text-center">
 
                         <!-- Heading -->
-                        <div class="section-heading">
+                        <div class="section-heading text-center">
                             <h2>Our <span>Presence</span></h2>
-                            <p>
+                            <p style="max-width: 700px; margin: 0 auto; font-size: 18px; line-height: 30px;">
                                 Our pan-Russia network enables us to maintain the highest standards of service delivery
                                 as well as scout for innovative products.
                             </p>
@@ -397,14 +406,15 @@
 
                         <div class="network-cards">
 
-                            <!-- ROW 1 -->
+                            <!-- ROW 1 — 3 cards (with GET DIRECTION) -->
                             <div class="row location-padding justify-content-center">
 
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                     <div class="city-card">
                                         <h4>Moscow</h4>
                                         <span class="phone">+7 (985) 540-01-44</span>
-                                        <a href="#" class="btn quote-btn">
+                                        <a href="https://yandex.com/maps/213/moscow/?ll=37.615500%2C55.727200&pt=37.6155%2C55.7272&z=16"
+                                            target="_blank" rel="noopener noreferrer" class="btn quote-btn">
                                             <span class="rqst-icon">
                                                 <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
                                             </span>
@@ -413,50 +423,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                    <div class="city-card">
-                                        <h4>St. Petersburg</h4>
-                                        <span class="phone">+7 (916) 462-19-56</span>
-                                        <a href="#" class="btn quote-btn">
-                                            <span class="rqst-icon">
-                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
-                                            </span>
-                                            GET DIRECTION
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                    <div class="city-card">
-                                        <h4>Ekaterinburg</h4>
-                                        <span class="phone">+7 (985) 540-01-56</span>
-                                        <a href="#" class="btn quote-btn">
-                                            <span class="rqst-icon">
-                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
-                                            </span>
-                                            GET DIRECTION
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                                    <div class="city-card">
-                                        <h4>Kazan</h4>
-                                        <span class="phone">+7 (985) 151-91-64</span>
-                                        <a href="#" class="btn quote-btn">
-                                            <span class="rqst-icon">
-                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
-                                            </span>
-                                            GET DIRECTION
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                     <div class="city-card">
                                         <h4>Novosibirsk</h4>
                                         <span class="phone">+7 (985) 530-11-92</span>
-                                        <a href="#" class="btn quote-btn">
+                                        <a href="https://yandex.com/maps/65/novosibirsk/?ll=82.934600%2C54.988500&pt=82.9346%2C54.9885&z=16"
+                                            target="_blank" rel="noopener noreferrer" class="btn quote-btn">
                                             <span class="rqst-icon">
                                                 <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
                                             </span>
@@ -465,11 +437,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                     <div class="city-card">
-                                        <h4>Khabarovsk</h4>
-                                        <span class="phone">+7 (915) 157-96-02</span>
-                                        <a href="#" class="btn quote-btn">
+                                        <h4>Ekaterinburg</h4>
+                                        <span class="phone">+7 (985) 540-01-56</span>
+                                        <a href="https://yandex.com/maps/54/yekaterinburg/?ll=60.612200%2C56.851900&pt=60.6122%2C56.8519&z=16"
+                                            target="_blank" rel="noopener noreferrer" class="btn quote-btn">
                                             <span class="rqst-icon">
                                                 <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
                                             </span>
@@ -478,29 +451,49 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                            </div>
+
+                            <!-- ROW 2 — 5 cards (no GET DIRECTION) -->
+                            <div
+                                class="row location-padding justify-content-center row-cols-1 row-cols-md-3 row-cols-lg-5 mt-0">
+
+                                <div class="col">
                                     <div class="city-card">
-                                        <h4>Vladivostok</h4>
-                                        <span class="phone">+7 (915) 157-96-02</span>
-                                        <a href="#" class="btn quote-btn">
-                                            <span class="rqst-icon">
-                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
-                                            </span>
-                                            GET DIRECTION
-                                        </a>
+                                        <h4 style="font-size: 20px;">St. Petersburg</h4>
+                                        <span class="phone" style="margin-bottom: 0!important;">+7 (916)
+                                            462-19-56</span>
                                     </div>
                                 </div>
 
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                <div class="col">
                                     <div class="city-card">
-                                        <h4>Rostov-on-Don</h4>
-                                        <span class="phone">+7 (916) 192-60-64</span>
-                                        <a href="#" class="btn quote-btn">
-                                            <span class="rqst-icon">
-                                                <img src="assets/img/arrow-icon-header.svg" alt="" loading="lazy">
-                                            </span>
-                                            GET DIRECTION
-                                        </a>
+                                        <h4 style="font-size: 20px;">Kazan</h4>
+                                        <span class="phone" style="margin-bottom: 0!important;">+7 (985)
+                                            151-91-64</span>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="city-card">
+                                        <h4 style="font-size: 20px;">Khabarovsk</h4>
+                                        <span class="phone" style="margin-bottom: 0!important;">+7 (915)
+                                            157-96-02</span>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="city-card">
+                                        <h4 style="font-size: 20px;">Vladivostok</h4>
+                                        <span class="phone" style="margin-bottom: 0!important;">+7 (915)
+                                            157-96-02</span>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="city-card">
+                                        <h4 style="font-size: 20px;">Rostov-on-Don</h4>
+                                        <span class="phone" style="margin-bottom: 0!important;">+7 (916)
+                                            192-60-64</span>
                                     </div>
                                 </div>
 
@@ -671,12 +664,15 @@
             if (!form) return;
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
+                if (!window.isFormEmailVerified(form)) return;
                 var btn = form.querySelector('button[type="submit"]');
                 var origText = btn.innerHTML;
                 btn.disabled = true;
                 btn.innerHTML = '<span class="icon"><img src="assets/img/arrow-icon-header.svg" alt=""></span>SENDING…';
 
-                fetch('/api/contact', {
+                var apiBase = (window.satguruCMS && window.satguruCMS.url) ||
+                    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:3002' : '');
+                fetch(apiBase + '/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(Object.fromEntries(new FormData(form)))

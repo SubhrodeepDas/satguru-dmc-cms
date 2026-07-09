@@ -2068,6 +2068,20 @@ body {
     margin-bottom: 14px;
 }
 
+.footer-readmore-link {
+    display: inline-block;
+    margin-top: 6px;
+    color: #114349;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-readmore-link:hover {
+    color: #ff7a00;
+}
+
 .footer-socials {
     display: flex;
     gap: 10px;
@@ -2098,6 +2112,12 @@ body {
     border-color: #ff7a00;
     color: #fff;
     transform: translateY(-3px);
+}
+
+.footer-socials a.footer-social-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: not-allowed;
 }
 
 .footer-social-max img {
@@ -2441,7 +2461,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgb(0 0 0) 0%, rgb(0 0 0) 35%, rgb(0 0 0 / 0%) 69%, rgb(0 0 0 / 0%) 99%);
+    background: linear-gradient(0deg, rgb(0 0 0) 0%, rgb(0 0 0 / 70%) 35%, rgb(0 0 0 / 0%) 69%, rgb(0 0 0 / 0%) 99%);
     z-index: 1;
     opacity: 0.65;
     transition: opacity 0.4s ease;
@@ -3935,6 +3955,10 @@ path.jvm-region {
     border: 1px solid #D1F8BD;
     text-align: center;
     box-shadow: 0px 8px 8px 7px #0000000a;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .city-card h4 {
@@ -5519,6 +5543,83 @@ transition: opacity 0.5s ease-in;
     min-height: 118px;
 }
 
+/* Email verification (Contact + Customise Your Request forms) */
+.email-verify-wrap {
+    position: relative;
+}
+
+.email-verify-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* Idle state (just the "Verify email" button, no message yet) sits inside
+   the input itself; once a message or the code step appears there's not
+   enough room, so it drops back below (see renderIdle/renderCodeStep). */
+.email-verify-wrap input.field-input:has(+ .email-verify-status.ev-inline) {
+    padding-right: 120px;
+}
+
+.email-verify-status.ev-inline {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    margin-top: 0;
+}
+
+.ev-verify-btn,
+.ev-confirm-btn {
+    border: none;
+    background-color: #2e7d32;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.ev-verify-btn:hover,
+.ev-confirm-btn:hover {
+    background-color: #256428;
+}
+
+.ev-verify-btn:disabled,
+.ev-confirm-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.ev-code-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.ev-code-input {
+    max-width: 140px;
+}
+
+.ev-msg {
+    font-size: 0.78rem;
+    color: #2e7d32;
+}
+
+.ev-msg.ev-error {
+    color: #c62828;
+}
+
+.ev-verified {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #2e7d32;
+}
+
 /* Select dropdown */
 select.field-input {
     appearance: none;
@@ -5712,6 +5813,7 @@ input[type="date"].field-input::-webkit-calendar-picker-indicator {
     margin: 0 auto 36px auto;
     position: relative;
     z-index: 1;
+    font-size: 1.125rem;
 }
 
 
@@ -7556,8 +7658,8 @@ input[type="date"].field-input::-webkit-calendar-picker-indicator {
 
 
 .team-page-heading p {
-    font-size: 16px;
-    color: #555;
+    font-size: 18px;
+    color: #1e3a3e;
     margin: 0;
 }
 
@@ -9261,6 +9363,11 @@ h2.wcu-intro-text {
     --btn-glow: rgba(0, 0, 0, 0.12);
 }
 
+.quote-btn {
+    width: max-content;
+    margin: 0 auto;
+}
+
 /* â”€â”€ Shared button shell â”€â”€ */
 .btn-view-packages,
 .contact-btn,
@@ -9288,6 +9395,7 @@ h2.wcu-intro-text {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     position: relative;
     overflow: visible;
+    justify-content: space-between;
 }
 
 /* â”€â”€ Stacked gradients: radial light overlay on top of brand gradient â”€â”€ */
@@ -9880,6 +9988,7 @@ h2.wcu-intro-text {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 1399px) {
@@ -10096,7 +10205,7 @@ h2.wcu-intro-text {
 .excursion-grid-card {
     perspective: 1200px;
     height: 100%;
-    min-height: 520px;
+    min-height: 540px;
     border-radius: 16px;
 }
 

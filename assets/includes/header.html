@@ -25,9 +25,11 @@
                     <li class="nav-item" data-megamenu="mega-experience">
                         <a class="nav-link">Experience</a>
                     </li>
+                    <!-- Media temporarily hidden — re-enable by uncommenting below
                     <li class="nav-item">
                         <a class="nav-link" href="/media.html">Media</a>
                     </li>
+                    -->
                 </ul>
             </div>
 
@@ -160,7 +162,9 @@
                                 <li><a href="/mice.html">MICE</a></li>
                             </ul>
                         </li>
+                        <!-- Media temporarily hidden — re-enable by uncommenting below
                         <li><a href="/media.html">Media</a></li>
+                        -->
                         <li><a href="/contact.html">Contact</a></li>
                         <li>
                             <a href="#" class="btn quote-btn customize-nav-btn">
@@ -248,7 +252,9 @@
             <div class="row g-3 mt-1">
                 <div class="col-lg-4 col-sm-6 col-12">
                     <label class="field-label">Email<span class="req">*</span></label>
-                    <input type="email" name="email" class="field-input" placeholder="Email*" required />
+                    <div class="email-verify-wrap" data-email-verify data-email-verify-stacked>
+                        <input type="email" id="quoteEmail" name="email" class="field-input" placeholder="Email*" required />
+                    </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-12">
                     <label class="field-label">Country<span class="req">*</span></label>

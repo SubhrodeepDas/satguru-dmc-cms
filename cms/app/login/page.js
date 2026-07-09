@@ -41,11 +41,17 @@ function LoginForm() {
       <div className="pointer-events-none absolute -bottom-32 -right-16 w-96 h-96 rounded-full bg-brand/10 blur-3xl" />
 
       <form onSubmit={handleSubmit} className="relative bg-white rounded-3xl shadow-panel p-8 w-full max-w-sm">
-        <div className="w-11 h-11 rounded-xl bg-brand flex items-center justify-center font-bold text-white text-lg mb-5">
-          S
+        <div className="flex justify-center">
+          <div className="admin-logo border border-gray-100 shadow-sm rounded-2xl p-4 mb-5">
+            <img
+              src="/satguru-logo.gif"
+              alt="Satguru Travel"
+              className="w-24 h-auto select-none"
+            />
+          </div>
         </div>
-        <h1 className="text-xl font-bold text-brand-dark mb-1">Satguru DMC</h1>
-        <p className="text-sm text-gray-500 mb-6">Sign in to manage site content</p>
+        <h1 className="text-xl font-bold text-brand-dark mb-1 text-center">Satguru DMC</h1>
+        <p className="text-sm text-gray-500 mb-6 text-center">Sign in to manage site content</p>
 
         <label className="block text-sm font-medium text-gray-700 mb-1.5">Admin Password</label>
         <input

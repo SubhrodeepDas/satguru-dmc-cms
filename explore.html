@@ -267,7 +267,7 @@
 
         // ── 2. Destination cards grid — from ExploreListings collection ──
         try {
-            var listingsData = await satguruCMS.getExploreListings();
+            var listingsData = await satguruCMS.getExploreListings(100);
             if (listingsData && listingsData.docs && listingsData.docs.length) {
                 var grid = document.getElementById('destGrid');
                 if (grid) {

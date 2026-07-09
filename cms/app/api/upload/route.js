@@ -4,7 +4,7 @@ import path from 'path';
 import { put } from '@vercel/blob';
 import { requireAuth } from '../../../lib/auth';
 
-const ALLOWED_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg', '.avif']);
+const ALLOWED_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg', '.avif', '.pdf']);
 
 export async function POST(req) {
   const authErr = requireAuth(req);

@@ -2,11 +2,16 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function CollectionList({ collectionSlug, collectionDef }) {
+  const router = useRouter();
   const [docs, setDocs] = useState(null);
   const [error, setError] = useState('');
   const [deletingId, setDeletingId] = useState(null);
+  const [relatedCounts, setRelatedCounts] = useState(null);
+  const [referenceLabels, setReferenceLabels] = useState(null);
+  const referenceField = collectionDef.fields.find((f) => f.type === 'reference');
 
   const load = useCallback(() => {
     fetch(`/api/${collectionSlug}?limit=1000`, { cache: 'no-store' })
@@ -18,6 +23,55 @@ export default function CollectionList({ collectionSlug, collectionDef }) {
   useEffect(() => {
     load();
   }, [load]);
+
+  // Optional "N related items" column (e.g. how many Excursions belong to
+  // each Explore Listing) — counted from the related collection's own data,
+  // not stored on this doc, so it always reflects the current live count.
+  useEffect(() => {
+    if (!collectionDef.relatedCount) return;
+    const { collection, matchField } = collectionDef.relatedCount;
+    fetch(`/api/${collection}?limit=1000`, { cache: 'no-store' })
+      .then((res) => res.json())
+      .then((data) => {
+        const counts = {};
+        (data.docs || []).forEach((d) => {
+          const key = d[matchField];
+          counts[key] = (counts[key] || 0) + 1;
+        });
+        setRelatedCounts(counts);
+      })
+      .catch(() => setRelatedCounts({}));
+  }, [collectionDef.relatedCount]);
+
+  // Resolves a `reference` field's stored value (e.g. a destination slug) to
+  // its human-readable label (e.g. the city name), for a "which city" column —
+  // reuses the same referenceCollection/referenceValueField/referenceLabelField
+  // metadata the edit form's dropdown already relies on.
+  useEffect(() => {
+    if (!referenceField) return;
+    fetch(`/api/${referenceField.referenceCollection}?limit=1000`, { cache: 'no-store' })
+      .then((res) => res.json())
+      .then((data) => {
+        const labels = {};
+        (data.docs || []).forEach((d) => {
+          labels[d[referenceField.referenceValueField]] = d[referenceField.referenceLabelField];
+        });
+        setReferenceLabels(labels);
+      })
+      .catch(() => setReferenceLabels({}));
+  }, [referenceField]);
+
+  // Singleton collections (e.g. Brochure) skip the list entirely — there's
+  // only ever one record, so go straight to editing it (or creating it the
+  // very first time) instead of showing a list with a "+ New" button.
+  useEffect(() => {
+    if (!collectionDef.singleton || !docs) return;
+    router.replace(docs[0] ? `/admin/${collectionSlug}/${docs[0].id}` : `/admin/${collectionSlug}/new`);
+  }, [collectionDef.singleton, docs, collectionSlug, router]);
+
+  if (collectionDef.singleton) {
+    return <p className="text-sm text-gray-400">Loading…</p>;
+  }
 
   async function handleDelete(id) {
     if (!confirm('Delete this item? This cannot be undone.')) return;
@@ -80,7 +134,31 @@ export default function CollectionList({ collectionSlug, collectionDef }) {
                     {doc.active ? 'Active' : 'Inactive'}
                   </span>
                 )}
+                {!('active' in doc) && 'featured' in doc && (
+                  <span className={`inline-flex items-center gap-1 text-[11px] mt-0.5 ${doc.featured ? 'text-emerald-600' : 'text-gray-400'}`}>
+                    <span className={`w-1.5 h-1.5 rounded-full ${doc.featured ? 'bg-emerald-500' : 'bg-gray-300'}`} />
+                    {doc.featured ? 'Featured' : 'Not featured'}
+                  </span>
+                )}
               </div>
+              {collectionDef.relatedCount && (
+                <div className="text-xs text-gray-400 shrink-0 w-24 text-center">
+                  {relatedCounts ? (
+                    <span className={relatedCounts[doc[collectionDef.relatedCount.ownField]] ? 'text-brand-dark font-medium' : ''}>
+                      {relatedCounts[doc[collectionDef.relatedCount.ownField]] || 0} {collectionDef.relatedCount.label}
+                    </span>
+                  ) : (
+                    '…'
+                  )}
+                </div>
+              )}
+              {referenceField && (
+                <div className="text-xs text-gray-500 shrink-0 w-36 truncate text-center" title={referenceLabels ? referenceLabels[doc[referenceField.name]] : ''}>
+                  {referenceLabels
+                    ? referenceLabels[doc[referenceField.name]] || (doc[referenceField.name] || '—')
+                    : '…'}
+                </div>
+              )}
               <div className="flex items-center gap-4 shrink-0">
                 <Link href={`/admin/${collectionSlug}/${doc.id}`} className="text-sm font-medium text-brand hover:text-accent transition-colors">
                   Edit

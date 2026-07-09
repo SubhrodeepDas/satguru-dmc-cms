@@ -1,0 +1,68 @@
+[
+  {
+    "id": 6,
+    "title": "Saint Petersburg",
+    "description": "Russia's cultural heart — baroque palaces, the Hermitage, romantic canals and the legendary White Nights.",
+    "image": "/uploads/St.-Petersburg-1.webp",
+    "link": "saint-petersburg-excursions.html",
+    "featured": false,
+    "order": 6,
+    "updatedAt": "2026-07-03T20:19:39.985Z",
+    "createdAt": "2026-06-02T14:09:49.616Z"
+  },
+  {
+    "id": 5,
+    "title": "Sochi",
+    "description": "The 'Russian Riviera' — golden Black Sea beaches, alpine mountain resorts and the 2014 Winter Olympics venues.",
+    "image": "/uploads/Sochi-city-1.webp",
+    "link": "sochi-excursions.html",
+    "featured": false,
+    "order": 5,
+    "updatedAt": "2026-06-03T11:43:39.708Z",
+    "createdAt": "2026-06-02T14:09:49.594Z"
+  },
+  {
+    "id": 4,
+    "title": "Kazan",
+    "description": "The multicultural capital of Tatarstan — UNESCO Kazan Kremlin, the grand Qolsharif Mosque and a unique blend of Russian and Eastern cultures.",
+    "image": "/uploads/Winter.webp",
+    "link": "kazan-excursions.html",
+    "featured": false,
+    "order": 4,
+    "updatedAt": "2026-06-03T10:17:35.487Z",
+    "createdAt": "2026-06-02T14:09:49.572Z"
+  },
+  {
+    "id": 3,
+    "title": "Golden Ring",
+    "description": "Ancient Russian towns — Sergiev Posad, Vladimir, Suzdal and Yaroslavl — preserving medieval kremlin walls and Orthodox heritage.",
+    "image": "/uploads/golden-ring-3-1.webp",
+    "link": "golden-ring.html",
+    "featured": false,
+    "order": 3,
+    "updatedAt": "2026-06-03T11:44:06.460Z",
+    "createdAt": "2026-06-02T14:09:49.551Z"
+  },
+  {
+    "id": 2,
+    "title": "Moscow",
+    "description": "Russia's dynamic capital — Red Square, the Kremlin, Tretyakov Gallery and a thriving modern arts scene.",
+    "image": "/uploads/siberian-winter-inspiration_t20_z2x4J4-scaled-1.webp",
+    "link": "moscow-excursions.html",
+    "featured": true,
+    "order": 2,
+    "updatedAt": "2026-06-02T14:09:49.531Z",
+    "createdAt": "2026-06-02T14:09:49.530Z"
+  },
+  {
+    "id": 1,
+    "title": "Murmansk",
+    "description": "Above the Arctic Circle, Murmansk delivers breathtaking Northern Lights spectacles, polar day adventures and authentic Russian Arctic culture.",
+    "image": "/uploads/aerial-view-of-murmansk-in-the-summer-2021-10-13-17-03-10-utc-1.webp",
+    "link": "murmansk-excursions.html",
+    "featured": true,
+    "order": 1,
+    "updatedAt": "2026-06-02T14:09:49.497Z",
+    "createdAt": "2026-06-02T14:09:49.495Z"
+  }
+]

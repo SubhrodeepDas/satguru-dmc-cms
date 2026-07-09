@@ -13,6 +13,7 @@ export default function CollectionForm({ collectionSlug, collectionDef, id }) {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
   const [savedAt, setSavedAt] = useState(null);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     if (!isEdit) return;
@@ -32,12 +33,7 @@ export default function CollectionForm({ collectionSlug, collectionDef, id }) {
     };
   }, [collectionSlug, id, isEdit, collectionDef.fields]);
 
-  function updateField(name, val) {
-    setValues((prev) => ({ ...prev, [name]: val }));
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function persist(nextValues) {
     setSaving(true);
     setError('');
     setSavedAt(null);
@@ -47,7 +43,7 @@ export default function CollectionForm({ collectionSlug, collectionDef, id }) {
       const res = await fetch(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify(nextValues),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Save failed');
@@ -63,6 +59,37 @@ export default function CollectionForm({ collectionSlug, collectionDef, id }) {
       setError(err.message || 'Save failed');
     } finally {
       setSaving(false);
+    }
+  }
+
+  function updateField(name, val) {
+    setValues((prev) => {
+      const next = { ...prev, [name]: val };
+      // Singleton settings-style records (e.g. Brochure) save themselves the
+      // instant a field changes — there's no separate list of drafts to
+      // review, so waiting for an extra "Save Changes" click just risks the
+      // change silently not going live if that click gets missed.
+      if (collectionDef.singleton) persist(next);
+      return next;
+    });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    await persist(values);
+  }
+
+  async function handleDelete() {
+    if (!confirm('Delete this? This cannot be undone.')) return;
+    setDeleting(true);
+    try {
+      const res = await fetch(`/api/${collectionSlug}/${id}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error('Delete failed');
+      router.push(`/admin/${collectionSlug}/new`);
+      router.refresh();
+    } catch {
+      alert('Could not delete this item.');
+      setDeleting(false);
     }
   }
 
@@ -109,13 +136,34 @@ export default function CollectionForm({ collectionSlug, collectionDef, id }) {
         >
           {saving ? 'Saving…' : isEdit ? 'Save Changes' : 'Create'}
         </button>
-        <button
-          type="button"
-          onClick={() => router.push(`/admin/${collectionSlug}`)}
-          className="text-sm text-gray-500 hover:text-brand-dark transition-colors"
-        >
-          Back to list
-        </button>
+        {!collectionDef.singleton && (
+          <button
+            type="button"
+            onClick={() => router.push(`/admin/${collectionSlug}`)}
+            className="text-sm text-gray-500 hover:text-brand-dark transition-colors"
+          >
+            Back to list
+          </button>
+        )}
+        {collectionDef.singleton && (
+          <button
+            type="button"
+            onClick={() => router.push('/admin')}
+            className="text-sm text-gray-500 hover:text-brand-dark transition-colors"
+          >
+            Back to dashboard
+          </button>
+        )}
+        {collectionDef.singleton && isEdit && (
+          <button
+            type="button"
+            onClick={handleDelete}
+            disabled={deleting}
+            className="text-sm text-red-500 hover:text-red-600 disabled:opacity-50 transition-colors"
+          >
+            {deleting ? 'Deleting…' : 'Delete'}
+          </button>
+        )}
       </div>
     </form>
   );

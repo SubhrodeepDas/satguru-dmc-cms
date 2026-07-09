@@ -8,7 +8,7 @@ import { GroupIcon } from '../../components/Icons';
 export const dynamic = 'force-dynamic';
 
 const BADGE_TINTS = [
-  { bg: '#EFEDFC', fg: '#6C5CE7' },
+  { bg: '#e6f4ec', fg: '#1a7c45' },
   { bg: '#FCE9F3', fg: '#E84393' },
   { bg: '#E8F0FE', fg: '#3B82F6' },
   { bg: '#FEF3E2', fg: '#F59E0B' },
@@ -27,7 +27,7 @@ export default async function AdminDashboard() {
 
   return (
     <div>
-      <div className="relative overflow-hidden bg-brand rounded-3xl px-8 py-9 mb-9">
+      <div className="relative overflow-hidden bg-[#1a7c45] rounded-3xl px-8 py-9 mb-9">
         <div className="absolute -top-10 -right-10 w-56 h-56 rounded-full bg-white/10" />
         <div className="absolute bottom-0 right-24 w-24 h-24 rounded-full bg-white/10" />
         <p className="relative text-[11px] font-semibold uppercase tracking-wider text-white/70 mb-2">Content Admin</p>
@@ -71,7 +71,10 @@ export default async function AdminDashboard() {
                   <div className="font-semibold text-brand-dark group-hover:text-brand transition-colors">
                     {item.label}
                   </div>
-                  <div className="text-xs text-gray-400 mt-1">{count} item{count === 1 ? '' : 's'} · manage →</div>
+                  <div className="text-xs text-gray-400 mt-1 flex items-center gap-1">
+                    {count} item{count === 1 ? '' : 's'} · manage
+                    <i className="ri-arrow-right-line text-brand text-sm leading-none transition-transform duration-200 group-hover:translate-x-1" />
+                  </div>
                 </Link>
               );
             })}

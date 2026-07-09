@@ -35,9 +35,13 @@ export const collections = {
     titleField: 'title',
     fields: bannerFields,
   },
+  // Hidden from the admin dashboard + sidebar (not needed there right now), but
+  // kept registered — the live frontend still reads these via /api/*
+  // (package pages' banner slides, and the media page's hero banner image).
   'package-banner-slides': {
     label: 'Package Banner Slides',
     group: 'Banners',
+    hidden: true,
     titleField: 'title',
     fields: [
       { name: 'packageSlug', type: 'text', label: 'Package Slug (matches itinerary slug)', required: true },
@@ -47,6 +51,7 @@ export const collections = {
   'media-banners': {
     label: 'Page Media Banners',
     group: 'Banners',
+    hidden: true,
     titleField: 'page',
     fields: [
       { name: 'page', type: 'text', label: 'Page key (e.g. about, contact, media)', required: true },
@@ -61,12 +66,17 @@ export const collections = {
     label: 'Explore Listings',
     group: 'Destinations',
     titleField: 'destinationName',
+    // At most 5 listings may be shown in the home page "Top Destinations" strip.
+    featureLimit: { field: 'homeFeature', max: 5, label: 'home page' },
+    // Shows an "N excursions" column in the list — how many Excursions
+    // (City Detail Page cards) are linked to each destination.
+    relatedCount: { collection: 'excursions', ownField: 'destinationSlug', matchField: 'destinationSlug', label: 'excursions' },
     fields: [
       { name: 'destinationName', type: 'text', label: 'Destination Name', required: true },
       { name: 'destinationSlug', type: 'slug', label: 'Destination Slug', sourceField: 'destinationName', sourceLabel: 'the destination name', required: true },
       { name: 'description', type: 'textarea', label: 'Description' },
       { name: 'image', type: 'image', label: 'Image' },
-      { name: 'homeFeature', type: 'boolean', label: 'Show on Home Page (Top Destinations)', default: false },
+      { name: 'homeFeature', type: 'boolean', label: 'Show on Home Page (Top Destinations — max 5)', default: false },
       { name: 'order', type: 'number', label: 'Order', default: 0 },
       { name: 'active', type: 'boolean', label: 'Active', default: true },
     ],
@@ -87,10 +97,7 @@ export const collections = {
         name: 'destinationSlug', type: 'reference', label: 'Destination (which city page this shows on)', required: true,
         referenceCollection: 'explore-listings', referenceValueField: 'destinationSlug', referenceLabelField: 'destinationName',
       },
-      { name: 'destinationOrder', type: 'number', label: 'Order on Explore Page', default: 0 },
       { name: 'order', type: 'number', label: 'Order on Destination Detail Page', default: 0 },
-      { name: 'homeFeature', type: 'boolean', label: 'Show as Explore overview card', default: false },
-      { name: 'highlights', type: 'array', label: 'Highlights (optional)', itemLabel: 'text', fields: highlightFields },
     ],
   },
 
@@ -155,6 +162,9 @@ export const collections = {
     label: 'Blog Categories',
     group: 'Blog',
     titleField: 'name',
+    // Shows an "N posts" column in the list — how many Blog Posts are
+    // tagged with each category.
+    relatedCount: { collection: 'blog-posts', ownField: 'slug', matchField: 'category', label: 'posts' },
     fields: [
       { name: 'name', type: 'text', label: 'Name', required: true },
       { name: 'slug', type: 'slug', label: 'Slug', sourceField: 'name', sourceLabel: 'the name', required: true },
@@ -168,13 +178,29 @@ export const collections = {
     titleField: 'title',
     fields: [
       { name: 'title', type: 'text', label: 'Title', required: true },
-      { name: 'category', type: 'text', label: 'Category (slug)' },
+      {
+        name: 'category', type: 'reference', label: 'Category', required: true,
+        referenceCollection: 'blog-categories', referenceValueField: 'slug', referenceLabelField: 'name',
+      },
       { name: 'excerpt', type: 'textarea', label: 'Excerpt' },
       { name: 'content', type: 'textarea', label: 'Content' },
       { name: 'image', type: 'image', label: 'Cover Image' },
       { name: 'author', type: 'text', label: 'Author' },
       { name: 'publishedDate', type: 'text', label: 'Published Date (YYYY-MM-DD)' },
       { name: 'featured', type: 'boolean', label: 'Featured', default: false },
+    ],
+  },
+
+  brochures: {
+    label: 'Brochure',
+    group: 'Media',
+    // Exactly one document ever exists — the admin UI skips the normal
+    // list/"+ New" flow and always goes straight to editing (or creating)
+    // this one record, so there's no way to end up with a second brochure.
+    singleton: true,
+    fields: [
+      { name: 'file', type: 'file', label: 'Brochure PDF', accept: '.pdf,application/pdf', required: true },
+      { name: 'active', type: 'boolean', label: 'Active (shown on the Media page)', default: true },
     ],
   },
 
@@ -223,8 +249,12 @@ export function getCollection(slug) {
   return collections[slug] || null;
 }
 
+// Drives the sidebar nav + dashboard cards only. `hidden` collections stay
+// fully registered (their /api/* routes and /admin edit pages keep working) —
+// they're just left out of this navigation listing.
 export const collectionGroups = collectionSlugs.reduce((groups, slug) => {
   const def = collections[slug];
+  if (def.hidden) return groups;
   const group = def.group || 'Other';
   if (!groups[group]) groups[group] = [];
   groups[group].push({ slug, ...def });
