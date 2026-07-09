@@ -9,7 +9,7 @@
   //   e.g. 'https://satguru-cms.vercel.app'  (no trailing slash)
   //   Leave '' to fall back to same-origin (only correct if the CMS API is
   //   proxied under the frontend's own domain).
-  var PRODUCTION_CMS_URL = '';
+  var PRODUCTION_CMS_URL = 'https://satguru-cms.vercel.app';
   // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
   // Payload admin origin — used only to rewrite media URLs in API responses
