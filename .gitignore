@@ -7,7 +7,6 @@ node_modules/
 **/.next/
 
 # secrets / local env (never commit)
-.env.local
 .env*.local
 **/.env.local
 
@@ -22,3 +21,4 @@ node_modules/
 Thumbs.db
 *.log
 .vercel
+config.bat

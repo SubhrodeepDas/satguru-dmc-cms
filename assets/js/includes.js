@@ -7,9 +7,44 @@
         return local ? 'http://localhost:10006' : 'http://194.67.119.189:10006';
     }
 
+    // site-config.js normally defines satguruUrl; this fallback runs when it did not
+    // load so fetch() never hits /assets/... on the domain root (missing /dmc).
+    function ensureBasePath() {
+        if (typeof window.satguruUrl === 'function') return;
+
+        var host = location.hostname;
+        var local = host === 'localhost' || host === '127.0.0.1';
+        var serverIp = host === '194.67.119.189';
+        var base = '';
+
+        if (!local && !serverIp) {
+            if (/(?:^|\.)satgurutravel\.ru$/i.test(host)) {
+                base = '/dmc';
+            } else {
+                var path = location.pathname || '';
+                if (path === '/dmc' || path.indexOf('/dmc/') === 0) base = '/dmc';
+            }
+        }
+
+        window.SITE_BASE_PATH = base;
+        window.SATGURU_BASE_PATH = base;
+        window.satguruUrl = function (url) {
+            if (!url || /^https?:\/\//i.test(url) || url.indexOf('//') === 0) return url;
+            return base + (url.charAt(0) === '/' ? url : '/' + url);
+        };
+        window.prefixRootHtml = function (html) {
+            if (!base || !html) return html;
+            return html
+                .split('__SITE_BASE__').join(base)
+                .replace(/(\s(?:src|href)=["'])\/(?!\/)([^"']*)/g, function (_, prefix, path) {
+                    return prefix + base + '/' + path;
+                });
+        };
+    }
+
     function assetUrl(path) {
-        if (typeof window.satguruUrl === 'function') return "https://satgurutravel.ru/dmc" + path;
-        return path;
+        ensureBasePath();
+        return window.satguruUrl(path);
     }
 
     async function injectAsync(id, url) {
@@ -22,6 +57,7 @@
                 return;
             }
             var html = await res.text();
+            ensureBasePath();
             if (window.prefixRootHtml) html = window.prefixRootHtml(html);
 
             var parser = new DOMParser();
@@ -235,8 +271,8 @@
 
     // Inject header and footer asynchronously, then run initializers
     Promise.all([
-        injectAsync('site-header', assetUrl('./assets/includes/header.html')),
-        injectAsync('site-footer', assetUrl('./assets/includes/footer.html'))
+        injectAsync('site-header', assetUrl('/assets/includes/header.html') + '?' + cb),
+        injectAsync('site-footer', assetUrl('/assets/includes/footer.html') + '?' + cb)
     ]).then(function () {
         // Guarantee the 3rd city card always has its content
         var cards = document.querySelectorAll('.footer-city-card');
@@ -326,7 +362,8 @@
                     if (!(sel.name in payload)) payload[sel.name] = sel.value;
                 });
 
-                var apiBase = cmsApiBase();
+                var apiBase = (window.satguruCMS && window.satguruCMS.url) ||
+                    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:10006' : '');
                 fetch(apiBase + '/api/quote', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -382,7 +419,8 @@
             }
 
             function nlApiBase() {
-                return cmsApiBase();
+                return (window.satguruCMS && window.satguruCMS.url) ||
+                    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:10006' : '');
             }
 
             function nlShowMsg(type, text) {
@@ -490,7 +528,7 @@
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: assetUrl('/assets/img/email.json')
+            path: base + 'assets/img/email.json'
         });
     }
 
