@@ -1,12 +1,16 @@
 'use strict';
-/* Sets window.SATGURU_BASE_PATH ('' locally, '/dmc' in production) and satguruUrl(). */
+/* Site base path: '' on localhost, '/dmc' on production (satgurutravel.ru). */
 (function (window) {
-  if (typeof window.SITE_BASE_PATH !== 'undefined') {
-    window.SATGURU_BASE_PATH = window.SITE_BASE_PATH;
-    return;
+  function isLocalDev() {
+    var host = window.location.hostname;
+    return host === 'localhost' || host === '127.0.0.1';
   }
 
-  var base = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? '' : '/dmc';
+  function getSiteBasePath() {
+    return isLocalDev() ? '' : '/dmc';
+  }
+
+  var base = getSiteBasePath();
   window.SITE_BASE_PATH = base;
   window.SATGURU_BASE_PATH = base;
 

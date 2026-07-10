@@ -3,10 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <script>
-    (function(w){var b='';var p=w.location.pathname;if(p==='/dmc'||p.indexOf('/dmc/')===0)b='/dmc';else if(/(?:^|\.)satgurutravel\.ru$/i.test(w.location.hostname))b='/dmc';w.SATGURU_BASE_PATH=b;w.satguruUrl=function(u){if(!u||/^https?:\/\//i.test(u)||u.indexOf('//')===0)return u;return(b||'')+(u.charAt(0)==='/'?u:'/'+u);};w.prefixRootHtml=function(h){if(!b||!h)return h;return h.replace(/(\s(?:src|href)=["'])\/(?!\/)/g,'$1'+b+'/');};})(window);
-    </script>
-    <!-- Favicon -->
+    <script>(function(){var l=location.hostname==='localhost'||location.hostname==='127.0.0.1';document.write('<script src="'+(l?'':'/dmc')+'/assets/js/site-config.js?v=2"><\/script>');})();</script>
+<!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
@@ -191,7 +189,7 @@
 
     </main>
 
-    <script src="assets/js/includes.js?v=6"></script>
+    <script src="assets/js/includes.js?v=7"></script>
     <script src="assets/js/jquery-4.0.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
