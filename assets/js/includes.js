@@ -235,8 +235,8 @@
 
     // Inject header and footer asynchronously, then run initializers
     Promise.all([
-        injectAsync('site-header', assetUrl('/assets/includes/header.html') + '?' + cb),
-        injectAsync('site-footer', assetUrl('/assets/includes/footer.html') + '?' + cb)
+        injectAsync('site-header', assetUrl('./assets/includes/header.html') + '?' + cb),
+        injectAsync('site-footer', assetUrl('./assets/includes/footer.html') + '?' + cb)
     ]).then(function () {
         // Guarantee the 3rd city card always has its content
         var cards = document.querySelectorAll('.footer-city-card');
