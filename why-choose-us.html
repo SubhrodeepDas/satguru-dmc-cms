@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script>
-    (function(w){var p=w.location.pathname;var b=p==='/dmc'||p.indexOf('/dmc/')===0?'/dmc':'';w.SATGURU_BASE_PATH=b;w.satguruUrl=function(u){if(!u||/^https?:\/\//i.test(u)||u.indexOf('//')===0)return u;return(b||'')+(u.charAt(0)==='/'?u:'/'+u);};w.prefixRootHtml=function(h){if(!b||!h)return h;return h.replace(/(\s(?:src|href)=["'])\/(?!\/)/g,'$1'+b+'/');};})(window);
+    (function(w){var b='';var p=w.location.pathname;if(p==='/dmc'||p.indexOf('/dmc/')===0)b='/dmc';else if(/(?:^|\.)satgurutravel\.ru$/i.test(w.location.hostname))b='/dmc';w.SATGURU_BASE_PATH=b;w.satguruUrl=function(u){if(!u||/^https?:\/\//i.test(u)||u.indexOf('//')===0)return u;return(b||'')+(u.charAt(0)==='/'?u:'/'+u);};w.prefixRootHtml=function(h){if(!b||!h)return h;return h.replace(/(\s(?:src|href)=["'])\/(?!\/)/g,'$1'+b+'/');};})(window);
     </script>
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">

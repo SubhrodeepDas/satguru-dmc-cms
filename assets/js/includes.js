@@ -1,9 +1,37 @@
 (function () {
 
-    function ensureBasePath() {
-        if (typeof window.SATGURU_BASE_PATH !== 'undefined') return;
+    function detectBasePathFromScript() {
+        var scripts = document.getElementsByTagName('script');
+        for (var i = scripts.length - 1; i >= 0; i--) {
+            var src = scripts[i].src;
+            if (!src || src.indexOf('assets/js/includes.js') === -1) continue;
+            try {
+                var marker = '/assets/js/includes.js';
+                var pathname = new URL(src).pathname;
+                var idx = pathname.indexOf(marker);
+                if (idx > 0) return pathname.slice(0, idx);
+                return '';
+            } catch (e) {
+                return '';
+            }
+        }
+        return null;
+    }
+
+    function detectBasePath() {
+        var fromScript = detectBasePathFromScript();
+        if (fromScript !== null) return fromScript;
+
         var path = location.pathname;
-        window.SATGURU_BASE_PATH = path === '/dmc' || path.indexOf('/dmc/') === 0 ? '/dmc' : '';
+        if (path === '/dmc' || path.indexOf('/dmc/') === 0) return '/dmc';
+
+        if (/(?:^|\.)satgurutravel\.ru$/i.test(location.hostname)) return '/dmc';
+
+        return '';
+    }
+
+    function initBasePath() {
+        window.SATGURU_BASE_PATH = detectBasePath();
         window.satguruUrl = function (url) {
             if (!url || /^https?:\/\//i.test(url) || url.indexOf('//') === 0) return url;
             var base = window.SATGURU_BASE_PATH || '';
@@ -17,7 +45,7 @@
     }
 
     function assetUrl(path) {
-        ensureBasePath();
+        initBasePath();
         return window.satguruUrl(path);
     }
 
@@ -243,7 +271,7 @@
         document.querySelectorAll('form[data-cms-form]').forEach(wireCmsForm);
     });
 
-    ensureBasePath();
+    initBasePath();
 
     var cb = Date.now();
 
