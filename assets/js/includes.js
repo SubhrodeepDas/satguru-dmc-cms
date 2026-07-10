@@ -8,7 +8,7 @@
     }
 
     function assetUrl(path) {
-        if (typeof window.satguruUrl === 'function') return window.satguruUrl(path);
+        if (typeof window.satguruUrl === 'function') return "https://satgurutravel.ru/dmc" + path;
         return path;
     }
 
@@ -235,8 +235,8 @@
 
     // Inject header and footer asynchronously, then run initializers
     Promise.all([
-        injectAsync('site-header', 'https://satgurutravel.ru/dmc/assets/includes/header.html' + '?' + cb),
-        injectAsync('site-footer', 'https://satgurutravel.ru/dmc/assets/includes/footer.html'+ '?' + cb)
+        injectAsync('site-header', assetUrl('/assets/includes/header.html') + '?' + cb),
+        injectAsync('site-footer', assetUrl('/assets/includes/footer.html') + '?' + cb)
     ]).then(function () {
         // Guarantee the 3rd city card always has its content
         var cards = document.querySelectorAll('.footer-city-card');
