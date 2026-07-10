@@ -1,46 +1,24 @@
 (function () {
 
-    function detectBasePathFromScript() {
-        var scripts = document.getElementsByTagName('script');
-        for (var i = scripts.length - 1; i >= 0; i--) {
-            var src = scripts[i].src;
-            if (!src || src.indexOf('assets/js/includes.js') === -1) continue;
-            try {
-                var marker = '/assets/js/includes.js';
-                var pathname = new URL(src).pathname;
-                var idx = pathname.indexOf(marker);
-                if (idx > 0) return pathname.slice(0, idx);
-                return '';
-            } catch (e) {
-                return '';
-            }
-        }
-        return null;
-    }
-
-    function detectBasePath() {
-        var fromScript = detectBasePathFromScript();
-        if (fromScript !== null) return fromScript;
-
-        var path = location.pathname;
-        if (path === '/dmc' || path.indexOf('/dmc/') === 0) return '/dmc';
-
-        if (/(?:^|\.)satgurutravel\.ru$/i.test(location.hostname)) return '/dmc';
-
-        return '';
+    function getSiteBasePath() {
+        if (typeof window.SITE_BASE_PATH === 'string') return window.SITE_BASE_PATH;
+        var local = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        return local ? '' : '/dmc';
     }
 
     function initBasePath() {
-        window.SATGURU_BASE_PATH = detectBasePath();
+        var base = getSiteBasePath();
+        window.SITE_BASE_PATH = base;
+        window.SATGURU_BASE_PATH = base;
         window.satguruUrl = function (url) {
             if (!url || /^https?:\/\//i.test(url) || url.indexOf('//') === 0) return url;
-            var base = window.SATGURU_BASE_PATH || '';
             return base + (url.charAt(0) === '/' ? url : '/' + url);
         };
         window.prefixRootHtml = function (html) {
-            var base = window.SATGURU_BASE_PATH;
             if (!base || !html) return html;
-            return html.replace(/(\s(?:src|href)=["'])\/(?!\/)/g, '$1' + base + '/');
+            return html
+                .split('__SITE_BASE__').join(base)
+                .replace(/(\s(?:src|href)=["'])\/(?!\/)/g, '$1' + base + '/');
         };
     }
 
@@ -54,7 +32,10 @@
         if (!el) return;
         try {
             var res = await fetch(url);
-            if (!res.ok) return;
+            if (!res.ok) {
+                console.error('[Satguru] Failed to load include:', url, res.status);
+                return;
+            }
             var html = await res.text();
             html = window.prefixRootHtml ? window.prefixRootHtml(html) : html;
 
