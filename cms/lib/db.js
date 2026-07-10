@@ -178,13 +178,42 @@ export function applyWhere(docs, where) {
   );
 }
 
+// Public origin for absolute /uploads URLs in API responses.
+// Set CMS_PUBLIC_URL=http://194.67.119.189:10006 on the server so images never
+// come back as http://localhost:10006/... (blocked by the browser from a public IP).
+export function getPublicOrigin(requestUrl) {
+  const env = process.env.CMS_PUBLIC_URL;
+  if (env) return String(env).replace(/\/$/, '');
+  return new URL(requestUrl).origin;
+}
+
+const LOCAL_ORIGIN_RE = /^https?:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?/;
+
+function normalizeUploadString(value, origin) {
+  if (typeof value !== 'string') return value;
+  if (value.startsWith('/uploads/')) return origin + value;
+  if (LOCAL_ORIGIN_RE.test(value) && value.includes('/uploads/')) {
+    return origin + value.replace(/^https?:\/\/[^/]+/, '');
+  }
+  return value;
+}
+
+function stripToUploadPath(value, origin) {
+  if (typeof value !== 'string') return value;
+  if (value.startsWith(origin + '/uploads/')) return value.slice(origin.length);
+  if (LOCAL_ORIGIN_RE.test(value) && value.includes('/uploads/')) {
+    return value.replace(/^https?:\/\/[^/]+/, '');
+  }
+  return value;
+}
+
 // Uploaded files stored as relative paths ("/uploads/xyz.jpg") get resolved to
 // absolute URLs against the request origin on the way out, so the public site
 // (a different origin) can use them directly as <img src>. Absolute URLs (e.g.
 // Vercel Blob URLs from production uploads) are left untouched.
 export function qualifyUrls(value, origin) {
   if (typeof value === 'string') {
-    return value.startsWith('/uploads/') ? origin + value : value;
+    return normalizeUploadString(value, origin);
   }
   if (Array.isArray(value)) {
     return value.map((v) => qualifyUrls(v, origin));
@@ -202,7 +231,7 @@ export function qualifyUrls(value, origin) {
 // doesn't bake a hardcoded origin into storage.
 export function dequalifyUrls(value, origin) {
   if (typeof value === 'string') {
-    return value.startsWith(origin + '/uploads/') ? value.slice(origin.length) : value;
+    return stripToUploadPath(value, origin);
   }
   if (Array.isArray(value)) {
     return value.map((v) => dequalifyUrls(v, origin));

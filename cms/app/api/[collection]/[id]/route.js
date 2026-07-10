@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getById, update, remove, qualifyUrls, dequalifyUrls, checkFeatureLimit } from '../../../../lib/db';
+import { getById, update, remove, qualifyUrls, dequalifyUrls, checkFeatureLimit, getPublicOrigin } from '../../../../lib/db';
 import { getCollection } from '../../../../lib/collections';
 import { requireAuth } from '../../../../lib/auth';
 
@@ -10,7 +10,7 @@ export async function GET(req, { params }) {
   }
   const doc = await getById(collection, id);
   if (!doc) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-  return NextResponse.json(qualifyUrls(doc, new URL(req.url).origin), { headers: { 'Cache-Control': 'no-store' } });
+  return NextResponse.json(qualifyUrls(doc, getPublicOrigin(req.url)), { headers: { 'Cache-Control': 'no-store' } });
 }
 
 export async function PATCH(req, { params }) {
@@ -21,7 +21,7 @@ export async function PATCH(req, { params }) {
   if (!getCollection(collection)) {
     return NextResponse.json({ error: 'Unknown collection' }, { status: 404 });
   }
-  const body = dequalifyUrls(await req.json(), new URL(req.url).origin);
+  const body = dequalifyUrls(await req.json(), getPublicOrigin(req.url));
   const existing = await getById(collection, id);
   const limitErr = await checkFeatureLimit(collection, body, existing);
   if (limitErr) return NextResponse.json({ error: limitErr }, { status: 400 });

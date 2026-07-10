@@ -12,18 +12,40 @@
     ? window.getCmsUrl()
     : (isLocal ? 'http://localhost:10006' : 'http://194.67.119.189:10006');
 
-  var CMS_ORIGIN = CMS_URL;
-
   function rewriteCmsOrigin(url) {
     if (!url) return url;
-    if (isLocal) return url;
-    url = url.replace(/^https?:\/\/[^/:]+:10054/, CMS_ORIGIN);
-    url = url.replace(/^https?:\/\/satgurudmcadmin\.excellisit\.net/, CMS_ORIGIN);
-    url = url.replace(/^https?:\/\/satguru-cms\.vercel\.app/, CMS_ORIGIN);
-    if (CMS_ORIGIN && url.indexOf(CMS_ORIGIN) !== 0) {
-      url = url.replace(/^https?:\/\/194\.67\.119\.189:10006/, CMS_ORIGIN);
-    }
+    // API may return localhost URLs — rewrite to the active CMS origin.
+    url = url.replace(/^https?:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?(?=\/uploads\/)/, CMS_URL);
+    url = url.replace(/^https?:\/\/localhost:10006/, CMS_URL);
+    url = url.replace(/^https?:\/\/127\.0\.0\.1:10006/, CMS_URL);
+    url = url.replace(/^https?:\/\/[^/:]+:10054/, CMS_URL);
+    url = url.replace(/^https?:\/\/satgurudmcadmin\.excellisit\.net/, CMS_URL);
+    url = url.replace(/^https?:\/\/satguru-cms\.vercel\.app/, CMS_URL);
     return url;
+  }
+
+  var LOCAL_UPLOAD_RE = /^https?:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?\/uploads\//;
+
+  function normalizeMediaUrls(value) {
+    if (typeof value === 'string') {
+      if (value.startsWith('/uploads/') || LOCAL_UPLOAD_RE.test(value)) {
+        return resolveUrl(value);
+      }
+      return value;
+    }
+    if (Array.isArray(value)) {
+      return value.map(normalizeMediaUrls);
+    }
+    if (value && typeof value === 'object') {
+      var out = {};
+      for (var k in value) {
+        if (Object.prototype.hasOwnProperty.call(value, k)) {
+          out[k] = normalizeMediaUrls(value[k]);
+        }
+      }
+      return out;
+    }
+    return value;
   }
 
   function resolveUrl(url) {
@@ -41,7 +63,7 @@
       try {
         var res = await fetch(CMS_URL + endpoint, { cache: 'no-store' });
         if (!res.ok) throw new Error('HTTP ' + res.status);
-        return await res.json();
+        return normalizeMediaUrls(await res.json());
       } catch (e) {
         console.error(
           '[Satguru CMS] fetch FAILED (' + e.message + ') for ' + CMS_URL + endpoint +

@@ -214,7 +214,7 @@
 
     </main>
 
-        <script src="assets/js/site-config.js?v=1"></script>
+        <script src="assets/js/site-config.js?v=2"></script>
 <script src="assets/js/includes.js?v=7"></script>
     <script src="assets/js/jquery-4.0.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -253,7 +253,7 @@
             var bannerData = await satguruCMS.getExploreBannerSlides();
             if (bannerData && bannerData.docs && bannerData.docs.length && swiperWrapper) {
                 swiperWrapper.innerHTML = bannerData.docs.map(function (slide) {
-                    var img = slide.imageUrl || satguruCMS.imgUrl(slide.image) || '';
+                    var img = satguruCMS.imgUrl(slide.image) || satguruCMS.imgUrl(slide.imageUrl) || '';
                     return '<div class="swiper-slide explore-slide" data-bg="' + escHtml(img) + '"></div>';
                 }).join('');
             }
@@ -279,7 +279,7 @@
                 var grid = document.getElementById('destGrid');
                 if (grid) {
                     grid.innerHTML = listingsData.docs.map(function (item) {
-                        var img  = item.imageUrl || satguruCMS.imgUrl(item.image) || '';
+                        var img  = satguruCMS.imgUrl(item.image) || satguruCMS.imgUrl(item.imageUrl) || '';
                         var name = item.destinationName || '';
                         var href = destHref(item.destinationSlug || '');
                         return '<div class="col-lg-4 col-md-6 col-12 tour-dest-col" data-name="' + escHtml(name.toLowerCase()) + '">' +

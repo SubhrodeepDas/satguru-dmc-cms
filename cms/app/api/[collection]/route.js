@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { readAll, create, parseWhere, applyWhere, applySort, qualifyUrls, dequalifyUrls, checkFeatureLimit } from '../../../lib/db';
+import { readAll, create, parseWhere, applyWhere, applySort, qualifyUrls, dequalifyUrls, checkFeatureLimit, getPublicOrigin } from '../../../lib/db';
 import { getCollection } from '../../../lib/collections';
 import { requireAuth } from '../../../lib/auth';
 
@@ -17,7 +17,7 @@ export async function GET(req, { params }) {
   const totalDocs = docs.length;
   const limit = parseInt(searchParams.get('limit') || '0', 10);
   if (limit > 0) docs = docs.slice(0, limit);
-  docs = qualifyUrls(docs, url.origin);
+  docs = qualifyUrls(docs, getPublicOrigin(req.url));
 
   return NextResponse.json(
     {
@@ -41,7 +41,7 @@ export async function POST(req, { params }) {
   if (!getCollection(collection)) {
     return NextResponse.json({ error: 'Unknown collection' }, { status: 404 });
   }
-  const body = dequalifyUrls(await req.json(), new URL(req.url).origin);
+  const body = dequalifyUrls(await req.json(), getPublicOrigin(req.url));
   const limitErr = await checkFeatureLimit(collection, body, null);
   if (limitErr) return NextResponse.json({ error: limitErr }, { status: 400 });
   const doc = await create(collection, body);
