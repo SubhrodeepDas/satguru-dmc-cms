@@ -1,12 +1,28 @@
 (function () {
 
+    function cmsApiBase() {
+        if (window.satguruCMS && window.satguruCMS.url) return window.satguruCMS.url;
+        if (typeof window.getCmsUrl === 'function') return window.getCmsUrl();
+        var local = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        return local ? 'http://localhost:10006' : 'http://194.67.119.189:10006';
+    }
+
+    function assetUrl(path) {
+        if (typeof window.satguruUrl === 'function') return window.satguruUrl(path);
+        return path;
+    }
+
     async function injectAsync(id, url) {
         var el = document.getElementById(id);
         if (!el) return;
         try {
             var res = await fetch(url);
-            if (!res.ok) return;
+            if (!res.ok) {
+                console.error('[Satguru] Failed to load include:', url, res.status);
+                return;
+            }
             var html = await res.text();
+            if (window.prefixRootHtml) html = window.prefixRootHtml(html);
 
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, 'text/html');
@@ -16,13 +32,6 @@
         } catch (e) {
             console.warn('Failed to inject', url, e);
         }
-    }
-
-    // Base URL of the CMS API. Locally the static site (any port) talks to the
-    // CMS on :3002; in production it uses satguruCMS.url (or same-origin proxy).
-    function cmsApiBase() {
-        return (window.satguruCMS && window.satguruCMS.url) ||
-            ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:3002' : '');
     }
 
     // Email verification widget — wraps an <input type="email"> in a
@@ -222,17 +231,12 @@
         document.querySelectorAll('form[data-cms-form]').forEach(wireCmsForm);
     });
 
-    // Resolve base path from script src so it works from any sub-folder
-    var scripts = document.getElementsByTagName('script');
-    var scriptSrc = scripts[scripts.length - 1].src;
-    var base = scriptSrc ? scriptSrc.replace(/assets\/js\/includes\.js.*/, '') : '';
-
     var cb = Date.now();
-    
+
     // Inject header and footer asynchronously, then run initializers
     Promise.all([
-        injectAsync('site-header', base + 'assets/includes/header.html?' + cb),
-        injectAsync('site-footer', base + 'assets/includes/footer.html?' + cb)
+        injectAsync('site-header', assetUrl('/assets/includes/header.html') + '?' + cb),
+        injectAsync('site-footer', assetUrl('/assets/includes/footer.html') + '?' + cb)
     ]).then(function () {
         // Guarantee the 3rd city card always has its content
         var cards = document.querySelectorAll('.footer-city-card');
@@ -322,8 +326,7 @@
                     if (!(sel.name in payload)) payload[sel.name] = sel.value;
                 });
 
-                var apiBase = (window.satguruCMS && window.satguruCMS.url) ||
-                    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:3002' : '');
+                var apiBase = cmsApiBase();
                 fetch(apiBase + '/api/quote', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -379,8 +382,7 @@
             }
 
             function nlApiBase() {
-                return (window.satguruCMS && window.satguruCMS.url) ||
-                    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:3002' : '');
+                return cmsApiBase();
             }
 
             function nlShowMsg(type, text) {
@@ -488,7 +490,7 @@
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: base + 'assets/img/email.json'
+            path: assetUrl('/assets/img/email.json')
         });
     }
 

@@ -581,7 +581,8 @@
 
 
 
-    <script src="assets/js/includes.js?v=5"></script>
+        <script src="assets/js/site-config.js?v=1"></script>
+<script src="assets/js/includes.js?v=7"></script>
     <script src="assets/js/jquery-4.0.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -677,7 +678,8 @@
                 btn.innerHTML = '<span class="icon"><img src="assets/img/arrow-icon-header.svg" alt=""></span>SENDING…';
 
                 var apiBase = (window.satguruCMS && window.satguruCMS.url) ||
-                    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:3002' : '');
+                    (typeof window.getCmsUrl === 'function' ? window.getCmsUrl() :
+                    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:10006' : 'http://194.67.119.189:10006'));
                 fetch(apiBase + '/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
