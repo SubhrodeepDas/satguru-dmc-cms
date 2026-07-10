@@ -1,5 +1,26 @@
 (function () {
 
+    function ensureBasePath() {
+        if (typeof window.SATGURU_BASE_PATH !== 'undefined') return;
+        var path = location.pathname;
+        window.SATGURU_BASE_PATH = path === '/dmc' || path.indexOf('/dmc/') === 0 ? '/dmc' : '';
+        window.satguruUrl = function (url) {
+            if (!url || /^https?:\/\//i.test(url) || url.indexOf('//') === 0) return url;
+            var base = window.SATGURU_BASE_PATH || '';
+            return base + (url.charAt(0) === '/' ? url : '/' + url);
+        };
+        window.prefixRootHtml = function (html) {
+            var base = window.SATGURU_BASE_PATH;
+            if (!base || !html) return html;
+            return html.replace(/(\s(?:src|href)=["'])\/(?!\/)/g, '$1' + base + '/');
+        };
+    }
+
+    function assetUrl(path) {
+        ensureBasePath();
+        return window.satguruUrl(path);
+    }
+
     async function injectAsync(id, url) {
         var el = document.getElementById(id);
         if (!el) return;
@@ -7,6 +28,7 @@
             var res = await fetch(url);
             if (!res.ok) return;
             var html = await res.text();
+            html = window.prefixRootHtml ? window.prefixRootHtml(html) : html;
 
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, 'text/html');
@@ -18,11 +40,10 @@
         }
     }
 
-    // Base URL of the CMS API. Locally the static site (any port) talks to the
-    // CMS on :3002; in production it uses satguruCMS.url (or same-origin proxy).
+    // Base URL of the CMS API. Locally the static site talks to CMS on :10006.
     function cmsApiBase() {
         return (window.satguruCMS && window.satguruCMS.url) ||
-            ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:3002' : '');
+            ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:10006' : '');
     }
 
     // Email verification widget — wraps an <input type="email"> in a
@@ -222,17 +243,14 @@
         document.querySelectorAll('form[data-cms-form]').forEach(wireCmsForm);
     });
 
-    // Resolve base path from script src so it works from any sub-folder
-    var scripts = document.getElementsByTagName('script');
-    var scriptSrc = scripts[scripts.length - 1].src;
-    var base = scriptSrc ? scriptSrc.replace(/assets\/js\/includes\.js.*/, '') : '';
+    ensureBasePath();
 
     var cb = Date.now();
-    
+
     // Inject header and footer asynchronously, then run initializers
     Promise.all([
-        injectAsync('site-header', base + 'assets/includes/header.html?' + cb),
-        injectAsync('site-footer', base + 'assets/includes/footer.html?' + cb)
+        injectAsync('site-header', assetUrl('/assets/includes/header.html') + '?' + cb),
+        injectAsync('site-footer', assetUrl('/assets/includes/footer.html') + '?' + cb)
     ]).then(function () {
         // Guarantee the 3rd city card always has its content
         var cards = document.querySelectorAll('.footer-city-card');
@@ -314,7 +332,7 @@
                 var btn = quoteForm.querySelector('button[type="submit"]');
                 var origText = btn.innerHTML;
                 btn.disabled = true;
-                btn.innerHTML = '<span class="icon"><img src="/assets/img/arrow-icon-header.svg" alt=""></span>SENDING…';
+                btn.innerHTML = '<span class="icon"><img src="' + assetUrl('/assets/img/arrow-icon-header.svg') + '" alt=""></span>SENDING…';
 
                 var payload = Object.fromEntries(new FormData(quoteForm));
                 // FormData skips <select> whose selected option is disabled — read them manually
@@ -322,8 +340,7 @@
                     if (!(sel.name in payload)) payload[sel.name] = sel.value;
                 });
 
-                var apiBase = (window.satguruCMS && window.satguruCMS.url) ||
-                    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:3002' : '');
+                var apiBase = cmsApiBase();
                 fetch(apiBase + '/api/quote', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -375,12 +392,11 @@
             // (e.g. `.innerHTML = 'Verify Code'`) drop the icon markup, which is
             // what the button's flex layout relies on to look right.
             function nlSetBtnText(text) {
-                nlSubmitBtn.innerHTML = '<span class="bannerPackage"><img src="/assets/img/org-arrow.svg" alt="" loading="lazy"></span>' + text;
+                nlSubmitBtn.innerHTML = '<span class="bannerPackage"><img src="' + assetUrl('/assets/img/org-arrow.svg') + '" alt="" loading="lazy"></span>' + text;
             }
 
             function nlApiBase() {
-                return (window.satguruCMS && window.satguruCMS.url) ||
-                    ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:3002' : '');
+                return cmsApiBase();
             }
 
             function nlShowMsg(type, text) {
@@ -488,7 +504,7 @@
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: base + 'assets/img/email.json'
+            path: assetUrl('/assets/img/email.json')
         });
     }
 

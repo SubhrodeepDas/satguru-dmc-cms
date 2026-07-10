@@ -1,18 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <script>
+    (function(w){var p=w.location.pathname;var b=p==='/dmc'||p.indexOf('/dmc/')===0?'/dmc':'';w.SATGURU_BASE_PATH=b;w.satguruUrl=function(u){if(!u||/^https?:\/\//i.test(u)||u.indexOf('//')===0)return u;return(b||'')+(u.charAt(0)==='/'?u:'/'+u);};w.prefixRootHtml=function(h){if(!b||!h)return h;return h.replace(/(\s(?:src|href)=["'])\/(?!\/)/g,'$1'+b+'/');};})(window);
+    </script>
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <script>(function(){document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function(el){var h=el.getAttribute('href');if(h&&h.charAt(0)==='/'&&!h.startsWith('//'))el.href=satguruUrl(h);});})();</script>
 
     <title>Experience Russia | Satguru DMC Russia</title>
     <meta name="description" content="Discover unforgettable experiences across Russia with Satguru DMC. From the iconic Trans-Siberian Railway to cultural tours of Moscow and St. Petersburg.">
     <meta property="og:title" content="Experience Russia | Satguru DMC Russia">
-    <meta property="og:description" content="Unforgettable Russia experiences — Trans-Siberian Railway, Moscow culture, St. Petersburg heritage and more.">
+    <meta property="og:description" content="Unforgettable Russia experiences � Trans-Siberian Railway, Moscow culture, St. Petersburg heritage and more.">
     <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,12 +24,12 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
-    <!-- Critical CSS — render-blocking (defines above-the-fold layout) -->
+    <!-- Critical CSS � render-blocking (defines above-the-fold layout) -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.min.css">
 
-    <!-- Non-critical CSS — loaded asynchronously (fonts & icon libraries) -->
+    <!-- Non-critical CSS � loaded asynchronously (fonts & icon libraries) -->
     <link rel="preload" href="assets/satoshi-font/css/satoshi.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="assets/satoshi-font/css/satoshi.css"></noscript>
 
@@ -85,7 +89,7 @@
                             Popular <span>Packages</span>
                         </h2>
                         <p class="section-desc">
-                            RT across Russia and strategic global presences in more the 80+ countries.  Our pan-Russia
+                            RT across Russia and strategic global presences in more the 80+ countries.� Our pan-Russia
                             network enables us to maintain the highest standards of service delivery as well as scout
                             for innovative products.
                         </p>
@@ -713,9 +717,9 @@
                             Get In Touch <span>With Us</span>
                         </h2>
                         <p class="section-desc">
-                             Staying committed to what we believe in - So no matter where in the world our customer
+                            �Staying committed to what we believe in - So no matter where in the world our customer
                             begins their journey from, we promise to bring them original, delightful, and unforgettable
-                            adventures – to create the experience of a lifetime, every time.
+                            adventures � to create the experience of a lifetime, every time.
                         </p>
                     </div>
                 </div>

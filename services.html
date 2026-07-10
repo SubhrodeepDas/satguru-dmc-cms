@@ -3,11 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <script>
+    (function(w){var p=w.location.pathname;var b=p==='/dmc'||p.indexOf('/dmc/')===0?'/dmc':'';w.SATGURU_BASE_PATH=b;w.satguruUrl=function(u){if(!u||/^https?:\/\//i.test(u)||u.indexOf('//')===0)return u;return(b||'')+(u.charAt(0)==='/'?u:'/'+u);};w.prefixRootHtml=function(h){if(!b||!h)return h;return h.replace(/(\s(?:src|href)=["'])\/(?!\/)/g,'$1'+b+'/');};})(window);
+    </script>
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <script>(function(){document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function(el){var h=el.getAttribute('href');if(h&&h.charAt(0)==='/'&&!h.startsWith('//'))el.href=satguruUrl(h);});})();</script>
 
     <title>Services & Products | Satguru DMC Russia</title>
     <meta name="description"
