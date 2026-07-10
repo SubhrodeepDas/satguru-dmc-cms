@@ -1,33 +1,33 @@
 'use strict';
 /* =========================================================
-   SATGURU DMC — Payload CMS Client
-   Local dev: CMS at http://localhost:3002 (npm run dev -w cms)
-   Production: API via same origin (server.js proxies /api + /media → :10054)
+   SATGURU DMC — CMS Client
+   Local dev: CMS at http://localhost:10006
+   Production: https://satgurutravel.ru/dmc (frontend + API + admin)
 ========================================================= */
 (function (window) {
-  // ▼▼▼ AFTER DEPLOYING THE CMS TO VERCEL, put its URL here ▼▼▼
-  //   e.g. 'https://satguru-cms.vercel.app'  (no trailing slash)
-  //   Leave '' to fall back to same-origin (only correct if the CMS API is
-  //   proxied under the frontend's own domain).
-  var PRODUCTION_CMS_URL = 'https://satguru-cms.vercel.app';
-  // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+  // Production CMS base URL (no trailing slash).
+  // Serves admin at /admin, API at /api/*, uploads at /uploads/*.
+  var PRODUCTION_CMS_URL = 'https://satgurutravel.ru/dmc';
 
-  // Payload admin origin — used only to rewrite media URLs in API responses
-  var CMS_ADMIN_ORIGIN = 'https://satgurudmcadmin.excellisit.net';
+  // Used to rewrite legacy media URLs in API responses to the production base.
+  var CMS_ADMIN_ORIGIN = 'https://satgurutravel.ru/dmc';
 
   var host = window.location.hostname;
   var isLocal = host === 'localhost' || host === '127.0.0.1';
   var CMS_URL = isLocal
-    ? 'http://localhost:3002'
+    ? 'http://localhost:10006'
     : (PRODUCTION_CMS_URL || window.location.origin);
 
   function rewriteCmsOrigin(url) {
     if (isLocal || !url) return url;
-    // IP staging: CMS on :10054
-    url = url.replace(/^https?:\/\/[^/:]+:10054/, window.location.origin);
-    // Domain: media URLs may point at the admin subdomain
-    if (CMS_ADMIN_ORIGIN) {
-      url = url.replace(new RegExp('^' + CMS_ADMIN_ORIGIN.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), window.location.origin);
+    var frontendBase = PRODUCTION_CMS_URL || window.location.origin;
+    // Legacy staging server
+    url = url.replace(/^https?:\/\/[^/:]+:10054/, frontendBase);
+    // Legacy admin domain
+    url = url.replace(/^https?:\/\/satgurudmcadmin\.excellisit\.net/, frontendBase);
+    // Rewrite old CMS origin to the production /dmc base
+    if (CMS_ADMIN_ORIGIN && CMS_ADMIN_ORIGIN !== frontendBase) {
+      url = url.replace(new RegExp('^' + CMS_ADMIN_ORIGIN.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), frontendBase);
     }
     return url;
   }
@@ -52,7 +52,7 @@
       } catch (e) {
         console.error(
           '[Satguru CMS] fetch FAILED (' + e.message + ') for ' + CMS_URL + endpoint +
-          ' — ensure satguru-frontend proxies /api to CMS (port 10054) and satguru-cms is running.'
+          ' — ensure the CMS is running and /dmc/api is proxied to the backend.'
         );
         return null;
       }
